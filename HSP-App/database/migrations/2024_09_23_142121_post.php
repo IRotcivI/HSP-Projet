@@ -19,8 +19,12 @@ return new class extends Migration
             $table->time('Heure');
             $table->integer('ref_reponse');
             $table->timestamps();
+
+            //Clé étrangers
+
+            $table->foreign('ref_reponse')->references('id')->on('reponse');
         });
-        //
+
     }
 
     /**
