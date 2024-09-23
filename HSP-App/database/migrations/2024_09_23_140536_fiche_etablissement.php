@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('Rue');
             $table->string('Ville');
             $table->integer('CP');
-            $table->string('Ville');
+            $table->text('Web');
             $table->integer('ref_utilisateur');
             $table->timestamps();
         });
