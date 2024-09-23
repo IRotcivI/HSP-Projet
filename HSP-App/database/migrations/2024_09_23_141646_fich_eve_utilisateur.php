@@ -12,9 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('fich_eve_utilisateur', function (Blueprint $table) {
-            $table->foreign('#ref_utilisateur')->references('id')->on('users');
-            $table->foreign('#ref_fiche_evenement')->references('id')->on('fiche_evenement');
+            $table->foreign('ref_utilisateur')->references('id')->on('users');
+            $table->foreign('ref_fiche_evenement')->references('id')->on('fiche_evenement');
             //
+
         });
     }
 
