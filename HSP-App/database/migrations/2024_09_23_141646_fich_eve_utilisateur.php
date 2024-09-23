@@ -15,6 +15,7 @@ return new class extends Migration
             $table->foreign('ref_utilisateur')->references('id')->on('users');
             $table->foreign('ref_fiche_evenement')->references('id')->on('fiche_evenement');
             //
+
         });
     }
 
