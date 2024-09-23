@@ -21,9 +21,16 @@ return new class extends Migration
             $table->text('cv');
             $table->string('entreprise');
             $table->integer('ref_post');
-            $table->integer('ref_post');
-            $table->integer('ref_post');
+            $table->integer('ref_reponse');
+            $table->integer('ref_offre');
             $table->timestamps();
+
+            //Clé étrangers
+
+            $table->foreign('ref_post')->references('id')->on('post');
+            $table->foreign('ref_reponse')->references('id')->on('reponse');
+            $table->foreign('ref_offre')->references('id')->on('offre');
+
 
         });
     }
