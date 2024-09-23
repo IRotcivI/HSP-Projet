@@ -18,8 +18,9 @@ return new class extends Migration
             $table->string('Ville');
             $table->integer('CP');
             $table->text('Web');
-            $table->integer('ref_utillisateur');
+            $table->integer('ref_utilisateur');
             $table->timestamps();
+            $table->foreign('ref_utilisateur')->references('id')->on('utilisateur');
         });
         //
     }
