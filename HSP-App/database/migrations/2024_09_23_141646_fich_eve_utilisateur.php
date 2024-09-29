@@ -12,10 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('fich_eve_utilisateur', function (Blueprint $table) {
+            $table->integer('ref_utilisateur');
+            $table->integer('ref_fiche_evenement');
+
+            //Clés etrangers
             $table->foreign('ref_utilisateur')->references('id')->on('users');
             $table->foreign('ref_fiche_evenement')->references('id')->on('fiche_evenement');
-            //
-
         });
     }
 
