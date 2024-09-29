@@ -20,6 +20,9 @@ return new class extends Migration
             $table->text('Web');
             $table->integer('ref_utilisateur');
             $table->timestamps();
+
+            //Clé étrangers
+
             $table->foreign('ref_utilisateur')->references('id')->on('utilisateur');
         });
         //

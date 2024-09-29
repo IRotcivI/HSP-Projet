@@ -14,6 +14,11 @@ return new class extends Migration
         Schema::create('utilisateur_offre', function (Blueprint $table) {
             $table->integer('ref_utilisateur')->primary();
             $table->integer('ref_offre')->primary();
+
+            //Clé étrangers
+
+            $table->foreign('ref_utilisateur')->references('id')->on('utilisateur');
+            $table->foreign('ref_offre')->references('id')->on('offre');
         });
         //
     }
