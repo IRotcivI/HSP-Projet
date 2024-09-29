@@ -18,11 +18,11 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('fonction');
-            $table->text('cv');
-            $table->string('entreprise');
-            $table->integer('ref_post');
-            $table->integer('ref_reponse');
-            $table->integer('ref_offre');
+            $table->text('cv')->nullable();
+            $table->string('entreprise')->nullable();
+            $table->integer('ref_post')->nullable();
+            $table->integer('ref_reponse')->nullable();
+            $table->integer('ref_offre')->nullable();
             $table->timestamps();
 
             //Clé étrangers
