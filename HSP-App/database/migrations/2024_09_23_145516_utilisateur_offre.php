@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('utilisateur_offre', function (Blueprint $table) {
-            $table->integer('ref_utilisateur')->primary();
-            $table->integer('ref_offre')->primary();
+            $table->integer('ref_utilisateur');
+            $table->integer('ref_offre');
 
             //Clé étrangers
 
