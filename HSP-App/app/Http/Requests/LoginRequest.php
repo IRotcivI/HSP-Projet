@@ -13,7 +13,7 @@ class LoginRequest extends FormRequest
     {
         return true;
     }
-return
+
     /**
      * Get the validation rules that apply to the request.
      *
