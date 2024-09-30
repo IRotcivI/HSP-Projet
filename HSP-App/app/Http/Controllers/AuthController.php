@@ -13,7 +13,9 @@ public function login(){
 public function doLogin(LoginRequest $request){
     $credentials = $request->validated();
 
-    Auth::attempt($credentials);
+    if ()Auth::attempt($credentials);{
+        session()->regenerate();
+    }
 
 }
 }
