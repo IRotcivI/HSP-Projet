@@ -10,6 +10,7 @@ public function login(){
     return_view('auth.login');
 }
 public function doLogin(LoginRequest $request){
+    $credentials = $request->validated();
 
 }
 }
