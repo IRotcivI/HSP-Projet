@@ -6,10 +6,6 @@ use Illuminate\Http\Request;
 
 class registerController extends Controller
 {
-    public function create()
-    {
-        return view('auth.register');
-    }
     public function store (Request $request)
     {
         $request-> validate([
@@ -24,8 +20,8 @@ class registerController extends Controller
         ]);
         return back ();
     }
-    public function created()
+    public function create()
     {
-        return view('auth.register');
+        return view('register.blade');
     }
 }
