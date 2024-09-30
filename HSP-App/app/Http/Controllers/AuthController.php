@@ -8,12 +8,12 @@ use Illuminate\Support\Facades\Auth;
 class AuthController
 {
 public function login(){
-    return_view('auth.login');
+    return view('auth.login');
 }
 public function doLogin(LoginRequest $request){
     $credentials = $request->validated();
 
-    if ()Auth::attempt($credentials);{
+    if (Auth::attempt($credentials)){
         session()->regenerate();
     }
 
