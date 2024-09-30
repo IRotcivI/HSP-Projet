@@ -1,0 +1,17 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Prend toute la hauteur de la fenêtre */
+    margin: 0; /* Supprime les marges par défaut */
+    background-color: #f8f9fa; /* Couleur de fond pour plus de style */
+}
+
+.row {
+    width: 100%; /* Permet aux éléments de prendre toute la largeur */
+    max-width: 400px; /* Limite la largeur pour un meilleur rendu */
+}
+
+.form-control {
+
