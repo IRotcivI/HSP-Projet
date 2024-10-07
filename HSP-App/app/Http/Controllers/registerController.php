@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Hash;
 
 class registerController extends Controller
 {
-
     public function store (Request $request)
     {
         $request-> validate([
@@ -30,3 +29,4 @@ class registerController extends Controller
         return view('auth.register');
     }
 }
+
