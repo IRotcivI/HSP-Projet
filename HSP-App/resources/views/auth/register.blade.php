@@ -1,8 +1,9 @@
-<h2>Inscription</h2>
+<h1>Inscription</h1>
+
 @if ($errors->any())
     <div>
-    <div>
-    </div>Erreur!</div>
+        <div>
+        </div>Erreur!</div>
     <ul>
         @foreach($errors->all() as $errors)
             <li>{{$errors}}</li>
@@ -10,29 +11,29 @@
     </ul>
     </div>
 @endif
-<form action="/register" method="POST">
+<form action="/HSP-App/app/Http/Controllers/registerController.php" method="POST">
 <div>
-    <label for="nom">Nom</label>
-    <input type="text" id="nom" name="nom" value="{{old('nom')}}" autofocus>
+    <input type="text" placeholder="Nom" id="nom" name="nom" value="{{old('nom')}}" autofocus>
+    <br></br>
 </div>
 <div>
-    <label for="prenom">Prenom</label>
-    <input type="text" id="prenom" name="prenom" value="{{old('prenom')}}">
+    <input type="text" placeholder="Prenom" id="prenom" name="prenom" value="{{old('prenom')}}">
+    <br></br>
 </div>
 <div>
-    <label for="email">Email</label>
-    <input type="text" id="email" name="email" value="{{old('email')}}">
+    <input type="text" placeholder="Email"  id="email" name="email" value="{{old('email')}}">
+    <br></br>
 </div>
 <div>
-    <label for="password">Mot de passe</label>
-    <input type="password" id="password" name="password" value="{{old('password')}}">
+    <input type="password" placeholder="Mot de passe" id="password" name="password" value="{{old('password')}}">
+    <br></br>
 </div>
     <div>
-        <label for="password_conf">Confirmation du Mot de passe</label>
-        <input type="password" id="password_conf" name="password_conf" value="{{old('password_conf')}}">
+        <input type="password" placeholder="Confirmation" id="password_conf" name="password_conf" value="{{old('password_conf')}}">
+        <br></br>
     </div>
-
 <duv>
-    <button>Register</button>
+    <button>Enregistrer</button>
 </duv>
 </form>
+
