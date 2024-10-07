@@ -16,6 +16,7 @@
 
     <h1>Connexion</h1>
     <div class="row text-center py-3 mt-3">
+        @csrf
         <label for="email">Email</label>
         <div class="col-4 mx-auto">
             <input type="email" placeholder="Email" class="form-control" id="email" name="email" value="{{old('email')}}">
