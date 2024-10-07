@@ -1,4 +1,5 @@
 <h1>Inscription</h1>
+
 @if ($errors->any())
     <div>
         <div>
@@ -31,7 +32,6 @@
         <input type="password" placeholder="Confirmation" id="password_conf" name="password_conf" value="{{old('password_conf')}}">
         <br></br>
     </div>
-
 <duv>
     <button>Enregistrer</button>
 </duv>

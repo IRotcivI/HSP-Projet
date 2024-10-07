@@ -29,5 +29,4 @@ class registerController extends Controller
     {
         return view('auth.register');
     }
-
 }
