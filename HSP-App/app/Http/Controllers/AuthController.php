@@ -16,6 +16,9 @@ public function doLogin(LoginRequest $request){
     if (Auth::attempt($credentials)){
         session()->regenerate();
     }
+    return to_route('auth.login')->withErrors([
+        'email'=> 'Email invalide'
+    ])->onlyInput('email');
 
 }
 }
