@@ -292,6 +292,27 @@ class Utilisateur{
 
         }
     }
+    public function InscriptionProf ()
+    {
+        $f = "professeur";
 
+        $bdd = new \BaseDeDonne();
+        $req = $bdd ->getBdd()->prepare("SELECT * FROM utilisateur WHERE email = :email");
+        $req ->execute(array(
+            "email" =>$this->getEmail()
+        ));
+
+        $bdd = new \BaseDeDonne();
+        $req = $bdd -> getBdd() -> prepare ("INSERT INTO utilisateur (nom,prenom,email,password,fonction) VALUES (:nom,:prenom,:email,:password,:fonction)");
+        $hash = password_hash($this->getMdp(), PASSWORD_DEFAULT);
+        $req -> execute(array(
+            'nom'=>$this->getNom(),
+            'prenom'=>$this->getPrenom(),
+            'email'=>$this->getEmail(),
+            'password'=>$hash,
+            'fonction'=>$f,
+        ));
+        header('location:/HSP/vue/auth/confirmation.html');
+    }
 
 }

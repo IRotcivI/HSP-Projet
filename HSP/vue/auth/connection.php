@@ -42,7 +42,7 @@
           <!-- Left links -->
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="#">HSP</a>
+              <a class="nav-link" href="/HSP/index.php">HSP</a>
             </li>
           </ul>
           <!-- Left links -->
@@ -56,11 +56,24 @@
             </a>
 
             <!--Lien vers la page inscription-->
-            <a href="/HSP/vue/auth/inscription.php">
-              <button data-mdb-ripple-init type="button" class="btn btn-primary me-3">
-                Inscription
-              </button>
-            </a>
+              <div class="dropdown">
+                  <a
+                          class="btn btn-primary dropdown-toggle"
+                          href="#"
+                          role="button"
+                          id="dropdownMenuLink"
+                          data-mdb-dropdown-init
+                          data-mdb-ripple-init
+                          aria-expanded="false"
+                  >
+                      Inscription
+                  </a>
+
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <li><a class="dropdown-item" href="/HSP/vue/auth/eleve/inscription.php">Eleve</a></li>
+                      <li><a class="dropdown-item" href="/HSP/vue/auth/professeur/inscriptionProf.php">Professeur</a></li>
+                  </ul>
+              </div>
           </div>
         </div>
         <!-- Collapsible wrapper -->
@@ -111,7 +124,7 @@
 
         <div class="member">
           Vous n'avez pas un compte ?
-          <a href="inscription.php">S'inscrire</a>
+          <a href="eleve/inscription.php">S'inscrire</a>
         </div>
       </div>
     </div>
