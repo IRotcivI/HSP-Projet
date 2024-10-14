@@ -208,10 +208,15 @@ class Utilisateur{
         $req -> execute(array(
             'email'=>$this->getEmail(),
         ));
+
         $res = $req -> fetch();
         if (is_array($res))
         {
             if (password_verify($this->getMdp(), $res['password'])){
+                $_SESSION['nom'] = $res['nom'];
+                $_SESSION['prenom'] = $res['prenom'];
+                $_SESSION['email'] = $res['email'];
+                $_SESSION['fonction'] = $res['fonction'];
                 session_start();
                 header("Location:/HSP/index.php");
                 exit();
