@@ -49,7 +49,7 @@
 
                 <div class="d-flex align-items-center">
                     <!--Lien vers la page connection-->
-                    <a href="connection.php">
+                    <a href="../connection.php">
                         <button data-mdb-ripple-init type="button" class="btn btn-link px-3 me-2">
                             Connexion
                         </button>
@@ -76,7 +76,7 @@
         <div class="inscription-container" id="inscription">
             <h1>Inscription</h1>
 
-            <form method="post" action="../../src/controller/traitInscription.php">
+            <form method="post" action="../../../src/controller/traitInscription.php">
                 <input type="text" name="nom" placeholder="Nom" value="" >
 
                 <input type="text" name="prenom" placeholder="Prenom" value="" >
@@ -111,7 +111,7 @@
 
             <div class="member">
                 Vous avez déjà un compte ?
-                <a href="connection.php">Se connecter</a>
+                <a href="../connection.php">Se connecter</a>
             </div>
         </div>
     </div>
