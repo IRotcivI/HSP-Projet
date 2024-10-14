@@ -5,21 +5,21 @@ if (isset($_POST['submit'])) {
     include '../model/Utilisateur.php';
 
     if (empty($_POST['nom']) || empty($_POST['prenom']) || empty($_POST['email']) || empty($_POST['mdp']) || empty($_POST['mdp2'])) {
-        header("Location:/HSP/vue/auth/eleve/inscription.php?inscription=vide");
+        header("Location:/HSP/vue/auth/inscription.php?inscription=vide");
         exit();
     }
     else {
         if (!preg_match("/^[a-zA-Z ]*$/",$_POST['nom']) || !preg_match("/^[a-zA-Z ]*$/",$_POST['prenom'])) {
-            header("Location:/HSP/vue/auth/eleve/inscription.php?inscription=caractere");
+            header("Location:/HSP/vue/auth/inscription.php?inscription=caractere");
             exit();
         }
         else{
             if ($_POST['mdp'] != $_POST['mdp2']) {
-                header("Location:/HSP/vue/auth/eleve/inscription.php?inscription=passwordincorect");
+                header("Location:/HSP/vue/auth/inscription.php?inscription=passwordincorect");
             }
             else {
                 if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-                    header("Location:/HSP/vue/auth/eleve/inscription.php?inscription=emailinvalide");
+                    header("Location:/HSP/vue/auth/inscription.php?inscription=emailinvalide");
                     exit();
                 }
                 else {
@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
                         'mdp' => $_POST['mdp']
                     ]);
 
-                    $ins->Inscription();
+                    $ins->InscriptionProf();
                 }
             }
         }
@@ -38,6 +38,6 @@ if (isset($_POST['submit'])) {
     }
 }
 else {
-    header("Location:/HSP/vue/auth/eleve/inscription.php?inscription=erreur");
+    header("Location:/HSP/vue/auth/inscription.php?inscription=erreur");
     exit();
 }

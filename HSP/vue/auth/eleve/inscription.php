@@ -42,25 +42,38 @@
                 <!-- Left links -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">HSP</a>
+                        <a class="nav-link" href="/HSP/index.php">HSP</a>
                     </li>
                 </ul>
                 <!-- Left links -->
 
                 <div class="d-flex align-items-center">
                     <!--Lien vers la page connection-->
-                    <a href="connection.php">
+                    <a href="../connection.php">
                         <button data-mdb-ripple-init type="button" class="btn btn-link px-3 me-2">
                             Connexion
                         </button>
                     </a>
 
                     <!--Lien vers la page inscription-->
-                    <a href="inscription.php">
-                        <button data-mdb-ripple-init type="button" class="btn btn-primary me-3">
+                    <div class="dropdown">
+                        <a
+                                class="btn btn-primary dropdown-toggle"
+                                href="#"
+                                role="button"
+                                id="dropdownMenuLink"
+                                data-mdb-dropdown-init
+                                data-mdb-ripple-init
+                                aria-expanded="false"
+                        >
                             Inscription
-                        </button>
-                    </a>
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="/HSP/vue/auth/eleve/inscription.php">Eleve</a></li>
+                            <li><a class="dropdown-item" href="/HSP/vue/auth/professeur/inscriptionProf.php">Professeur</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <!-- Collapsible wrapper -->
@@ -76,7 +89,7 @@
         <div class="inscription-container" id="inscription">
             <h1>Inscription</h1>
 
-            <form method="post" action="../../src/controller/traitInscription.php">
+            <form method="post" action="../../../src/controller/traitInscription.php">
                 <input type="text" name="nom" placeholder="Nom" value="" >
 
                 <input type="text" name="prenom" placeholder="Prenom" value="" >
@@ -111,7 +124,7 @@
 
             <div class="member">
                 Vous avez déjà un compte ?
-                <a href="connection.php">Se connecter</a>
+                <a href="../connection.php">Se connecter</a>
             </div>
         </div>
     </div>
