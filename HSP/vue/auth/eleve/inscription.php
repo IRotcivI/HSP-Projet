@@ -119,6 +119,9 @@
                 elseif (strpos($fullurl, "inscription=passwordincorect") !== false) {
                     echo "<p class='faute'>Les mots de passe ne correspondent pas !</p>";
                 }
+                elseif (strpos($fullurl, "erreur=1") !== false) {
+                    echo "<p class='faute'>Email dèja utilisé !</p>";
+                }
                 ?>
             </div>
 

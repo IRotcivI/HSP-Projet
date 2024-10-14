@@ -182,18 +182,23 @@ class Utilisateur{
         $req ->execute(array(
             "email" =>$this->getEmail()
         ));
+        if ($req -> rowCount() > 0){
+            header('location:/HSP/vue/auth/eleve/inscription.php?erreur=1');
+            exit();
 
-        $bdd = new \BaseDeDonne();
-        $req = $bdd -> getBdd() -> prepare ("INSERT INTO utilisateur (nom,prenom,email,password,fonction) VALUES (:nom,:prenom,:email,:password,:fonction)");
-        $hash = password_hash($this->getMdp(), PASSWORD_DEFAULT);
-        $req -> execute(array(
-            'nom'=>$this->getNom(),
-            'prenom'=>$this->getPrenom(),
-            'email'=>$this->getEmail(),
-            'password'=>$hash,
-            'fonction'=>$f,
-        ));
-        header('location:/HSP/vue/auth/confirmation.html');
+        }else{
+            $bdd = new \BaseDeDonne();
+            $req = $bdd -> getBdd() -> prepare ("INSERT INTO utilisateur (nom,prenom,email,password,fonction) VALUES (:nom,:prenom,:email,:password,:fonction)");
+            $hash = password_hash($this->getMdp(), PASSWORD_DEFAULT);
+            $req -> execute(array(
+                'nom'=>$this->getNom(),
+                'prenom'=>$this->getPrenom(),
+                'email'=>$this->getEmail(),
+                'password'=>$hash,
+                'fonction'=>$f,
+            ));
+            header('location:/HSP/vue/auth/confirmation.html');
+        }
     }
 
     public function Connexion ()
