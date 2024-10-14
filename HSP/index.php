@@ -19,6 +19,7 @@
     />
     <!-- MDB -->
     <link rel="stylesheet" href="assets/css/mdb.min.css" />
+      <link rel="stylesheet" href="assets/css/index.css">
   </head>
   <body>
     <!-- Start your project here-->
@@ -96,13 +97,20 @@
       </nav>
       <!-- Navbar -->
     </header>
-
     <main>
-        <?php
-        $temps = time() + 1800;
-        echo $temps;
-        ?>
-
+        <div class="bg-image">
+            <img src="/HSP/assets/img/imagehopital.jpg" height="100" class="img-fluid" alt="Wild Landscape"/>
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+                <div class = "d-flex justify-content-around align-top">
+                    <h1>Bienvenue sur HSP</h1>
+                </div>
+                <br><br>
+                <div class="d-flex justify-content-center align-text-top h-100">
+                    <h4><p>Créée en 1954, La Générale des hôpitaux (GDH), dont le siège est situé à Paris,</p>
+                        <p>est le premier groupe de cliniques et hôpitaux privés en France.<p> Fort de 70 années d'expérience, GDH a su tirer profit du développement des dernières technologies médicales<p> afin d'offrir aux patients des prestations couvrant une large variété de spécialités.</h4>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer></footer>
