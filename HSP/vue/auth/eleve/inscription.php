@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -89,18 +90,14 @@
         <div class="inscription-container" id="inscription">
             <h1>Inscription</h1>
 
-            <form method="post" action="../../../src/controller/traitInscription.php">
-                <input type="text" name="nom" placeholder="Nom" value="" >
-
-                <input type="text" name="prenom" placeholder="Prenom" value="" >
-
-                <input type="text" name="email" placeholder="Email" value="" >
-
-                <input type="password" name="mdp" placeholder="Mot de Passe" value="" >
+            <form method="post" action="../../../src/controller/traitInscription.php" enctype="multipart/form-data">
+                <input type="text" name="nom" placeholder="Nom" >
+                <input type="text" name="prenom" placeholder="Prenom" >
+                <input type="text" name="email" placeholder="Email"  >
+                <input type="password" name="mdp" placeholder="Mot de Passe" >
                 <input type="password" name="mdp2" placeholder="Confirmer le mot de passe" >
-
+                <input type="file" name="file">
                 <button type="submit" name="submit" class="btn btn-primary" data-mdb-ripple-init>S'inscrire</button>
-
             </form>
 
             <div class="faute">
@@ -111,7 +108,7 @@
                     echo "<p class='faute'>Vous n'avez pas rempli tout les champs !</p>";
                 }
                 elseif (strpos($fullurl, "inscription=caractere") !== false) {
-                    echo "<p class='faute'>Vous avez utilisé des caractéres invalides !</p>";
+                    echo "<p class='faute'>Vous avez utilisé des caractères invalides !</p>";
                 }
                 elseif (strpos($fullurl, "inscription=emailinvalide") !== false) {
                     echo "<p class='faute'>Email invalide !</p>";
@@ -120,7 +117,19 @@
                     echo "<p class='faute'>Les mots de passe ne correspondent pas !</p>";
                 }
                 elseif (strpos($fullurl, "erreur=1") !== false) {
-                    echo "<p class='faute'>Email dèja utilisé !</p>";
+                    echo "<p class='faute'>Email déjà utilisé !</p>";
+                }
+                elseif (strpos($fullurl, "inscription=cvvide") !== false) {
+                    echo "<p class='faute'>CV manquant !</p>";
+                }
+                elseif (strpos($fullurl, "inscription=cvinvalide") !== false) {
+                    echo "<p class='faute'>Ce type de document n'est pas accepter. Seulement les PDF !</p>";
+                }
+                elseif (strpos($fullurl, "inscription=cverreur") !== false) {
+                    echo "<p class='faute'>Une erreur est apparu lors de la sauvegarde de votre CV !</p>";
+                }
+                elseif (strpos($fullurl, "inscription=cvtaille") !== false) {
+                    echo "<p class='faute'>Fichier trop volumineux !</p>";
                 }
                 ?>
             </div>

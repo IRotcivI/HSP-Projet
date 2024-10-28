@@ -18,24 +18,26 @@
 <table id="myTable" class="display">
     <thead>
     <tr>
-        <th>nom</th>
-        <th>prenom</th>
-        <th>etablissement</th>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Email</th>
+        <th>Etablisement</th>
     </tr>
     </thead>
     <tbody>
     <?php
 
-    $bdd = new PDO('mysql:host=localhost:3306;dbname=annuaire;charset=utf8', 'root', '');
+    $bdd = new PDO('mysql:host=localhost:3306;dbname=hsp;charset=utf8', 'root', '');
 
-    $requete = $bdd -> prepare("SELECT * FROM annuaire");
+    $requete = $bdd -> prepare("SELECT * FROM utilisateur WHERE fonction = 'professeur' ");
     $requete -> execute();
     $aff = $requete -> fetchAll();
     foreach ($aff as $uti){
         echo '<tr>';
         echo '<td>'.$uti['nom'].'</td>';
         echo '<td>'.$uti['prenom'].'</td>';
-        echo '<td>'.$uti['etablissement'].'</td>';
+        echo '<td>'.$uti['email'].'</td>';
+        echo '<td>'.$uti['entreprise'].'</td>';
         echo '</tr>';
     }
     ?>
