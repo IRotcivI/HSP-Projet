@@ -84,7 +84,7 @@
 
             </form>
 
-            <div class="faute">
+            <div class="eror">
                 <?php
                 $fullurl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
