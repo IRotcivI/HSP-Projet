@@ -23,14 +23,41 @@ if (isset($_POST['submit'])) {
                     exit();
                 }
                 else {
-                    $ins = new Utilisateur([
-                        'nom' => $_POST['nom'],
-                        'prenom' => $_POST['prenom'],
-                        'email' => $_POST['email'],
-                        'mdp' => $_POST['mdp']
-                    ]);
+                    if (isset($_FILES['file'])){
+                        $file = $_FILES['file']['name'];
+                        $file_error = $_FILES['file']['error'];
+                        $fileExt = explode('.', $file);
+                        $fileActualExt = strtolower(end($fileExt));
+                        $allowed = array('pdf');
+                        $upload_dir = __DIR__ . '/uploads/' . $_FILES['file']['name'];
 
-                    $ins->Inscription();
+                        if (in_array($fileActualExt, $allowed)) {
+                            if ($file_error === 0) {
+                                move_uploaded_file($_FILES['file']['tmp_name'],$upload_dir);
+                                $ins = new Utilisateur([
+                                    'nom' => $_POST['nom'],
+                                    'prenom' => $_POST['prenom'],
+                                    'email' => $_POST['email'],
+                                    'mdp' => $_POST['mdp'],
+                                    'cv' => $file
+                                ]);
+
+                                $ins->inscription();
+                            }
+                            else{
+                                header("Location:/HSP/vue/auth/eleve/inscription.php?inscription=cvtaille");
+                                exit();
+                            }
+                        }
+                        else {
+                            header("Location:/HSP/vue/auth/eleve/inscription.php?inscription=cvinvalide");
+                            exit();
+                        }
+                    }
+                    else {
+                        header("Location:/HSP/vue/auth/eleve/inscription.php?inscription=cvvide");
+                        exit();
+                    }
                 }
             }
         }

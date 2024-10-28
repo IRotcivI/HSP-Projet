@@ -7,6 +7,7 @@ class Utilisateur{
     private $email;
     private $mdp;
     private $confirmation;
+    private $cv;
     private $token;
     private $selector;
     private $validator;
@@ -172,6 +173,23 @@ class Utilisateur{
         $this->validator = $validator;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getCv()
+    {
+        return $this->cv;
+    }
+
+    /**
+     * @param mixed $cv
+     */
+    public function setCv($cv): void
+    {
+        $this->cv = $cv;
+    }
+
+
 
     public function Inscription ()
     {
@@ -188,7 +206,7 @@ class Utilisateur{
 
         }else{
             $bdd = new \BaseDeDonne();
-            $req = $bdd -> getBdd() -> prepare ("INSERT INTO utilisateur (nom,prenom,email,password,fonction) VALUES (:nom,:prenom,:email,:password,:fonction)");
+            $req = $bdd -> getBdd() -> prepare ("INSERT INTO utilisateur (nom,prenom,email,password,fonction,cv) VALUES (:nom,:prenom,:email,:password,:fonction,:cv)");
             $hash = password_hash($this->getMdp(), PASSWORD_DEFAULT);
             $req -> execute(array(
                 'nom'=>$this->getNom(),
@@ -196,6 +214,7 @@ class Utilisateur{
                 'email'=>$this->getEmail(),
                 'password'=>$hash,
                 'fonction'=>$f,
+                'cv'=>$this->getCv()
             ));
             header('location:/HSP/vue/auth/confirmation.html');
         }
