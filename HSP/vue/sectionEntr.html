@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Inscription</title>
+    <!-- HSP icon -->
+    <link rel="icon" href="/HSP/assets/img/toolbox_container_repair_box_tool_box_toolboxes_icon_189312.ico"
+          type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="/HSP/assets/css/mdb.min.css" />
+    <link rel="stylesheet" href="/HSP/assets/css/ins.css" />
+</head>
+
+<body>
+<head>
+    <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+        <!-- Container wrapper -->
+        <div class="container">
+            <!-- Navbar brand -->
+            <a class="navbar-brand me-2">
+                <img src="/HSP/assets/img/toolbox_container_repair_box_tool_box_toolboxes_icon_189312.ico" height="16"
+                     alt="HSP Logo" loading="lazy" style="margin-top: -1px;" />
+            </a>
+
+            <!-- Toggle button -->
+            <button data-mdb-collapse-init class="navbar-toggler" type="button" data-mdb-target="#navbarButtonsExample"
+                    aria-controls="navbarButtonsExample" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarButtonsExample">
+                <!-- Left links -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/HSP/index.php">HSP</a>
+                    </li>
+                </ul>
+                <!-- Left links -->
+
+                <div class="d-flex align-items-center">
+                    <!--Lien vers la page connection-->
+                    <a href="../connection.php">
+                        <button data-mdb-ripple-init type="button" class="btn btn-link px-3 me-2">
+                            Connexion
+                        </button>
+                    </a>
+
+                    <!--Lien vers la page inscription-->
+                    <div class="dropdown">
+                        <a
+                                class="btn btn-primary dropdown-toggle"
+                                href="#"
+                                role="button"
+                                id="dropdownMenuLink"
+                                data-mdb-dropdown-init
+                                data-mdb-ripple-init
+                                aria-expanded="false"
+                        >
+                            Inscription
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="/HSP/vue/auth/eleve/inscription.php">Eleve</a></li>
+                            <li><a class="dropdown-item" href="/HSP/vue/auth/professeur/inscriptionProf.php">Professeur</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Collapsible wrapper -->
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+    <style>
+        .button {
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button1 {background-color: #04AA6D;} /*  Green */
+        .button2 {background-color: #008CBA;} /* Blue */
+    </style>
+</head>
+<body>
+
+<h1>Offre d'emploi / Stage</h1>
+<p>Publiez vos offres ici :</p>
+
+
+<a href="offreReussi.html">
+<button class="button button1">Ajouter une offre</button>
+</a>
+<button class="button button2">Voir les offres actives</button>
+
+</body>
+</html>
+</body>
