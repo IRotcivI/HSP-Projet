@@ -6,7 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>HSP Project</title>
     <!-- HSP icon -->
-    <link rel="icon" href="assets/img/toolbox_container_repair_box_tool_box_toolboxes_icon_189312.ico" type="image/x-icon" />
+    <link rel="icon" href="/HSP/assets/img/freepik-export-202410281551095LzP.ico" type="image/x-icon" />
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -31,7 +31,7 @@
           <!-- Navbar brand -->
           <a class="navbar-brand me-2">
             <img
-              src="assets/img/toolbox_container_repair_box_tool_box_toolboxes_icon_189312.ico"
+              src="/HSP/assets/img/freepik-export-202410281551095LzP.ico"
               height="16"
               alt="HSP Logo"
               loading="lazy"

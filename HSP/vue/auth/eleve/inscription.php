@@ -8,7 +8,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Inscription</title>
     <!-- HSP icon -->
-    <link rel="icon" href="/HSP/assets/img/toolbox_container_repair_box_tool_box_toolboxes_icon_189312.ico"
+    <link rel="icon" href="/HSP/assets/img/freepik-export-202410281551095LzP.ico"
           type="image/x-icon" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
@@ -28,7 +28,7 @@
         <div class="container">
             <!-- Navbar brand -->
             <a class="navbar-brand me-2">
-                <img src="/HSP/assets/img/toolbox_container_repair_box_tool_box_toolboxes_icon_189312.ico" height="16"
+                <img src="/HSP/assets/img/freepik-export-202410281551095LzP.ico" height="16"
                      alt="HSP Logo" loading="lazy" style="margin-top: -1px;" />
             </a>
 
