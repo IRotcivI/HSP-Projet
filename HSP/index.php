@@ -98,8 +98,8 @@
       <!-- Navbar -->
     </header>
     <main>
-        <div class="bg-image">
-            <img src="/HSP/assets/img/imagehopital.jpg" height="100" class="img-fluid" alt="Wild Landscape"/>
+        <div class="bg-image ">
+            <img src="/HSP/assets/img/imagehopital.jpg" height="100"  class="img-fluid" alt="Wild Landscape"/>
             <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
                 <div class = "d-flex justify-content-around align-top">
                     <h1>Bienvenue sur HSP</h1>
@@ -108,9 +108,17 @@
                 <div class="d-flex justify-content-center align-text-top h-100">
                     <h4><p>Créée en 1954, La Générale des hôpitaux (GDH), dont le siège est situé à Paris,</p>
                         <p>est le premier groupe de cliniques et hôpitaux privés en France.<p> Fort de 70 années d'expérience, GDH a su tirer profit du développement des dernières technologies médicales<p> afin d'offrir aux patients des prestations couvrant une large variété de spécialités.</h4>
+
                 </div>
+
             </div>
         </div>
+        <br></br>
+        <div class = "d-flex justify-content-around align-top">
+        <h3>Retrouvez-nous près de chez vous</h3>
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d70687.3324966235!2d2.2816912889486605!3d48.8213262263974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sHopital%20Paris%20Sud!5e0!3m2!1sfr!2sfr!4v1730123417147!5m2!1sfr!2sfr" align="left"  width="1265" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
     </main>
 
     <footer></footer>
@@ -121,4 +129,5 @@
     <!-- Custom scripts -->
     <script type="text/javascript"></script>
   </body>
+
 </html>
