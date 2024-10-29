@@ -1,8 +1,9 @@
-h1{
+
+.titre h1{
+    text-align: center;
     color: white;
 }
 h2{
-    color: black;
     text-align: center;
 }
 h3{
@@ -10,7 +11,7 @@ h3{
     text-align: left;
 }
 h4{
-    color: white;
+    color: #000000;
     text-align: left;
 }
 h5{
@@ -25,11 +26,6 @@ body {
 header, footer {
     color: white;
     text-align: center;
-}
-.container {
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
 }
 
 .services {
@@ -53,4 +49,191 @@ iframe {
     width: 100%;
     margin-top: 20px;
     border-radius: 10px;
+}
+
+
+body {
+    background-color: #111;
+}
+section {
+    margin-top: 50px;
+}
+.menu {
+    display: flex;
+    align-items: center;
+}
+.menu li  {
+    margin: 0 15px;
+    list-style-type: none;
+}
+.menu li a {
+    color: #fff;
+    font-size: 14px;
+}
+.btn-reservation {
+    color: #29d9d5;
+    font-size: 14px;
+    border: 2px solid #29d9d5;
+    padding: 5px 20px;
+    transition: 0.5s;
+    font-weight: bolder;
+}
+.btn-reservation:hover {
+    background-color: #29d9d5;
+    color: #fff;
+
+}
+
+/* Partie Evenement CSS */
+.decouvreservice{
+    text-align: center;
+    color: white;
+}
+#evenement {
+    padding: 0 10%;
+    margin-bottom: 50px;
+    height: 90vh;
+}
+#evenement form {
+    background-color: #fff;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.content{
+    color: white;
+}
+.nomevent{
+    color: black;
+}
+p{
+    color: #ffffff;
+}
+p1{
+    color: black;
+}
+p2{
+    color: #000000;
+}
+
+.home {
+    height: calc(110vh - 1px);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 10%;
+    padding-bottom: 1px;
+}
+.home-infos {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 50px;
+    animation: anime 2s linear;
+}
+.home-infos a {
+    text-decoration: 0;
+    border: 2px solid #93d6d0;
+    color: #93d6d0;
+    border-radius: 6px;
+    padding: 5px 20px;
+    margin-top: 5px;
+    font-weight: 400;
+    text-transform: capitalize;
+    transition: 0.5s;
+}
+.home-infos a:hover {
+    background-color: #93d6d0;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.service{
+    color: #1a4296;
+    text-align: center;
+}
+/* Partie Contact CSS */
+#contact {
+    padding: 0 10%;
+    margin-bottom: 50px;
+    height: 90vh;
+}
+#contact form {
+    background-color: #fff;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.left-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.left-right .left , .left-right .right  {
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+}
+#contact form label {
+    font-size: 14px;
+    padding: 10px 0;
+    font-weight: 600
+}
+#contact form input {
+    padding: 8px;
+    outline: 0;
+    border: 1px solid #999;
+}
+
+textarea {
+    height: 150px;
+    resize: none;
+    outline: 0;
+    width: 100%;
+    padding: 10px;
+}
+#contact form input:focus , textarea:focus {
+    border: 1px solid #29d9d5;
+}
+iframe {
+    height: 150px;
+    width: 100%;
+}
+#contact button {
+    width: fit-content;
+    padding: 8px 40px;
+    background-color: #111;
+    border: 1px solid #111;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#contact button:hover {
+    letter-spacing: 1px;
+}
+
+footer {
+    width: 100%;
+    background-color: #222;
+    padding: 10px 0;
+    font-size: 14px;
+    text-align: center;
+}
+footer p {
+    color: #fff;
+}
+footer p span {
+    color: #29d9d5;
+}
+.responsive-menu {
+    display: none;
+}
+label{
+    color: black;
+}
+.right{
+    color: red;
 }
