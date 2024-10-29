@@ -99,9 +99,9 @@
     </header>
     <main>
         <div class="bg-image ">
-            <img src="/HSP/assets/img/imagehopital.jpg" height="100"  class="img-fluid" alt="Wild Landscape"/>
+            <img src="/HSP/assets/img/imghopital.jpg" height="100" class="img-fluid" alt="Wild Landscape"/>
             <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
-                <div class = "d-flex justify-content-around align-top">
+                <div class = "titre d-flex justify-content-around align-top">
                     <h1>Bienvenue sur HSP</h1>
                 </div>
                 <br><br>
@@ -109,54 +109,94 @@
                     <h4><p>Créée en 1954, La Générale des hôpitaux (GDH), dont le siège est situé à Paris,</p>
                         <p>est le premier groupe de cliniques et hôpitaux privés en France.<p> Fort de 70 années d'expérience, GDH a su tirer profit du développement des dernières technologies médicales<p> afin d'offrir aux patients des prestations couvrant une large variété de spécialités.</h4>
 
+                    <section class="home" id="text-block">
+                        <div class="home-infos">
+                            <!-- box -->
+                            <div class="nomevent">
+                                <h1>Actualités et Evénements</h1>
+                                <img src="images/paris.jpg" alt="">
+                                <div class="content">
+                                    <div>
+                                        <h4>Titre1</h4>
+                                            <p1>Description</e></p1>
+                                        <p1></p1>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- box -->
+                            <div class="box">
+                                <img src="images/moscou.jpg" alt="">
+                                <div class="content">
+                                    <div>
+                                        <h4>Titre2</h4>
+                                        <p1>Description</p1>
+                                        <p1></p1>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- box -->
+                            <div class="box">
+                                <img src="images/miami.jpg" alt="">
+                                <div class="content">
+                                    <div>
+                                        <h4>Titre3</h4>
+                                        <p1>Description</p1>
+                                        <p1></p1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
 
             </div>
-
         </div>
-        <div class="hero">
-            <h2>Découvrez nos services</h2>
+        <div class="decouvreservice">
+            <h1>Découvrez nos services</h1>
         </div>
 
         <div class="container">
             <section class="services">
                 <div class="service">
                     <h2>Opportunités d'Emploi et de Stage</h2>
-                    <p>Offres d'emploi/stage publiées par les entreprises partenaires</p>
+                    <p1>Offres d'emploi/stage publiées par les entreprises partenaires</p1>
                 </div>
-                <div class="service">
-                   <h2>Evénement</h2>
-                    <p>Liste des événements organisés et inscription possible sur le site.</p>
-                </div>
+
                 <div class="service">
                     <h2>Forum de Discussion</h2>
-                    <p>Forums pour échanger sur divers sujets</p>
+                    <p1>Forums pour échanger sur divers sujets</p1>
                 </div>
             </section>
 
-            <br></br>
-            <div class = "d-flex justify-content-around align-top">
-                <h3>Retrouvez-nous près de chez vous</h3>
-            </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d70687.3324966235!2d2.2816912889486605!3d48.8213262263974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sHopital%20Paris%20Sud!5e0!3m2!1sfr!2sfr!4v1730123417147!5m2!1sfr!2sfr" align="left"  width="1265" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <br>
     </main>
 
     <footer>
-        <div class="contact"></div>
-        <div class="class-form">
+        <div class="responsive-menu"></div>
+        <section id="contact">
+            <h1 class="title">Contact</h1>
             <form action="">
-                <br><br><br><br><br><br><br><br><br><br><br>
-                <h5>Besoin d'un renseignement? <p>N'hésiter pas a nous contacter ci-dessous</p></h5>
-                <input type="text"  placeholder="Entrer votre nom">
-                <br>
-                <input type="email" placeholder="Entrer une adresse email">
-                <br>
-                <textarea placeholder="Entrer un message" cols="30" rows="10"></textarea>
-                <br>
+                <div class="left-right">
+                    <div class="left">
+                        <label>Nom</label>
+                        <input type="text">
+                        <label>Email</label>
+                        <input type="text">
+                        <label>Objet</label>
+                        <input type="text">
+                        <label>Message</label>
+                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="right">
+                        <h2>Besoin d'un renseignement ?</h2>
+                        <label>N'hésiter pas à nous contacter !</label>
+                        <label>Adresse</label>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d70687.3324966235!2d2.2816912889486605!3d48.8213262263974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sHopital%20Paris%20Sud!5e0!3m2!1sfr!2sfr!4v1730123417147!5m2!1sfr!2sfr" align="left"  width="1265" height="700" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <br>
+                    </div>
+                </div>
                 <button>Envoyer</button>
             </form>
-        </div>
+        </section>
     </footer>
     <!-- End your project here-->
 
