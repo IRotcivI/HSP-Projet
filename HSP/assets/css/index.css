@@ -1,6 +1,10 @@
 h1{
     color: white;
 }
+h2{
+    color: black;
+    text-align: center;
+}
 h3{
     color: black;
     text-align: left;
@@ -8,4 +12,45 @@ h3{
 h4{
     color: white;
     text-align: left;
+}
+h5{
+    color: black;
+    text-align: center;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header, footer {
+    color: white;
+    text-align: center;
+}
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.services {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+.service {
+    text-align: center;
+    padding: 20px;
+    width: 30%;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+.contact-section {
+    text-align: center;
+    margin-top: 20px;
+}
+iframe {
+    height: 300px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 10px;
 }
