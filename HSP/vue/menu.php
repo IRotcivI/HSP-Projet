@@ -22,6 +22,7 @@ if (empty($_SESSION)) {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
         <!-- MDB -->
         <link rel="stylesheet" href="../assets/css/mdb.min.css" />
+        <link rel="stylesheet" href="../assets/css/profiles.css">
     </head>
     <body>
     <!-- Start your project here-->
@@ -71,9 +72,9 @@ if (empty($_SESSION)) {
                         ?>
                     </li>
                     <li class="nav-item me-3 me-lg-1">
-                        <a class="nav-link d-sm-flex align-items-sm-center" href="#">
+                        <a class="nav-link d-sm-flex align-items-sm-center" href="auth/profiles.php">
                             <img src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" class="rounded-circle" height="22" alt="Black and White Portrait of a Man" loading="lazy" />
-                            <strong class="d-none d-sm-block ms-1"><?php echo htmlspecialchars($_SESSION['prenom']); ?></strong>
+                            <strong class="d-none d-sm-block ms-1"><?php echo strtoupper($_SESSION['prenom']); ?></strong>
                         </a>
                     </li>
 
