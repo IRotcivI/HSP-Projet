@@ -80,7 +80,7 @@ input:focus{
     color: rgb(58, 113, 201);
 }
 
-.box .faute {
+.box .eror {
     font-size: 0.8rem;
     margin-top: 1.4rem;
 }
@@ -90,9 +90,12 @@ input:focus{
     color: red;
 }
 
-.succes{
-    Text-decoration: none;
-    color: #3fc93a;
+.box .succes{
+    font-size: 0.8rem;
+    margin-top: 1.4rem;
 }
 
-
+.box .succes p{
+    text-decoration: none;
+    color: green;
+}
