@@ -22,6 +22,8 @@ if (empty($_SESSION)) {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
         <!-- MDB -->
         <link rel="stylesheet" href="../assets/css/mdb.min.css" />
+        <link rel="stylesheet" href="../assets/css/profiles.css">
+        <link rel="stylesheet" href="../assets/css/evenement.css">
     </head>
     <body>
     <!-- Start your project here-->
@@ -107,56 +109,54 @@ if (empty($_SESSION)) {
         <!-- Navbar -->
     </header>
 
-    <main>
-        <table id="myTable" class="table align-middle mb-0 bg-white display">
-            <thead class="bg-light">
-            <tr>
-                <th>Nom-Prénom</th>
-                <th>Profession</th>
-                <th>Status</th>
-                <th>Action</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php
-            $bdd = new PDO('mysql:host=localhost:3306;dbname=hsp;charset=utf8', 'root', '');
-            $requete = $bdd->prepare("SELECT * FROM utilisateur WHERE fonction = 'eleve'");
-            $requete->execute();
-            $aff = $requete->fetchAll();
 
-            foreach ($aff as $ligne) {
-                ?>
-                <tr>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <img
-                                src="https://mdbootstrap.com/img/new/avatars/8.jpg"
-                                alt=""
-                                style="width: 45px; height: 45px"
-                                class="rounded-circle"
-                            />
-                            <div class="ms-3">
-                                <p class="fw-bold mb-1"><?php echo htmlspecialchars($ligne['nom']) . ' ' . htmlspecialchars($ligne['prenom']); ?></p>
-                                <p class="text-muted mb-0"><?php echo htmlspecialchars($ligne['email']); ?></p>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <p class="fw-normal mb-1"><?php echo htmlspecialchars($ligne['fonction']); ?></p>
-                    </td>
-                    <td>
-                        <span class="badge badge-success rounded-pill d-inline"
-                        >Eleve</span
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-link btn-sm btn-rounded" disabled>
-                            <?php echo htmlspecialchars($ligne['email']); ?>
-                        </button>
-                    </td>
-                </tr>
-            <?php } ?>
-            </tbody>
-        </table>
+    <main>
+        <div class="box">
+            <form style="width: 300px;">
+                <!-- Name input -->
+
+
+                <!-- Titre input -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="email" id="form4Example2" class="form-control" />
+                    <label class="form-label" for="form4Example2">Titre</label>
+                </div>
+
+                <!-- Description input -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <textarea class="form-control" id="form4Example3" rows="4"></textarea>
+                    <label class="form-label" for="form4Example3">Description</label>
+                </div>
+
+                <!-- rue input -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="email" id="form4Example2" class="form-control" />
+                    <label class="form-label" for="form4Example3">Rue</label>
+                </div>
+
+                <!-- ville input -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="email" id="form4Example2" class="form-control" />
+                    <label class="form-label" for="form4Example3">Ville</label>
+                </div>
+
+                <!-- cp input -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="email" id="form4Example2" class="form-control" />
+                    <label class="form-label" for="form4Example3">Code postal</label>
+                </div>
+
+                <!-- hopital input -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="email" id="form4Example2" class="form-control" />
+                    <label class="form-label" for="form4Example3">Hopital</label>
+                </div>
+
+                <!-- Submit button -->
+                <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">Creer l'evenement</button>
+            </form>
+
+        </div>
     </main>
 
     <footer></footer>

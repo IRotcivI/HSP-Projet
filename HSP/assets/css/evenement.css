@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #dfe9f5;
+}
+
+.box{
+    width: 330px;
+    padding: 2rem 1rem;
+    margin: 50px auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 20px 35px rgb(58, 113, 201);
+}
+
+h1{
+    font-size: 2rem;
+    color: black;
+}
+
+h2 {
+    font-size: 0.8rem;
+    color: black;
+}
+
+form input{
+    width: 92%;
+    outline: none;
+    border: 1px solid #fff;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    background: #e4e4e4;
+}
+
+.box button{
+    font-size: 1rem;
+    margin-top: 0.9rem;
+    padding: 10px 0;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    width: 90%;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgba(255, 247, 25, 0.8);
+}
+
+input:focus{
+    border: 1px solid rgb(58, 113, 201);
+}
+
+.member{
+    font-size: 0.8rem;
+    margin-top: 1.4rem;
+    color: rgb(0, 0, 0);
+}
+
+.member a{
+    text-decoration: none;
+    color: rgb(58, 113, 201);
+}
+
+
+.recover{
+    text-align: right;
+    font-size: 0.7rem;
+    margin: 0.3rem 1.4rem 0 0;
+}
+
+.recover a{
+    text-decoration: none;
+    color: rgb(58, 113, 201);
+}
+
+.box .faute {
+    font-size: 0.8rem;
+    margin-top: 1.4rem;
+}
+
+.box .faute p {
+    text-decoration: none;
+    color: red;
+}
+
+.box .succes{
+    font-size: 0.8rem;
+    margin-top: 1.4rem;
+}
+
+.box .succes p{
+    text-decoration: none;
+    color: #48c93a;
+}
+
+
