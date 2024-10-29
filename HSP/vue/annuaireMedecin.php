@@ -22,7 +22,6 @@ if (empty($_SESSION)) {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
         <!-- MDB -->
         <link rel="stylesheet" href="../assets/css/mdb.min.css" />
-        <link rel="stylesheet" href="../assets/css/profiles.css">
     </head>
     <body>
     <!-- Start your project here-->
@@ -40,18 +39,6 @@ if (empty($_SESSION)) {
                 <!-- Left elements -->
 
                 <!-- Center elements -->
-                <?php
-                if ($_SESSION['fonction'] == 'eleve'){ ?>
-                    <ul class="navbar-nav flex-row d-none d-md-flex">
-                    <li class="nav-item me-3 me-lg-1 active">
-                        <a class="nav-link" href="database.php">
-                            <span><i class="fas fa-book-open"></i></span>
-                        </a>
-                    </li>
-                </ul>
-                <?php
-                }
-                if ($_SESSION['fonction'] == 'professeur'){ ?>
                 <ul class="navbar-nav flex-row d-none d-md-flex">
                     <li class="nav-item me-3 me-lg-1 active">
                         <a class="nav-link" href="annuaireMedecin.php">
@@ -59,9 +46,6 @@ if (empty($_SESSION)) {
                         </a>
                     </li>
                 </ul>
-                    <?php
-                }
-                ?>
                 <!-- Center elements -->
 
                 <!-- Right elements -->
@@ -69,12 +53,12 @@ if (empty($_SESSION)) {
                     <li>
                         <?php
                         if ($_SESSION['fonction'] == 'eleve') { ?>
-                        <button type="button" class="btn btn-success" data-mdb-ripple-init disabled><?php echo $_SESSION['fonction']?></button>
-                        <?php
+                            <button type="button" class="btn btn-success" data-mdb-ripple-init disabled><?php echo $_SESSION['fonction']?></button>
+                            <?php
                         }
                         else { ?>
-                        <button type="button" class="btn btn-info" data-mdb-ripple-init disabled><?php echo $_SESSION['fonction']?></button>
-                        <?php
+                            <button type="button" class="btn btn-info" data-mdb-ripple-init disabled><?php echo $_SESSION['fonction']?></button>
+                            <?php
                         }
                         ?>
                     </li>
@@ -103,7 +87,55 @@ if (empty($_SESSION)) {
     </header>
 
     <main>
+        <table id="myTable" class="table align-middle mb-0 bg-white display">
+            <thead class="bg-light">
+            <tr>
+                <th>Nom-Prénom</th>
+                <th>Profession</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            $bdd = new PDO('mysql:host=localhost:3306;dbname=hsp;charset=utf8', 'root', '');
+            $requete = $bdd->prepare("SELECT * FROM utilisateur WHERE fonction = 'eleve'");
+            $requete->execute();
+            $aff = $requete->fetchAll();
 
+            foreach ($aff as $ligne) {
+                ?>
+                <tr>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img
+                                src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                                alt=""
+                                style="width: 45px; height: 45px"
+                                class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                                <p class="fw-bold mb-1"><?php echo htmlspecialchars($ligne['nom']) . ' ' . htmlspecialchars($ligne['prenom']); ?></p>
+                                <p class="text-muted mb-0"><?php echo htmlspecialchars($ligne['email']); ?></p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1"><?php echo htmlspecialchars($ligne['fonction']); ?></p>
+                    </td>
+                    <td>
+                        <span class="badge badge-success rounded-pill d-inline"
+                        >Eleve</span
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-link btn-sm btn-rounded" disabled>
+                            <?php echo htmlspecialchars($ligne['email']); ?>
+                        </button>
+                    </td>
+                </tr>
+            <?php } ?>
+            </tbody>
+        </table>
     </main>
 
     <footer></footer>
