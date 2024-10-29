@@ -2,6 +2,7 @@
 
 class Utilisateur{
 
+    private $id;
     private $nom;
     private $prenom;
     private $email;
@@ -27,6 +28,22 @@ class Utilisateur{
                 $this -> $cmd ($value);
             }
         }
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
     }
 
     /**
@@ -233,6 +250,7 @@ class Utilisateur{
         {
             if (password_verify($this->getMdp(), $res['password'])){
                 session_start();
+                $_SESSION['id'] = $res['id'];
                 $_SESSION['nom'] = $res['nom'];
                 $_SESSION['prenom'] = $res['prenom'];
                 $_SESSION['email'] = $res['email'];
@@ -342,6 +360,34 @@ class Utilisateur{
             'fonction'=>$f,
         ));
         header('location:/HSP/vue/auth/confirmation.html');
+    }
+
+    public function Modifier()
+    {
+        if ($_SESSION['email'] !== $this->getEmail()){
+            $bdd = new \BaseDeDonne();
+            $req = $bdd ->getBdd()->prepare("SELECT * FROM utilisateur WHERE email = :email AND id = :id");
+            $req ->execute(array(
+                "email" =>$this->getEmail(),
+                "id"=>$this->getId()
+            ));
+            if ($req -> rowCount() > 0){
+                header('location:/HSP/vue/auth/profiles.php?erreur=1');
+                exit();
+            }
+        }
+            $bdd = new \BaseDeDonne();
+            $req = $bdd -> getBdd() -> prepare ("UPDATE utilisateur SET nom = :nom, prenom = :prenom, email = :email WHERE id = :id ");
+            $req -> execute(array(
+                'nom'=>$this->getNom(),
+                'prenom'=>$this->getPrenom(),
+                'email'=>$this->getEmail(),
+                'id'=>$this->getId(),
+            ));
+            $_SESSION['nom'] = $this->getNom();
+            $_SESSION['prenom'] = $this->getPrenom();
+            $_SESSION['email'] = $this->getEmail();
+            header('location:/HSP/vue/auth/profiles.php?succes=1');
     }
 
 }
