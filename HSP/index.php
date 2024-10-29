@@ -106,8 +106,23 @@
                 </div>
                 <br><br>
                 <div class="d-flex justify-content-center align-text-top h-100">
-                    <h4><p>Créée en 1954, La Générale des hôpitaux (GDH), dont le siège est situé à Paris,</p>
-                        <p>est le premier groupe de cliniques et hôpitaux privés en France.<p> Fort de 70 années d'expérience, GDH a su tirer profit du développement des dernières technologies médicales<p> afin d'offrir aux patients des prestations couvrant une large variété de spécialités.</h4>
+                    <h4><p>Créée en 1954, La Générale des hôpitaux (GDH), dont le siège est situé à Paris, est le premier groupe de cliniques et hôpitaux privés en France.<p> Fort de 70 années d'expérience, GDH a su tirer profit du développement des dernières technologies médicales afin d'offrir aux patients des prestations couvrant une large variété de spécialités.
+                            <p>Inauguré en 1995, l'hôpital privé HSP (Hôpital Sud Paris) est le fruit du rattachement de plusieurs établissements indépendants au pôle territorial Paris Sud du groupe GDH. Situé dans la commune de Marreuil sur Seine, à 25km de Paris, l'hôpital compte 90 praticiens et dispose de 289 lits.
+                            <p>Associant des compétences diverses et complémentaires, l'établissement possède :</p>
+
+                        <p>&nbsp &nbsp• un pôle de chirurgie</p>
+
+                        <p>&nbsp &nbsp• un pôle de médecine</p>
+
+                        <p>&nbsp &nbsp• un pôle de cancérologie</p>
+
+                        <p>&nbsp &nbsp• un pôle de maternité</p>
+
+                        <p>&nbsp &nbsp• un pôle d'imagerie médicale</p>
+
+                        <p>&nbsp &nbsp• un service d'urgences 24h/24 7j/7</p>
+
+                        <p>Le réseau informatique de l'hôpital HSP compte près de 350 postes pour des utilisateurs variés (praticiens, employés administratifs, patients...).</h4>
 
                     <section class="home" id="text-block">
                         <div class="home-infos">
