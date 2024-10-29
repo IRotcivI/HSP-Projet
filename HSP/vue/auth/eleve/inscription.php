@@ -105,31 +105,31 @@
                 $fullurl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
                 if (strpos($fullurl, "inscription=vide") !== false) {
-                    echo "<p class='faute'>Vous n'avez pas rempli tout les champs !</p>";
+                    echo "<p class='text-danger'>Vous n'avez pas rempli tout les champs !</p>";
                 }
                 elseif (strpos($fullurl, "inscription=caractere") !== false) {
-                    echo "<p class='faute'>Vous avez utilisé des caractères invalides !</p>";
+                    echo "<p class='text-danger'>Vous avez utilisé des caractères invalides !</p>";
                 }
                 elseif (strpos($fullurl, "inscription=emailinvalide") !== false) {
-                    echo "<p class='faute'>Email invalide !</p>";
+                    echo "<p class='text-danger'>Email invalide !</p>";
                 }
                 elseif (strpos($fullurl, "inscription=passwordincorect") !== false) {
-                    echo "<p class='faute'>Les mots de passe ne correspondent pas !</p>";
+                    echo "<p class='text-danger'>Les mots de passe ne correspondent pas !</p>";
                 }
                 elseif (strpos($fullurl, "erreur=1") !== false) {
-                    echo "<p class='faute'>Email déjà utilisé !</p>";
+                    echo "<p class='text-danger'>Email déjà utilisé !</p>";
                 }
                 elseif (strpos($fullurl, "inscription=cvvide") !== false) {
-                    echo "<p class='faute'>CV manquant !</p>";
+                    echo "<p class='text-danger'>CV manquant !</p>";
                 }
                 elseif (strpos($fullurl, "inscription=cvinvalide") !== false) {
-                    echo "<p class='faute'>Ce type de document n'est pas accepter. Seulement les PDF !</p>";
+                    echo "<p class='text-danger'>Ce type de document n'est pas accepter. Seulement les PDF !</p>";
                 }
                 elseif (strpos($fullurl, "inscription=cverreur") !== false) {
-                    echo "<p class='faute'>Une erreur est apparu lors de la sauvegarde de votre CV !</p>";
+                    echo "<p class='text-danger'>Une erreur est apparu lors de la sauvegarde de votre CV !</p>";
                 }
                 elseif (strpos($fullurl, "inscription=cvtaille") !== false) {
-                    echo "<p class='faute'>Fichier trop volumineux !</p>";
+                    echo "<p class='text-danger'>Fichier trop volumineux !</p>";
                 }
                 ?>
             </div>
