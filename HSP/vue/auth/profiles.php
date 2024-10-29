@@ -44,15 +44,28 @@ if (empty($_SESSION)) {
                 if ($_SESSION['fonction'] == 'eleve'){ ?>
                     <ul class="navbar-nav flex-row d-none d-md-flex">
                         <li class="nav-item me-3 me-lg-1 active">
-                            <a class="nav-link" href="../database.php">
+                            <a class="nav-link" href="database.php">
                                 <span><i class="fas fa-book-open"></i></span>
                             </a>
                         </li>
                     </ul>
                     <?php
                 }
-                else{
-                    echo '';
+                if ($_SESSION['fonction'] == 'professeur'){ ?>
+                    <ul class="navbar-nav flex-row d-none d-md-flex">
+                        <li class="nav-item me-3 me-lg-1 active">
+                            <a class="nav-link" href="annuaireMedecin.php">
+                                <span><i class="fas fa-graduation-cap"></i></span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item me-3 me-lg-1 active">
+                            <a class="nav-link" href="creationEvenement.php">
+                                <span><i class="far fa-calendar-plus"></i></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <?php
                 }
                 ?>
                 <!-- Center elements -->
