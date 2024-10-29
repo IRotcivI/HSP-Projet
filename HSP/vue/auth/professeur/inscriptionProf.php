@@ -108,16 +108,16 @@
                 $fullurl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
                 if (strpos($fullurl, "inscriptionProf=vide") !== false) {
-                    echo "<p class='faute'>Vous n'avez pas rempli tout les champs !</p>";
+                    echo "<p class='text-danger'>Vous n'avez pas rempli tout les champs !</p>";
                 }
                 elseif (strpos($fullurl, "inscriptionProf=caractere") !== false) {
-                    echo "<p class='faute'>Vous avez utilisé des caractéres invalides !</p>";
+                    echo "<p class='text-danger'>Vous avez utilisé des caractéres invalides !</p>";
                 }
                 elseif (strpos($fullurl, "inscriptionProf=emailinvalide") !== false) {
-                    echo "<p class='faute'>Email invalide !</p>";
+                    echo "<p class='text-danger'>Email invalide !</p>";
                 }
                 elseif (strpos($fullurl, "inscriptionProf=passwordincorect") !== false) {
-                    echo "<p class='faute'>Les mots de passe ne correspondent pas !</p>";
+                    echo "<p class='text-danger'>Les mots de passe ne correspondent pas !</p>";
                 }
                 ?>
             </div>

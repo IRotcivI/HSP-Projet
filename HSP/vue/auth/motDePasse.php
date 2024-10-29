@@ -84,21 +84,21 @@
 
             </form>
 
-            <div class="faute">
+            <div class="eror">
                 <?php
                 $fullurl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
                 if (strpos($fullurl, "reset=success") !== false) {
-                    echo "<p class='succes'>Email envoyer !</p>";
+                    echo "<p class='text-success'>Email envoyer !</p>";
                 }
                 elseif (strpos($fullurl, "connection=nouser") !== false) {
-                    echo "<p class='faute'>Aucun utilisateur (Veullez créer un compte) !</p>";
+                    echo "<p class='text-danger'>Aucun utilisateur (Veullez créer un compte) !</p>";
                 }
                 elseif (strpos($fullurl, "connection=emailinvalide") !== false) {
-                    echo "<p class='faute'>Le format de l'email est invalide !</p>";
+                    echo "<p class='text-danger'>Le format de l'email est invalide !</p>";
                 }
                 elseif (strpos($fullurl, "connection=passwordincorect") !== false) {
-                    echo "<p class='faute'>Mot de passe ou email incorrect !</p>";
+                    echo "<p class='text-danger'>Mot de passe ou email incorrect !</p>";
                 }
                 ?>
             </div>

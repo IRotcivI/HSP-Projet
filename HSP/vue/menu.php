@@ -15,13 +15,14 @@ if (empty($_SESSION)) {
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>HSP Project</title>
         <!-- HSP icon -->
-        <link rel="icon" href="../assets/img/toolbox_container_repair_box_tool_box_toolboxes_icon_189312.ico" type="image/x-icon" />
+        <link rel="icon" href="/HSP/assets/img/freepik-export-202410281551095LzP.ico" type="image/x-icon" />
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
         <!-- Google Fonts Roboto -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
         <!-- MDB -->
         <link rel="stylesheet" href="../assets/css/mdb.min.css" />
+        <link rel="stylesheet" href="../assets/css/profiles.css">
     </head>
     <body>
     <!-- Start your project here-->
@@ -32,18 +33,48 @@ if (empty($_SESSION)) {
                 <!-- Left elements -->
                 <div class="d-flex">
                     <!-- Brand -->
-                    <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
-                        <img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" height="20" alt="MDB Logo" loading="lazy" style="margin-top: 2px;" />
+                    <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="menu.php">
+                        <img src="/HSP/assets/img/freepik-export-202410281551095LzP.ico" height="20" alt="MDB Logo" loading="lazy" style="margin-top: 2px;" />
                     </a>
                 </div>
                 <!-- Left elements -->
 
+                <!-- Center elements -->
+                <?php
+                if ($_SESSION['fonction'] == 'eleve'){ ?>
+                    <ul class="navbar-nav flex-row d-none d-md-flex">
+                    <li class="nav-item me-3 me-lg-1 active">
+                        <a class="nav-link" href="database.php">
+                            <span><i class="fas fa-book-open"></i></span>
+                        </a>
+                    </li>
+                </ul>
+                <?php
+                }
+                else{
+                    echo '';
+                }
+                ?>
+                <!-- Center elements -->
+
                 <!-- Right elements -->
                 <ul class="navbar-nav flex-row">
+                    <li>
+                        <?php
+                        if ($_SESSION['fonction'] == 'eleve') { ?>
+                        <button type="button" class="btn btn-success" data-mdb-ripple-init disabled><?php echo $_SESSION['fonction']?></button>
+                        <?php
+                        }
+                        else { ?>
+                        <button type="button" class="btn btn-info" data-mdb-ripple-init disabled><?php echo $_SESSION['fonction']?></button>
+                        <?php
+                        }
+                        ?>
+                    </li>
                     <li class="nav-item me-3 me-lg-1">
-                        <a class="nav-link d-sm-flex align-items-sm-center" href="#">
+                        <a class="nav-link d-sm-flex align-items-sm-center" href="auth/profiles.php">
                             <img src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" class="rounded-circle" height="22" alt="Black and White Portrait of a Man" loading="lazy" />
-                            <strong class="d-none d-sm-block ms-1"><?php echo htmlspecialchars($_SESSION['prenom']); ?></strong>
+                            <strong class="d-none d-sm-block ms-1"><?php echo strtoupper($_SESSION['prenom']); ?></strong>
                         </a>
                     </li>
 
@@ -65,7 +96,7 @@ if (empty($_SESSION)) {
     </header>
 
     <main>
-        <?php var_dump($_SESSION); ?>
+
     </main>
 
     <footer></footer>

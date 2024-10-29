@@ -6,7 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>HSP Project</title>
     <!-- HSP icon -->
-    <link rel="icon" href="assets/img/toolbox_container_repair_box_tool_box_toolboxes_icon_189312.ico" type="image/x-icon" />
+    <link rel="icon" href="/HSP/assets/img/freepik-export-202410281551095LzP.ico" type="image/x-icon" />
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -31,7 +31,7 @@
           <!-- Navbar brand -->
           <a class="navbar-brand me-2">
             <img
-              src="assets/img/toolbox_container_repair_box_tool_box_toolboxes_icon_189312.ico"
+              src="/HSP/assets/img/freepik-export-202410281551095LzP.ico"
               height="16"
               alt="HSP Logo"
               loading="lazy"
@@ -112,16 +112,52 @@
                 </div>
 
             </div>
-        </div>
-        <br></br>
-        <div class = "d-flex justify-content-around align-top">
-        <h3>Retrouvez-nous près de chez vous</h3>
-        </div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d70687.3324966235!2d2.2816912889486605!3d48.8213262263974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sHopital%20Paris%20Sud!5e0!3m2!1sfr!2sfr!4v1730123417147!5m2!1sfr!2sfr" align="left"  width="1265" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
+        </div>
+        <div class="hero">
+            <h2>Découvrez nos services</h2>
+        </div>
+
+        <div class="container">
+            <section class="services">
+                <div class="service">
+                    <h2>Opportunités d'Emploi et de Stage</h2>
+                    <p>Offres d'emploi/stage publiées par les entreprises partenaires</p>
+                </div>
+                <div class="service">
+                   <h2>Evénement</h2>
+                    <p>Liste des événements organisés et inscription possible sur le site.</p>
+                </div>
+                <div class="service">
+                    <h2>Forum de Discussion</h2>
+                    <p>Forums pour échanger sur divers sujets</p>
+                </div>
+            </section>
+
+            <br></br>
+            <div class = "d-flex justify-content-around align-top">
+                <h3>Retrouvez-nous près de chez vous</h3>
+            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d70687.3324966235!2d2.2816912889486605!3d48.8213262263974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sHopital%20Paris%20Sud!5e0!3m2!1sfr!2sfr!4v1730123417147!5m2!1sfr!2sfr" align="left"  width="1265" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <br>
     </main>
 
-    <footer></footer>
+    <footer>
+        <div class="contact"></div>
+        <div class="class-form">
+            <form action="">
+                <br><br><br><br><br><br><br><br><br><br><br>
+                <h5>Besoin d'un renseignement? <p>N'hésiter pas a nous contacter ci-dessous</p></h5>
+                <input type="text"  placeholder="Entrer votre nom">
+                <br>
+                <input type="email" placeholder="Entrer une adresse email">
+                <br>
+                <textarea placeholder="Entrer un message" cols="30" rows="10"></textarea>
+                <br>
+                <button>Envoyer</button>
+            </form>
+        </div>
+    </footer>
     <!-- End your project here-->
 
     <!-- MDB -->
