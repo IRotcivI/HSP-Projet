@@ -2,6 +2,7 @@
 
 class Evenement {
     private $id;
+    private $eventId;
     private $titre;
     private $description;
     private $rue;
@@ -9,24 +10,9 @@ class Evenement {
     private $cp;
     private $type;
 
-    /**
-     * @param $id
-     * @param $titre
-     * @param $description
-     * @param $rue
-     * @param $cp
-     * @param $ville
-     * @param $type
-     */
-    public function __construct($id, $titre, $description, $rue, $cp, $ville, $type)
+    public function __construct( array $cmd)
     {
-        $this->id = $id;
-        $this->titre = $titre;
-        $this->description = $description;
-        $this->rue = $rue;
-        $this->cp = $cp;
-        $this->ville = $ville;
-        $this->type = $type;
+        $this -> hydrate ($cmd);
     }
     public function hydrate( array $cmd)
     {
@@ -54,6 +40,22 @@ class Evenement {
     public function setId($id): void
     {
         $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEventId()
+    {
+        return $this->eventId;
+    }
+
+    /**
+     * @param mixed $eventId
+     */
+    public function setEventId($eventId): void
+    {
+        $this->eventId = $eventId;
     }
 
     /**
@@ -163,6 +165,56 @@ class Evenement {
             'cp'=>$this->getCp(),
             'type'=>$this->getType(),
         ));
+
+    }
+
+    public function Participation()
+    {
+        $bdd = new \BaseDeDonne();
+        $req = $bdd->getBdd()->prepare("SELECT nb_place FROM fiche_evenement WHERE id = :id");
+        $req -> execute(array(
+            'id'=>$this->getEventId(),
+        ));
+        $resultat = $req -> fetch();
+
+        if ($resultat['nb_place'] != 0){
+            $event = $bdd->getBdd()->prepare("INSERT INTO fich_eve_utilisateur (ref_utilisateur, ref_fiche_evenement) VALUES (:ref_utilisateur, :ref_fiche_evenement)");
+            $event -> execute(array(
+                'ref_utilisateur'=>$this->getId(),
+                'ref_fiche_evenement'=>$this->getEventId()
+            ));
+
+            $place = $bdd->getBdd()->prepare("UPDATE fiche_evenement SET nb_place = nb_place - 1 WHERE id = :id");
+            $place -> execute(array(
+                'id'=>$this->getEventId()
+            ));
+
+            header("Location:/HSP/vue/eleveEvenement?");
+            exit();
+
+        }
+        else{
+            header("Location:/HSP/vue/eleveEvenement?event=place");
+            exit();
+        }
+    }
+
+    public function AnnulerParticipation()
+    {
+        $bdd = new \BaseDeDonne();
+        $annuler = $bdd->getBdd()->prepare("DELETE FROM fich_eve_utilisateur WHERE ref_utilisateur = :id AND ref_fiche_evenement = :event");
+        $annuler -> execute(array(
+            'id'=>$this->getId(),
+            'event'=>$this->getEventId()
+        ));
+
+        $maj = $bdd->getBdd()->prepare("UPDATE fiche_evenement SET nb_place = nb_place + 1 WHERE id = :id");
+        $maj -> execute(array(
+            'id'=>$this->getEventId()
+        ));
+
+        header("Location:/HSP/vue/eleveEvenement?");
+        exit();
 
     }
 
