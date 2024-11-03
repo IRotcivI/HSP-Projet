@@ -22,6 +22,7 @@ if (empty($_SESSION)) {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
         <!-- MDB -->
         <link rel="stylesheet" href="../assets/css/mdb.min.css" />
+        <link rel="stylesheet" href="../assets/css/annuaireProf.css">
     </head>
     <body>
     <!-- Start your project here-->
@@ -39,13 +40,33 @@ if (empty($_SESSION)) {
                 <!-- Left elements -->
 
                 <!-- Center elements -->
-                <ul class="navbar-nav flex-row d-none d-md-flex">
-                    <li class="nav-item me-3 me-lg-1 active">
-                        <a class="nav-link" href="database.php">
-                            <span><i class="fas fa-book-open"></i></span>
-                        </a>
-                    </li>
-                </ul>
+                <?php
+                if ($_SESSION['fonction'] == 'eleve'){ ?>
+                    <ul class="navbar-nav flex-row d-none d-md-flex">
+                        <li class="nav-item me-3 me-lg-1 active">
+                            <a class="nav-link" href="database.php">
+                                <span><i class="fas fa-book-open"></i></span>
+                            </a>
+                        </li>
+                        <li class="nav-item me-3 me-lg-1 active">
+                            <a class="nav-link" href="eleveEvenement.php">
+                                <span><i class="fas fa-calendar-day"></i></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <?php
+                }
+                if ($_SESSION['fonction'] == 'professeur'){ ?>
+                    <ul class="navbar-nav flex-row d-none d-md-flex">
+                        <li class="nav-item me-3 me-lg-1 active">
+                            <a class="nav-link" href="annuaireMedecin.php">
+                                <span><i class="fas fa-graduation-cap"></i></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <?php
+                }
+                ?>
                 <!-- Center elements -->
 
                 <!-- Right elements -->
