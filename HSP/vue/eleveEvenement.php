@@ -22,7 +22,7 @@ if (empty($_SESSION)) {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
         <!-- MDB -->
         <link rel="stylesheet" href="../assets/css/mdb.min.css" />
-        <link rel="stylesheet" href="../assets/css/profiles.css">
+        <link rel="stylesheet" href="../assets/css/eleveEvenement.css">
     </head>
     <body>
     <!-- Start your project here-->
@@ -139,7 +139,9 @@ if (empty($_SESSION)) {
                             </div>
                         </td>
                         <td>
-                            <p class="fw-normal mb-1"><?php echo strtoupper($ligne['description'])?></p>
+                            <label>
+                                <textarea class="textarea" disabled><?php echo strtoupper($ligne['description'])?></textarea>
+                            </label>
                         </td>
                         <td>
                             <p class="fw-normal mb-1"><?php echo htmlspecialchars($ligne['hop'])?></p>
@@ -148,7 +150,7 @@ if (empty($_SESSION)) {
                             <p class="fw-normal mb-1"><?php echo htmlspecialchars($ligne['rue']) . " " . htmlspecialchars($ligne['cp']) . " " . htmlspecialchars($ligne['ville']) ?></p>
                         </td>
                         <td>
-                            <p class="fw-normal mb-1"><?php echo htmlspecialchars($ligne['nb_place']) ?></p>
+                            <p class="fw-normal mb-1"><?php echo htmlspecialchars($ligne['nb_place'])?></p>
                         </td>
                         <td>
                             <?php
