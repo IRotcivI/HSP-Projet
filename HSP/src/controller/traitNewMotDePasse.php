@@ -31,4 +31,5 @@ if (isset($_POST['resetmdpbutton'])){
 
 } else {
     header("Location:/HSP/index.php");
+    exit();
 }
