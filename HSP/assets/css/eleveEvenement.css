@@ -1,0 +1,11 @@
+*{
+    font-family: "JetBrains Mono", sans-serif;
+}
+
+.textarea{
+    resize: horizontal;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    align-content: center;
+}
