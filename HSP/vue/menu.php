@@ -54,6 +54,12 @@ if (empty($_SESSION)) {
                                 <span><i class="fas fa-calendar-day"></i></span>
                             </a>
                         </li>
+                        <li class="nav-item me-3 me-lg-1 active">
+                            <a class="nav-link" href="eleveOffre.php">
+                                <span><i class="fas fa-briefcase"></i></i></span>
+                            </a>
+                        </li>
+
                 </ul>
                 <?php
                 }
