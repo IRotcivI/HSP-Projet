@@ -39,7 +39,7 @@
     <tr>
         <th>Titre</th>
         <th>Description</th>
-        <th>Tâches</th>
+        <th>Tache</th>
         <th>Date</th>
         <th>Salaire</th>
         <th>Type d'Offre</th>
@@ -58,7 +58,7 @@
     echo '<tr>';
         echo '<td>' . $offre['titre'] . '</td>';
         echo '<td>' . $offre['description'] . '</td>';
-        echo '<td>' . $offre['taches'] . '</td>';
+        echo '<td>' . $offre['tache'] . '</td>';
         echo '<td>' . $offre['date'] . '</td>';
         echo '<td>' . $offre['salaire'] . '</td>';
         echo '<td>' . $offre['type'] . '</td>';
