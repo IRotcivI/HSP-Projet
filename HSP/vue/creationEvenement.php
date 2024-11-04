@@ -112,48 +112,54 @@ if (empty($_SESSION)) {
 
     <main>
         <div class="box">
-            <form style="width: 300px;">
+            <form style="width: 300px;" method="post" action="../src/controller/traitCreationEven.php">
                 <!-- Name input -->
 
 
                 <!-- Titre input -->
                 <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="email" id="form4Example2" class="form-control" />
+                    <input type="text" id="form4Example2" class="form-control" name="titre" />
                     <label class="form-label" for="form4Example2">Titre</label>
                 </div>
 
                 <!-- Description input -->
                 <div data-mdb-input-init class="form-outline mb-4">
-                    <textarea class="form-control" id="form4Example3" rows="4"></textarea>
+                    <textarea class="form-control" id="form4Example3" rows="4" name="description"></textarea>
                     <label class="form-label" for="form4Example3">Description</label>
                 </div>
 
                 <!-- rue input -->
                 <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="email" id="form4Example2" class="form-control" />
+                    <input type="text" id="form4Example2" class="form-control" name="rue" />
                     <label class="form-label" for="form4Example3">Rue</label>
                 </div>
 
                 <!-- ville input -->
                 <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="email" id="form4Example2" class="form-control" />
+                    <input type="text" id="form4Example2" class="form-control" name="ville"/>
                     <label class="form-label" for="form4Example3">Ville</label>
                 </div>
 
                 <!-- cp input -->
                 <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="email" id="form4Example2" class="form-control" />
+                    <input type="text" id="form4Example2" class="form-control" name="cp"/>
                     <label class="form-label" for="form4Example3">Code postal</label>
+                </div>
+
+                <!-- nb_place input -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="number" id="form4Example2" class="form-control" name="nb_place"/>
+                    <label class="form-label" for="form4Example3">Nombre de place</label>
                 </div>
 
                 <!-- hopital input -->
                 <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="email" id="form4Example2" class="form-control" />
+                    <input type="text" id="form4Example2" class="form-control" name="hopital"/>
                     <label class="form-label" for="form4Example3">Hopital</label>
                 </div>
 
                 <!-- Submit button -->
-                <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">Creer l'evenement</button>
+                <button data-mdb-ripple-init type="submit" name="submit" class="btn btn-primary btn-block mb-4">Creer l'evenement</button>
             </form>
 
         </div>
