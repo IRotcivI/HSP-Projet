@@ -110,17 +110,17 @@
                             <p>Inauguré en 1995, l'hôpital privé HSP (Hôpital Sud Paris) est le fruit du rattachement de plusieurs établissements indépendants au pôle territorial Paris Sud du groupe GDH. Situé dans la commune de Marreuil sur Seine, à 25km de Paris, l'hôpital compte 90 praticiens et dispose de 289 lits.
                             <p>Associant des compétences diverses et complémentaires, l'établissement possède :</p>
 
-                        <p>&nbsp &nbsp• un pôle de chirurgie</p>
+                        <p>• un pôle de chirurgie</p>
 
-                        <p>&nbsp &nbsp• un pôle de médecine</p>
+                        <p>• un pôle de médecine</p>
 
-                        <p>&nbsp &nbsp• un pôle de cancérologie</p>
+                        <p>• un pôle de cancérologie</p>
 
-                        <p>&nbsp &nbsp• un pôle de maternité</p>
+                        <p>• un pôle de maternité</p>
 
-                        <p>&nbsp &nbsp• un pôle d'imagerie médicale</p>
+                        <p>• un pôle d'imagerie médicale</p>
 
-                        <p>&nbsp &nbsp• un service d'urgences 24h/24 7j/7</p>
+                        <p>• un service d'urgences 24h/24 7j/7</p>
 
                         <p>Le réseau informatique de l'hôpital HSP compte près de 350 postes pour des utilisateurs variés (praticiens, employés administratifs, patients...).</h4>
 
@@ -192,25 +192,37 @@
             <form action="">
                 <div class="left-right">
                     <div class="left">
-                        <label>Nom</label>
-                        <input type="text">
-                        <label>Email</label>
-                        <input type="text">
-                        <label>Objet</label>
-                        <input type="text">
+                        <label>Nom de Famille</label>
+                        <input type="text" name="nom" placeholder="Nom">
+                        <label>Adresse Émail</label>
+                        <input type="email" name="email" placeholder="Email">
+                        <label>Titre</label>
+                        <input type="text" name="objet" placeholder="Objet">
                         <label>Message</label>
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                        <textarea name="message" placeholder="Veuillez expliquer votre demande." cols="30" rows="10"></textarea>
+                        <button type="submit" name="envoyer">Envoyer</button>
                     </div>
                     <div class="right">
                         <h2>Besoin d'un renseignement ?</h2>
                         <label>N'hésiter pas à nous contacter !</label>
                         <label>Adresse</label>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d70687.3324966235!2d2.2816912889486605!3d48.8213262263974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sHopital%20Paris%20Sud!5e0!3m2!1sfr!2sfr!4v1730123417147!5m2!1sfr!2sfr" align="left"  width="1265" height="700" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        <br>
+
                     </div>
                 </div>
-                <button>Envoyer</button>
             </form>
+            <div class="faute">
+                <?php
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    if (empty($_POST['nom']) || empty($_POST['email']) || empty($_POST['objet']) || empty($_POST['message'])) {
+                        echo "Les Champs sont vide!";
+                        exit();
+                    } else {
+                        echo "Message envoyé";
+                    }
+                }
+                ?>
+            </div>
         </section>
     </footer>
     <!-- End your project here-->
