@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+
+if (!isset($_SESSION['fonction']) || $_SESSION['fonction'] !== 'professeur') {
+
+    header('Location: /HSP/index.php');
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -31,6 +42,11 @@
                 <li class="nav-item me-3 me-lg-1 active">
                     <a class="nav-link" href="annuaireMedecin.php">
                         <span><i class="fas fa-graduation-cap"></i></span>
+                    </a>
+                </li>
+                <li class="nav-item me-3 me-lg-1 active">
+                    <a class="nav-link" href="offre.php">
+                        <span><i class="fas fa-briefcase"></i> Offre</span>
                     </a>
                 </li>
                 <?php } ?>
