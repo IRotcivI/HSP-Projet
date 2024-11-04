@@ -1,23 +1,28 @@
 
-.titre h1{
+.titre h1 , p{
     text-align: center;
     color: white;
 }
 h2{
     text-align: center;
 }
-h3{
+h3 , h4{
     color: black;
-    text-align: left;
-}
-h4{
-    color: #000000;
     text-align: left;
 }
 h5{
     color: black;
     text-align: center;
 }
+
+p{
+    text-align: left;
+    color: white;
+}
+p1{
+    color: black;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -70,19 +75,6 @@ section {
     color: #fff;
     font-size: 14px;
 }
-.btn-reservation {
-    color: #29d9d5;
-    font-size: 14px;
-    border: 2px solid #29d9d5;
-    padding: 5px 20px;
-    transition: 0.5s;
-    font-weight: bolder;
-}
-.btn-reservation:hover {
-    background-color: #29d9d5;
-    color: #fff;
-
-}
 
 /* Partie Evenement CSS */
 .decouvreservice{
@@ -94,6 +86,7 @@ section {
     margin-bottom: 50px;
     height: 90vh;
 }
+
 #evenement form {
     background-color: #fff;
     margin:auto;
@@ -101,20 +94,13 @@ section {
     flex-direction: column;
     padding: 20px;
 }
+
+
 .content{
     color: white;
 }
 .nomevent{
     color: black;
-}
-p{
-    color: #ffffff;
-}
-p1{
-    color: black;
-}
-p2{
-    color: #000000;
 }
 
 .home {
