@@ -9,6 +9,8 @@ class Evenement {
     private $ville;
     private $cp;
     private $type;
+    private $place;
+    private $hopital;
 
     public function __construct( array $cmd)
     {
@@ -24,6 +26,38 @@ class Evenement {
                 $this -> $cmd ($value);
             }
         }
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHopital()
+    {
+        return $this->hopital;
+    }
+
+    /**
+     * @param mixed $hopital
+     */
+    public function setHopital($hopital): void
+    {
+        $this->hopital = $hopital;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPlace()
+    {
+        return $this->place;
+    }
+
+    /**
+     * @param mixed $place
+     */
+    public function setPlace($place): void
+    {
+        $this->place = $place;
     }
 
     /**
@@ -157,13 +191,16 @@ class Evenement {
     public function Creation ()
     {
         $bdd = new \BaseDeDonne();
-        $req = $bdd -> getBdd() -> prepare ("INSERT INTO fiche_evenement (titre,description,rue,ville,cp,type) VALUES (:titre,:description,:rue,:ville,:cp,:type)");
+        $req = $bdd -> getBdd() -> prepare ("INSERT INTO fiche_evenement (titre,description,rue,ville,cp,nb_place,hop) VALUES (:titre,:description,:rue,:ville,:cp,:place,:hop)");
         $req -> execute(array(
             'titre'=>$this->getTitre(),
             'description'=>$this->getDescription(),
             'rue'=>$this->getRue(),
             'cp'=>$this->getCp(),
-            'type'=>$this->getType(),
+            'ville'=>$this->getVille(),
+            'place'=>$this->getPlace(),
+            'hop'=>$this->getHopital()
+
         ));
 
     }
