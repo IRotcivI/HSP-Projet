@@ -199,6 +199,13 @@ class Evenement {
         }
     }
 
+
+
+
+
+
+
+
     public function AnnulerParticipation()
     {
         $bdd = new \BaseDeDonne();
