@@ -80,7 +80,7 @@ if (!isset($_SESSION['fonction']) || $_SESSION['fonction'] !== 'professeur') {
 
 <main>
     <link href="/HSP/assets/css/ajtOffre.css" rel="stylesheet">
-    <form action="../src/controller/traitOffre.php" method="POST">
+    <form action="../src/controller/traitEleveOffre.php" method="POST">
         <div class="form-row">
             <div class="input-data">
                 <input type="text" name="titre" required>
