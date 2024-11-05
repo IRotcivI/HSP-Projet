@@ -70,6 +70,12 @@ if (empty($_SESSION)) {
                             <span><i class="fas fa-graduation-cap"></i></span>
                         </a>
                     </li>
+
+                    <li class="nav-item me-3 me-lg-1 active">
+                        <a class="nav-link" href="creationEvenement.php">
+                            <span><i class="far fa-calendar-plus"></i></span>
+                        </a>
+                    </li>
                 </ul>
                     <?php
                 }
@@ -192,6 +198,7 @@ if (empty($_SESSION)) {
                 </section>
             </div>
 
+
             <div class="item item2">2</div>
 
             <div class="item item3"><section>
@@ -202,7 +209,83 @@ if (empty($_SESSION)) {
                 </section>
             </div>
 
-            <div class="item item4">4</div>
+            <div class="item item4">4
+                <div class="item item1">
+                    <section class="titre">
+                        <h1>
+                            Offre inscrit
+                        </h1>
+                    </section>
+                    <section>
+                        <table class="table align-middle mb-0 bg-white">
+                            <thead class="bg-light">
+                            <?php
+                            $bdd = new PDO('mysql:host=localhost:3306;dbname=hsp;charset=utf8', 'root', '');
+                            $requete = $bdd->prepare("SELECT * FROM offre WHERE id IN (SELECT ref_offre FROM utilisateur_offre WHERE ref_utilisateur = :id) ");
+                            $requete->execute(array(
+                                'id' => $_SESSION['id']
+                            ));
+                            $aff = $requete->fetchAll();
+
+                            if ($aff == NULL) { ?>
+                                <div>
+                                    <a href="/HSP/vue/eleveEvenement.php">
+                                        <button type="button" class="btn btn-light" data-mdb-ripple-init data-mdb-ripple-color="dark">Participer à une offre d'emploi / stage</button>
+                                    </a>
+                                </div>
+                                <?php
+                            }
+                            else { ?>
+                            <tr>
+                                <th>Fonction</th>
+                                <th>Taches</th>
+                                <th>Date</th>
+                                <th>Contrat</th>
+                                <th>Candidature</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <?php
+                            foreach ($aff as $ligne) {
+                                ?>
+                                <tr>
+                                    <td>
+                                        <div class=" align-items-center">
+                                            <div>
+                                                <p class="fw-bold mb-1"><?php echo htmlspecialchars($ligne['titre'])?></p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p><?php echo htmlspecialchars($ligne['hop'])?></p>
+                                    </td>
+                                    <td><?php echo htmlspecialchars($ligne['nb_place'])?></td>
+                                    <td>
+                                        <a href="/HSP/vue/eleveEvenement.php">
+                                            <button type="button" class="btn btn-info" data-mdb-ripple-init>Info</button>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <form method="post" action="/HSP/src/controller/traitEleveEvenement.php">
+                                            <input type="hidden" name="event" value="<?php echo $ligne['id']; ?>">
+                                            <input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>">
+                                            <button type="submit" value="annuler" name="submit" class="btn btn-danger" data-mdb-ripple-init>Annuler</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <?php
+                            }
+                            ?>
+                            <?php
+                            }
+                            ?>
+
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
             <div class="item item5">5</div>
             <div class="item item6">6</div>
         </div>
