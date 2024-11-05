@@ -229,7 +229,7 @@ if (empty($_SESSION)) {
 
                             if ($aff == NULL) { ?>
                                 <div>
-                                    <a href="/HSP/vue/eleveEvenement.php">
+                                    <a href="/HSP/vue/eleveOffre.php">
                                         <button type="button" class="btn btn-light" data-mdb-ripple-init data-mdb-ripple-color="dark">Participer à une offre d'emploi / stage</button>
                                     </a>
                                 </div>
