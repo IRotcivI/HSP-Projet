@@ -1,6 +1,8 @@
 <?php
 
 class Offre {
+    private $id;
+    private $idOffre;
     private string $type;
     private string $titre;
     private string $description;
@@ -20,6 +22,38 @@ class Offre {
                 $this->$method($value);
             }
         }
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdOffre()
+    {
+        return $this->idOffre;
+    }
+
+    /**
+     * @param mixed $idOffre
+     */
+    public function setIdOffre($idOffre): void
+    {
+        $this->idOffre = $idOffre;
     }
 
     public function getType() {
@@ -106,5 +140,45 @@ class Offre {
         } catch (PDOException $e) {
             echo 'Erreur : ' . $e->getMessage();
         }
+    }
+
+    public function Candidater()
+    {
+        $bdd = new \BaseDeDonne();
+        $req = $bdd->getBdd()->prepare("SELECT id FROM offre WHERE id = :id");
+        $req -> execute(array(
+            'id'=>$this->getIdOffre(),
+        ));
+        $resultat = $req -> fetch();
+
+        if ($resultat){
+            $event = $bdd->getBdd()->prepare("INSERT INTO utilisateur_offre (ref_utilisateur, ref_offre) VALUES (:ref_utilisateur, :ref_offre)");
+            $event -> execute(array(
+                'ref_utilisateur'=>$this->getId(),
+                'ref_offre'=>$this->getIdOffre()
+            ));
+
+            header("Location:/HSP/vue/eleveOffre");
+            exit();
+
+        }
+        else{
+            header("Location:/HSP/vue/eleveOffre?offre=indisponible");
+            exit();
+        }
+    }
+
+    public function AnnulerCandidater()
+    {
+        $bdd = new \BaseDeDonne();
+        $annuler = $bdd->getBdd()->prepare("DELETE FROM utilisateur_offre WHERE ref_utilisateur = :id AND ref_offre = :offre");
+        $annuler -> execute(array(
+            'id'=>$this->getId(),
+            'offre'=>$this->getIdOffre()
+        ));
+
+        header("Location:/HSP/vue/eleveOffre");
+        exit();
+
     }
 }
