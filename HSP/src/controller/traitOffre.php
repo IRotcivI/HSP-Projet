@@ -10,8 +10,13 @@ if (isset($_POST['submit'])) {
     }
     else{
         $ajt = new Offre([
-            'email' => $_POST['email'],
-            'mdp' => $_POST['mdp']
+            'titre' => $_POST['titre'],
+            'description' => $_POST['description'],
+            'tache' => $_POST['tache'],
+            'date' => $_POST['date'],
+            'salaire' => $_POST['salaire'],
+            'type' => $_POST['type'],
+
         ]);
 
         $ajt->Ajouter();
