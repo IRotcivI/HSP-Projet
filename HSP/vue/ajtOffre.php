@@ -73,9 +73,17 @@ if (!isset($_SESSION['fonction']) || $_SESSION['fonction'] !== 'professeur') {
                         <i class="fas fa-chevron-circle-down fa-lg"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Option 1</a></li>
-                        <li><a class="dropdown-item" href="#">Option 2</a></li>
-                        <li><a class="dropdown-item" href="/HSP/src/controller/traitMenu.php">Déconnexion</a></li>
+                        <?php
+                        if ($_SESSION['fonction'] == 'professeur') { ?>
+                            <li><a class="dropdown-item" href="#">Tableau de(s) offre</a></li>
+                            <?php
+                        }
+                        else { ?>
+                            <li><a class="dropdown-item" href="#">Non disponible</a></li>
+                            <?php
+                        }
+                        ?>
+                        <li><a class="dropdown-item" href="/HSP/src/controller/traitMenu.php">Déconnection</a></li>
                     </ul>
                 </li>
             </ul>
