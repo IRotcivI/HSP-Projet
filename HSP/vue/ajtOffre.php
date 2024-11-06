@@ -18,8 +18,13 @@ if (!isset($_SESSION['fonction']) || $_SESSION['fonction'] !== 'professeur') {
     <title>HSP Project</title>
     <link rel="icon" href="/HSP/assets/img/freepik-export-202410281551095LzP.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <!-- Google Fonts OSWALD -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <!-- MDB -->
     <link rel="stylesheet" href="../assets/css/mdb.min.css" />
+    <link rel="stylesheet" href="../assets/css/all.css">
     <link rel="stylesheet" href="../assets/css/profiles.css">
 </head>
 <body>

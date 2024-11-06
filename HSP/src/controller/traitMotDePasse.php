@@ -32,7 +32,7 @@ if (isset($_POST["submit-reset"])){
 
 
 //Load Composer's autoloader
-    require 'C:\Users\FAYE_Vi\Desktop\HSP-Projet\HSP\vendor\autoload.php';
+    require 'C:\Users\FAYE Victor\Desktop\Programation\HSP-Projet\HSP\vendor\autoload.php';
 
 //Create an instance; passing `true` enables exceptions
     $mail = new PHPMailer(true);
@@ -55,7 +55,7 @@ if (isset($_POST["submit-reset"])){
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = 'Réinitialiser du mot de passe HSP';
+        $mail->Subject = 'Reinitialiser du mot de passe HSP';
         $mail->Body = 'Voici le lien pour réinitialiser votre mot de passe HSP
                        Lien : <a href="' . $lien . '">' . $lien . '</a>';
         $mail->AltBody = '';

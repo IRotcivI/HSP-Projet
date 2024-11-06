@@ -18,11 +18,14 @@ if (empty($_SESSION)) {
         <link rel="icon" href="/HSP/assets/img/freepik-export-202410281551095LzP.ico" type="image/x-icon" />
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-        <!-- Google Fonts Roboto -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+        <!-- Google Fonts OSWALD -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
         <!-- MDB -->
         <link rel="stylesheet" href="../assets/css/mdb.min.css" />
         <link rel="stylesheet" href="../assets/css/menu.css">
+        <link rel="stylesheet" href="../assets/css/all.css">
     </head>
     <body>
     <!-- Start your project here-->
@@ -108,8 +111,16 @@ if (empty($_SESSION)) {
                             <i class="fas fa-chevron-circle-down fa-lg"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Option 1</a></li>
-                            <li><a class="dropdown-item" href="#">Option 2</a></li>
+                            <?php
+                            if ($_SESSION['fonction'] == 'professeur') { ?>
+                                <li><a class="dropdown-item" href="#">Tableau de(s) offre</a></li>
+                                <?php
+                            }
+                            else { ?>
+                            <li><a class="dropdown-item" href="#">Non disponible</a></li>
+                            <?php
+                            }
+                            ?>
                             <li><a class="dropdown-item" href="/HSP/src/controller/traitMenu.php">Déconnection</a></li>
                         </ul>
                     </li>

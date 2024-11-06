@@ -18,23 +18,27 @@ if (empty($_SESSION)) {
         <link rel="icon" href="/HSP/assets/img/freepik-export-202410281551095LzP.ico" type="image/x-icon" />
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-        <!-- Google Fonts Roboto -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+        <!-- Google Fonts OSWALD -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
         <!-- MDB -->
         <link rel="stylesheet" href="../assets/css/mdb.min.css" />
+        <link rel="stylesheet" href="../assets/css/all.css">
         <link rel="stylesheet" href="../assets/css/eleveEvenement.css">
     </head>
     <body>
     <!-- Start your project here-->
     <header>
         <!-- Navbar-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+        <nav class="navbar align-items-center navbar-expand-lg navbar-light bg-body-tertiary">
             <div class="container-fluid justify-content-between">
                 <!-- Left elements -->
                 <div class="d-flex">
                     <!-- Brand -->
                     <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="menu.php">
                         <img src="/HSP/assets/img/freepik-export-202410281551095LzP.ico" height="20" alt="MDB Logo" loading="lazy" style="margin-top: 2px;" />
+                        <small>Tableau de bord</small>
                     </a>
                 </div>
                 <!-- Left elements -->
