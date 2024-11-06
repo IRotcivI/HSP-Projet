@@ -42,8 +42,13 @@ body{
     border: 1px hidden black;
 }
 
+.table th{
+    background: white;
+}
+
 .table {
     border-collapse: collapse;
+
 }
 
 .titre h1 {
@@ -67,4 +72,15 @@ input {
 .item3 h2{
     margin-top: 20px;
     text-align: center;
+}
+
+
+.cadre-table-scroll {
+    max-height: 11.5em;
+    overflow-y: scroll;
+}
+
+.table-scroll thead th {
+    position: fixed;
+    top: 0;
 }

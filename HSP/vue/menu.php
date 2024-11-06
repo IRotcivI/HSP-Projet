@@ -139,8 +139,8 @@ if (empty($_SESSION)) {
                         Evénement inscrit
                     </h1>
                 </section>
-                <section>
-                    <table class="table align-middle mb-0 bg-white">
+                <section class="cadre-table-scroll">
+                    <table class="table align-middle height-15 mb-0 bg-white">
                         <thead class="bg-light">
                         <?php
                         $bdd = new PDO('mysql:host=localhost:3306;dbname=hsp;charset=utf8', 'root', '');
@@ -227,7 +227,7 @@ if (empty($_SESSION)) {
                             Offre inscrit
                         </h1>
                     </section>
-                    <section>
+                    <section class="cadre-table-scroll">
                         <table class="table align-middle mb-0 bg-white">
                             <thead class="bg-light">
                             <?php
@@ -269,17 +269,17 @@ if (empty($_SESSION)) {
                                         </div>
                                     </td>
                                     <td>
-                                        <p><?php echo htmlspecialchars($ligne['hop'])?></p>
+                                        <p><?php echo htmlspecialchars($ligne['tache'])?></p>
                                     </td>
-                                    <td><?php echo htmlspecialchars($ligne['nb_place'])?></td>
+                                    <td><?php echo htmlspecialchars($ligne['date'])?></td>
                                     <td>
-                                        <a href="/HSP/vue/eleveEvenement.php">
+                                        <a href="/HSP/vue/eleveOffre.php">
                                             <button type="button" class="btn btn-info" data-mdb-ripple-init>Info</button>
                                         </a>
                                     </td>
                                     <td>
-                                        <form method="post" action="/HSP/src/controller/traitEleveEvenement.php">
-                                            <input type="hidden" name="event" value="<?php echo $ligne['id']; ?>">
+                                        <form method="post" action="/HSP/src/controller/traitEleveOffre.php">
+                                            <input type="hidden" name="offre" value="<?php echo $ligne['id']; ?>">
                                             <input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>">
                                             <button type="submit" value="annuler" name="submit" class="btn btn-danger" data-mdb-ripple-init>Annuler</button>
                                         </form>
