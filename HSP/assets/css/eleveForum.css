@@ -1,0 +1,38 @@
+*{
+    border-radius: 8px;
+
+}
+body{
+    background-color: #dfe9f5;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    margin-top: 10px;
+    border-radius: 8px;
+
+}
+.card{
+    border-radius: 8px;
+}
+.btn.btn-lg{
+    border-radius: 8px;
+}
+.icon-1x {
+    font-size: 24px !important;
+}
+a{
+    text-decoration:none;
+}
+.text-primary, a.text-primary:focus, a.text-primary:hover {
+linear-gradient(90deg, #48c6ef 0%, #6f86d6 100%)
+}
+.text-black, .text-hover-black:hover {
+    color: #000 !important;
+}
+.font-weight-bold {
+    font-weight: 700 !important;
+}
+i{
+    align-items: center;
+}

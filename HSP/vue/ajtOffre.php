@@ -36,26 +36,51 @@ if (!isset($_SESSION['fonction']) || $_SESSION['fonction'] !== 'professeur') {
                     <img src="/HSP/assets/img/freepik-export-202410281551095LzP.ico" height="20" alt="Logo HSP" loading="lazy" style="margin-top: 2px;" />
                 </a>
             </div>
-            <ul class="navbar-nav flex-row d-none d-md-flex">
-                <?php if ($_SESSION['fonction'] == 'eleve') { ?>
-                <li class="nav-item me-3 me-lg-1 active">
-                    <a class="nav-link" href="database.php">
-                        <span><i class="fas fa-book-open"></i></span>
-                    </a>
-                </li>
-                <?php } elseif ($_SESSION['fonction'] == 'professeur') { ?>
-                <li class="nav-item me-3 me-lg-1 active">
-                    <a class="nav-link" href="annuaireMedecin.php">
-                        <span><i class="fas fa-graduation-cap"></i></span>
-                    </a>
-                </li>
-                <li class="nav-item me-3 me-lg-1 active">
-                    <a class="nav-link" href="offre.php">
-                        <span><i class="fas fa-briefcase"></i> Offre</span>
-                    </a>
-                </li>
-                <?php } ?>
-            </ul>
+            <!-- Center elements -->
+            <?php
+            if ($_SESSION['fonction'] == 'eleve'){ ?>
+                <ul class="navbar-nav flex-row d-none d-md-flex">
+                    <li class="nav-item me-3 me-lg-1 active">
+                        <a class="nav-link" href="database.php">
+                            <span><i class="fas fa-book-open"></i></span>
+                        </a>
+                    </li>
+                    <li class="nav-item me-3 me-lg-1 active">
+                        <a class="nav-link" href="eleveEvenement.php">
+                            <span><i class="fas fa-calendar-day"></i></span>
+                        </a>
+                    </li>
+                    <li class="nav-item me-3 me-lg-1 active">
+                        <a class="nav-link" href="eleveOffre.php">
+                            <span><i class="fas fa-briefcase"></i></span>
+                        </a>
+                    </li>
+                    <li class="nav-item me-3 me-lg-1 active">
+                        <a class="nav-link" href="forum/eleveForum.php">
+                            <span><i class="fas fa-comments"></i></span>
+                        </a>
+                    </li>
+                </ul>
+                <?php
+            }
+            if ($_SESSION['fonction'] == 'professeur'){ ?>
+                <ul class="navbar-nav flex-row d-none d-md-flex">
+                    <li class="nav-item me-3 me-lg-1 active">
+                        <a class="nav-link" href="annuaireMedecin.php">
+                            <span><i class="fas fa-graduation-cap"></i></span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item me-3 me-lg-1 active">
+                        <a class="nav-link" href="creationEvenement.php">
+                            <span><i class="far fa-calendar-plus"></i></span>
+                        </a>
+                    </li>
+                </ul>
+                <?php
+            }
+            ?>
+            <!-- Center elements -->
             <ul class="navbar-nav flex-row">
                 <li>
                     <button type="button" class="btn <?php echo ($_SESSION['fonction'] == 'eleve') ? 'btn-success' : 'btn-info'; ?>" data-mdb-ripple-init disabled>

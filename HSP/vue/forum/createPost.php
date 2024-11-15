@@ -23,22 +23,22 @@ if (empty($_SESSION)) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
         <!-- MDB -->
-        <link rel="stylesheet" href="../assets/css/mdb.min.css" />
-        <link rel="stylesheet" href="../assets/css/all.css">
-        <link rel="stylesheet" href="../assets/css/eleveEvenement.css">
+        <link rel="stylesheet" href="../../assets/css/mdb.min.css" />
+        <link rel="stylesheet" href="../../assets/css/createPost.css">
+        <link rel="stylesheet" href="../../assets/css/all.css">
     </head>
     <body>
     <!-- Start your project here-->
     <header>
         <!-- Navbar-->
-        <nav class="navbar align-items-center navbar-expand-lg navbar-light bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
             <div class="container-fluid justify-content-between">
                 <!-- Left elements -->
                 <div class="d-flex">
                     <!-- Brand -->
                     <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="menu.php">
                         <img src="/HSP/assets/img/freepik-export-202410281551095LzP.ico" height="20" alt="MDB Logo" loading="lazy" style="margin-top: 2px;" />
-                        <small>Evenement</small>
+                        <small>Créer un post</small>
                     </a>
                 </div>
                 <!-- Left elements -->
@@ -63,7 +63,7 @@ if (empty($_SESSION)) {
                             </a>
                         </li>
                         <li class="nav-item me-3 me-lg-1 active">
-                            <a class="nav-link" href="forum/eleveForum.php">
+                            <a class="nav-link" href="eleveForum.php">
                                 <span><i class="fas fa-comments"></i></span>
                             </a>
                         </li>
@@ -136,102 +136,47 @@ if (empty($_SESSION)) {
     </header>
 
     <main>
-        <table id="myTable" class="table align-middle mb-0 bg-white display">
-            <thead class="bg-light">
-            <tr>
-                <th>Titre</th>
-                <th>Description</th>
-                <th>Etablisement</th>
-                <th>Adresse</th>
-                <th>Place</th>
-                <th>Participer </th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php
-            $bdd = new PDO('mysql:host=localhost:3306;dbname=hsp;charset=utf8', 'root', '');
-            $requete = $bdd->prepare("SELECT * FROM fiche_evenement");
-            $requete->execute();
-            $aff = $requete->fetchAll();
+        <div class="box">
+            <div class="inscription-container" id="inscription">
+                <h1>Post</h1>
 
-            foreach ($aff as $ligne) {
-                ?>
-                <tr>
-                    <form action="/HSP/src/controller/traitEleveEvenement.php" method="POST">
-                        <!-- Titre Column -->
-                        <td>
-                            <div class="d-flex align-items-center">
-                                <div class="ms-3">
-                                    <p class="fw-bold mb-1"><?php echo htmlspecialchars($ligne['titre'])?></p>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <label>
-                                <textarea class="textarea" disabled><?php echo strtoupper($ligne['description'])?></textarea>
-                            </label>
-                        </td>
-                        <td>
-                            <p class="fw-normal mb-1"><?php echo htmlspecialchars($ligne['hop'])?></p>
-                        </td>
-                        <td>
-                            <p class="fw-normal mb-1"><?php echo htmlspecialchars($ligne['rue']) . " " . htmlspecialchars($ligne['cp']) . " " . htmlspecialchars($ligne['ville']) ?></p>
-                        </td>
-                        <td>
-                            <p class="fw-normal mb-1"><?php echo htmlspecialchars($ligne['nb_place'])?></p>
-                        </td>
-                        <td>
-                            <?php
+                <form method="post" action="/HSP/src/controller/traitPost.php">
+                    <input type="text" name="titre" placeholder="Titre">
+                    <select name="categorie" required>
+                        <option disabled selected>Catégorie</option>
+                        <option value="general">Général</option>
+                        <option value="question">Question</option>
+                        <option value="annonce">Annonce</option>
+                    </select>
+                    <textarea name="description" placeholder="Description"></textarea>
+                    <button type="submit" name="submit" class="btn btn-primary" data-mdb-ripple-init>Créer le post</button>
+                </form>
 
-                            $bdd = new PDO('mysql:host=localhost:3306;dbname=hsp;charset=utf8', 'root', '');
-                            $button = $bdd->prepare("SELECT * FROM fich_eve_utilisateur WHERE ref_utilisateur = :id AND ref_fiche_evenement = :event ");
-                            $button->execute(array(
-                                'id' => $_SESSION['id'],
-                                'event'=>$ligne['id']
-                            ));
+                <div class="faute">
+                    <?php
+                    $fullurl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
-                            $resultat = $button->fetch();
+                    if (strpos($fullurl, "post=vide") !== false) {
+                        echo "<p class='text-danger'>Vous n'avez pas rempli tout les champs !</p>";
+                    }
+                    elseif (strpos($fullurl, "post=caractere") !== false) {
+                        echo "<p class='text-danger'>Vous avez utilisé des caractères invalides dans le titre !</p>";
+                    }
+                    elseif (strpos($fullurl, "post=reussi") !== false) {
+                        echo "<p class='text-success'>Post créer !</p>";
+                    }
+                    ?>
+                </div>
 
-                            $place = $bdd->prepare("SELECT nb_place FROM fiche_evenement WHERE id = :id");
-                            $place->execute(array(
-                                    'id' => $ligne['id']
-                            ));
-
-                            $disponible = $place->fetch();
-
-                            if ($disponible['nb_place'] == 0 && !$resultat) { ?>
-                                <button type="submit" name="submit" class="btn btn-warning" disabled data-mdb-ripple-init>Plus de place</button>
-                                <?php
-                            } else {
-                                if ($resultat) { ?>
-                                    <button type="submit" name="submit" value="annuler" class="btn btn-danger" data-mdb-ripple-init>Annuler</button>
-                                    <?php
-                                } else { ?>
-                                    <button type="submit" name="submit" value="postuler" class="btn btn-success" data-mdb-ripple-init>Postuler</button>
-                                    <?php
-                                }
-                                ?>
-                            <?php
-                            }
-                            ?>
-
-                        </td>
-
-                        <input type="hidden" name="event" value="<?php echo $ligne['id'] ?>">
-                        <input type="hidden" name="id" value="<?php echo $_SESSION['id'] ?>">
-                    </form>
-                </tr>
-
-            <?php } ?>
-            </tbody>
-        </table>
+            </div>
+        </div>
     </main>
 
     <footer></footer>
     <!-- End your project here-->
 
     <!-- MDB -->
-    <script type="text/javascript" src="../assets/js/mdb.umd.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/mdb.umd.min.js"></script>
     <!-- Custom scripts -->
     <script type="text/javascript"></script>
     </body>

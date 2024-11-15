@@ -52,6 +52,21 @@ if (empty($_SESSION)) {
                                 <span><i class="fas fa-book-open"></i></span>
                             </a>
                         </li>
+                        <li class="nav-item me-3 me-lg-1 active">
+                            <a class="nav-link" href="eleveEvenement.php">
+                                <span><i class="fas fa-calendar-day"></i></span>
+                            </a>
+                        </li>
+                        <li class="nav-item me-3 me-lg-1 active">
+                            <a class="nav-link" href="eleveOffre.php">
+                                <span><i class="fas fa-briefcase"></i></span>
+                            </a>
+                        </li>
+                        <li class="nav-item me-3 me-lg-1 active">
+                            <a class="nav-link" href="forum/eleveForum.php">
+                                <span><i class="fas fa-comments"></i></span>
+                            </a>
+                        </li>
                     </ul>
                     <?php
                 }

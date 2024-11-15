@@ -38,7 +38,7 @@ if (empty($_SESSION)) {
                     <!-- Brand -->
                     <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="menu.php">
                         <img src="/HSP/assets/img/freepik-export-202410281551095LzP.ico" height="20" alt="MDB Logo" loading="lazy" style="margin-top: 2px;" />
-                        <small>Tableau de bord</small>
+                        <small>Offre</small>
                     </a>
                 </div>
                 <!-- Left elements -->
@@ -59,7 +59,12 @@ if (empty($_SESSION)) {
                         </li>
                         <li class="nav-item me-3 me-lg-1 active">
                             <a class="nav-link" href="eleveOffre.php">
-                                <span><i class="fas fa-briefcase"></i></i></span>
+                                <span><i class="fas fa-briefcase"></i></span>
+                            </a>
+                        </li>
+                        <li class="nav-item me-3 me-lg-1 active">
+                            <a class="nav-link" href="forum/eleveForum.php">
+                                <span><i class="fas fa-comments"></i></span>
                             </a>
                         </li>
                     </ul>
@@ -70,6 +75,12 @@ if (empty($_SESSION)) {
                         <li class="nav-item me-3 me-lg-1 active">
                             <a class="nav-link" href="annuaireMedecin.php">
                                 <span><i class="fas fa-graduation-cap"></i></span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item me-3 me-lg-1 active">
+                            <a class="nav-link" href="creationEvenement.php">
+                                <span><i class="far fa-calendar-plus"></i></span>
                             </a>
                         </li>
                     </ul>

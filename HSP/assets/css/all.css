@@ -2,7 +2,14 @@
     font-family: myFont;
     src: local(JetBrainsMono-Medium);
 }
-
+@font-face {
+    font-family: myFontItalic;
+    src: local(JetBrainsMono-MediumItalic);
+}
 *{
     font-family: myFont, sans-serif;
+    border-radius: 8px;
+}
+h5{
+    font-family:myFontItalic,sans-serif ;
 }
