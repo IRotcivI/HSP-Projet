@@ -63,7 +63,7 @@ if (empty($_SESSION)) {
                             </a>
                         </li>
                         <li class="nav-item me-3 me-lg-1 active">
-                            <a class="nav-link" href="forum/eleveForum.php">
+                            <a class="nav-link" href="forum/eleveForum.php?choix=">
                                 <span><i class="fas fa-comments"></i></span>
                             </a>
                         </li>
@@ -216,7 +216,7 @@ if (empty($_SESSION)) {
 
             <div class="item item2">2</div>
 
-            <div class="item item3"><section>
+            <div class="item item3">3<section>
                     <h1>Temps</h1>
                 </section>
                 <section>
@@ -224,7 +224,7 @@ if (empty($_SESSION)) {
                 </section>
             </div>
 
-            <div class="item item4">4
+            <div class="item item4">
                 <div class="item item1">
                     <section class="titre">
                         <h1>
