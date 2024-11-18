@@ -63,7 +63,7 @@ if (empty($_SESSION)) {
                             </a>
                         </li>
                         <li class="nav-item me-3 me-lg-1 active">
-                            <a class="nav-link" href="forum/eleveForum.php">
+                            <a class="nav-link" href="forum/eleveForum.php?choix=">
                                 <span><i class="fas fa-comments"></i></span>
                             </a>
                         </li>
