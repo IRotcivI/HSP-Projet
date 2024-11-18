@@ -38,6 +38,7 @@ if (empty($_SESSION)) {
                     <!-- Brand -->
                     <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="../menu.php">
                         <img src="/HSP/assets/img/freepik-export-202410281551095LzP.ico" height="20" alt="MDB Logo" loading="lazy" style="margin-top: 2px;" />
+                        <small>Forum</small>
                     </a>
                 </div>
                 <!-- Left elements -->
@@ -47,8 +48,23 @@ if (empty($_SESSION)) {
                 if ($_SESSION['fonction'] == 'eleve'){ ?>
                     <ul class="navbar-nav flex-row d-none d-md-flex">
                         <li class="nav-item me-3 me-lg-1 active">
-                            <a class="nav-link" href="database.php">
+                            <a class="nav-link" href="../database.php">
                                 <span><i class="fas fa-book-open"></i></span>
+                            </a>
+                        </li>
+                        <li class="nav-item me-3 me-lg-1 active">
+                            <a class="nav-link" href="../eleveEvenement.php">
+                                <span><i class="fas fa-calendar-day"></i></span>
+                            </a>
+                        </li>
+                        <li class="nav-item me-3 me-lg-1 active">
+                            <a class="nav-link" href="../eleveOffre.php">
+                                <span><i class="fas fa-briefcase"></i></span>
+                            </a>
+                        </li>
+                        <li class="nav-item me-3 me-lg-1 active">
+                            <a class="nav-link" href="eleveForum.php">
+                                <span><i class="fas fa-comments"></i></span>
                             </a>
                         </li>
                     </ul>
@@ -57,13 +73,13 @@ if (empty($_SESSION)) {
                 if ($_SESSION['fonction'] == 'professeur'){ ?>
                     <ul class="navbar-nav flex-row d-none d-md-flex">
                         <li class="nav-item me-3 me-lg-1 active">
-                            <a class="nav-link" href="annuaireMedecin.php">
+                            <a class="nav-link" href="../annuaireMedecin.php">
                                 <span><i class="fas fa-graduation-cap"></i></span>
                             </a>
                         </li>
 
                         <li class="nav-item me-3 me-lg-1 active">
-                            <a class="nav-link" href="creationEvenement.php">
+                            <a class="nav-link" href="../creationEvenement.php">
                                 <span><i class="far fa-calendar-plus"></i></span>
                             </a>
                         </li>
@@ -88,7 +104,7 @@ if (empty($_SESSION)) {
                         ?>
                     </li>
                     <li class="nav-item me-3 me-lg-1">
-                        <a class="nav-link d-sm-flex align-items-sm-center" href="profiles.php">
+                        <a class="nav-link d-sm-flex align-items-sm-center" href="../auth/profiles.php">
                             <img src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" class="rounded-circle" height="22" alt="Black and White Portrait of a Man" loading="lazy" />
                             <strong class="d-none d-sm-block ms-1"><?php echo strtoupper($_SESSION['prenom']); ?></strong>
                         </a>
