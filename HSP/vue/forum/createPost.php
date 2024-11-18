@@ -63,7 +63,7 @@ if (empty($_SESSION)) {
                             </a>
                         </li>
                         <li class="nav-item me-3 me-lg-1 active">
-                            <a class="nav-link" href="eleveForum.php">
+                            <a class="nav-link" href="eleveForum.php?choix=">
                                 <span><i class="fas fa-comments"></i></span>
                             </a>
                         </li>
@@ -104,7 +104,7 @@ if (empty($_SESSION)) {
                         ?>
                     </li>
                     <li class="nav-item me-3 me-lg-1">
-                        <a class="nav-link d-sm-flex align-items-sm-center" href="auth/profiles.php">
+                        <a class="nav-link d-sm-flex align-items-sm-center" href="/HSP/vue/auth/profiles.php">
                             <img src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" class="rounded-circle" height="22" alt="Black and White Portrait of a Man" loading="lazy" />
                             <strong class="d-none d-sm-block ms-1"><?php echo strtoupper($_SESSION['prenom']); ?></strong>
                         </a>
@@ -125,7 +125,7 @@ if (empty($_SESSION)) {
                                 <?php
                             }
                             ?>
-                            <li><a class="dropdown-item" href="/HSP/src/controller/traitMenu.php">Déconnection</a></li>
+                            <li><a class="dropdown-item" href="/HSP/src/controller/traitMenu.php">Déconnexion</a></li>
                         </ul>
                     </li>
                 </ul>
