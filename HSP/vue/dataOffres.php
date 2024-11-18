@@ -1,4 +1,4 @@
-<!doctype html>
++<!doctype html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -42,7 +42,7 @@
         <th>Tache</th>
         <th>Date</th>
         <th>Salaire</th>
-        <th>Type d'Offre</th>
+        <th>Type</th>
     </tr>
     </thead>
     <tbody>
