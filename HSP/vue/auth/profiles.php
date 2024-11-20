@@ -83,6 +83,12 @@ if (empty($_SESSION)) {
                                 <span><i class="far fa-calendar-plus"></i></span>
                             </a>
                         </li>
+
+                        <li class="nav-item me-3 me-lg-1 active">
+                            <a class="nav-link" href="../forum/eleveForum.php?choix=medecin" title="Forum">
+                                <span><i class="fas fa-comments"></i></span>
+                            </a>
+                        </li>
                     </ul>
                     <?php
                 }
@@ -148,6 +154,7 @@ if (empty($_SESSION)) {
                     </div>
                 </div>
 
+                <form method="post" action="../../src/controller/traitProfiles.php">
                 <div class="row">
                     <div class="col">
                         <div class="card mb-4">
@@ -156,7 +163,19 @@ if (empty($_SESSION)) {
                                      class="rounded-circle img-fluid" style="width: 150px;">
                                 <h5 class="my-3"><?php echo $_SESSION['nom'] ." ". $_SESSION['prenom'] ?></h5>
                                 <p class="text-muted mb-1"><?php echo strtoupper($_SESSION['fonction']) ?></p>
-                                <p class="text-muted mb-4"><?php echo $_SESSION['email'] ?></p>
+                                <p class="text-muted mb-3"><?php echo $_SESSION['email'] ?></p>
+                                <select name="hopital" class="btn btn-secondary dropdown-toggle">
+                                    <option value="">Hopital de base</option>
+                                    <option value="hopital1">Hôpital 1</option>
+                                    <option value="hopital2">Hôpital 2</option>
+                                    <option value="hopital3">Hôpital 3</option>
+                                    <option value="hopital4">Hôpital 4</option>
+                                    <option value="hopital5">Hôpital 5</option>
+                                </select>
+                                <br>
+                                <button type="submit" class="btn btn-primary btn-sm">Modifier</button>
+                </form>
+
                             </div>
                         </div>
                         <div class="card mb-4 mb-lg-0">

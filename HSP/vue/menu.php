@@ -83,6 +83,11 @@ if (empty($_SESSION)) {
                             <span><i class="far fa-calendar-plus"></i></span>
                         </a>
                     </li>
+                    <li class="nav-item me-3 me-lg-1 active">
+                        <a class="nav-link" href="forum/eleveForum.php?choix=medecin" title="Forum">
+                            <span><i class="fas fa-comments"></i></span>
+                        </a>
+                    </li>
                 </ul>
                     <?php
                 }
