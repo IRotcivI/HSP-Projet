@@ -140,6 +140,7 @@ if (empty($_SESSION)) {
         <div class="container">
             <div class="row">
                 <div class="btn align-items-center">
+                    <a href="eleveForum.php?choix="><button class="btn btn-primary" type="button" data-mdb-ripple-init>Tout</button></a>
                     <a href="eleveForum.php?choix=eleve"><button class="btn btn-primary" type="button" data-mdb-ripple-init>Eleve</button></a>
                     <a href="eleveForum.php?choix=medecin"><button class="btn btn-primary" type="button" data-mdb-ripple-init>Medecin</button></a>
             </div>
