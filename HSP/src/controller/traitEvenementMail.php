@@ -1,38 +1,36 @@
 <?php
-session_start();
 
-// Vérifier si la session est vide (c'est-à-dire que l'utilisateur n'est pas connecté)
-if (empty($_SESSION)) {
-    header('Location: /HSP/index.php');
-    exit();
-} else {
+if (isset($_POST['submit'])) {
+    include '../database/Bdd.php';
+    include '../model/Evenement.php'; // Assuming you have an Evenement model
 
-    // Traitement de la réinitialisation du mot de passe
-    if (isset($_POST["submit-reset"])) {
-        // Inclure les fichiers nécessaires
-        include '../database/Bdd.php';
-        include '../model/Utilisateur.php';
+    // Check for empty fields
+    if (empty($_POST['titre']) || empty($_POST['description']) || empty($_POST['rue']) || empty($_POST['ville']) || empty($_POST['cp']) || empty($_POST['nb_place'])| empty($_POST['hopital'])) {
+        header("Location:/HSP/vue/creationEvenement.php?creation=vide");
+        exit();
+    } else {
+        // Validate postal code (assuming it's numeric)
+        if (!is_numeric($_POST['cp'])) {
+            header("Location:/HSP/vue/creationEvenement.php?creation=cpinvalide");
+            exit();
+        }
 
-        // Génération du token de réinitialisation
-        $selector = bin2hex(random_bytes(8));
-        $token = random_bytes(32);
+        // Validate number of places
+        if (!is_numeric($_POST['nb_place'])) {
+            header("Location:/HSP/vue/creationEvenement.php?creation=nbplaceinvalide");
+            exit();
+        }
 
-        // Lien de réinitialisation
-        $lien = "http://hsp-project/HSP/vue/auth/nouveauMotDePasse.php?selector=" . $selector . "&validator=" . bin2hex($token);
-
-        // Expiration du token dans 30 minutes
-        $temps = date("U") + 1800;
-
-        // Insérer les données du token dans la base de données
-        $ins = new Utilisateur([
-            'email' => $_POST['email'],
-            'token' => $token,
-            'selector' => $selector,
-            'temps' => $temps
+        $event = new Evenement([
+            'titre' => $_POST['titre'],
+            'description' => $_POST['description'],
+            'rue' => $_POST['rue'],
+            'ville' => $_POST['ville'],
+            'cp' => $_POST['cp'],
+            'place' => $_POST['nb_place'],
+            'hopital' => $_POST['hopital'],
         ]);
-        $ins->PasswordTokenDel(); // Supprimer un éventuel ancien token
-        $ins->PasswordTokenIns(); // Insérer le nouveau token
-
+        $event->Creation();
         // Destinataire de l'email
         $receveur = $_POST['email'];
 
