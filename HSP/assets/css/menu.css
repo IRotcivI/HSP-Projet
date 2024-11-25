@@ -1,86 +1,144 @@
-*{
+/* Reset de base */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.container{
+/* Body et arrière-plan */
+body {
+    background-color: #dfe9f5;
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* Navbar */
+nav.navbar {
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Conteneur principal */
+.container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr) ;
+    grid-template-columns: repeat(3, 1fr); /* Trois colonnes égales */
+    grid-template-rows: auto auto; /* Deux lignes : principales et bas */
     gap: 20px;
-    max-width: 1500px;
-    margin-top: 20px;
+    width: 100%;
+    padding: 20px;
 }
 
-.item1{
-    width: 930px;
-    padding: 2rem 1rem;
-    margin: 50px auto;
-    background-color: rgb(255, 255, 255);
+/* Éléments principaux */
+.item {
+    background-color: #fff;
     border-radius: 10px;
-    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%; /* Prend toute la largeur de sa colonne */
 }
 
-.item1.titre{
+/* Zone principale : Evénements */
+.item1 {
+    grid-column: 1 / 3; /* Occupe les deux premières colonnes */
+}
+
+.item1 h1 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.item2 h1 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.item2 h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+/* Zone latérale droite : Widgets */
+.item3 {
+    grid-column: 3 / 4; /* Colonne de droite */
+}
+
+/* Zone en bas : Offres */
+.item4 {
+    grid-column: 1 / 4; /* Occupe toute la largeur sur la ligne suivante */
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #f9fafb;
+    font-size: 0.9rem;
     text-align: left;
 }
 
-table{
-    background-color: #dfe9f5;
-    color: red;
+.table th,
+.table td {
+    padding: 10px;
+    border: 1px solid #e5e7eb;
 }
 
-
-body{
-    background-color: #dfe9f5;
-    justify-content: center;
-    align-items: center;
+.table th {
+    background-color: #f3f4f6;
+    font-weight: bold;
 }
 
-.table th, .table td {
-    padding: 5px;
-    border: 1px hidden black;
-}
-
-.table th{
-    background: white;
-}
-
-.table {
-    border-collapse: collapse;
-
-}
-
-.titre h1 {
-    margin-bottom: 10px;
-}
-
-input {
-    outline: none;
-    border: none;
-}
-
-.item3{
-    width: 330px;
-    padding: 2rem 1rem;
-    margin: 50px auto;
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    text-align: center;
-}
-
-.item3 h2{
-    margin-top: 20px;
-    text-align: center;
-}
-
-
+/* Cadre scroll pour tableaux */
 .cadre-table-scroll {
-    max-height: 11.5em;
-    overflow-y: scroll;
+    max-height: 300px;
+    overflow-y: auto;
+
+    border-radius: 5px;
 }
 
-.table-scroll thead th {
-    position: fixed;
-    top: 0;
+/* Boutons */
+button {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
+
+.btn-danger {
+    background-color: #e63946;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #d62828;
+}
+
+.btn-info {
+    background-color: #457b9d;
+    color: white;
+}
+
+.btn-info:hover {
+    background-color: #1d3557;
+}
+
+.btn-light {
+    background-color: #f1faee;
+    color: #333;
+}
+
+.btn-light:hover {
+    background-color: #e5e5e5;
+}
+

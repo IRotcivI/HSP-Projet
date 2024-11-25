@@ -103,8 +103,12 @@ if (empty($_SESSION)) {
                             <button type="button" class="btn btn-success" data-mdb-ripple-init disabled><?php echo $_SESSION['fonction']?></button>
                             <?php
                         }
-                        else { ?>
+                        if ($_SESSION['fonction'] == 'professeur') { ?>
                             <button type="button" class="btn btn-info" data-mdb-ripple-init disabled><?php echo $_SESSION['fonction']?></button>
+                            <?php
+                        }
+                        if ($_SESSION['fonction'] == 'operateur') { ?>
+                            <button type="button" class="btn btn-warning" data-mdb-ripple-init disabled><?php echo $_SESSION['fonction']?></button>
                             <?php
                         }
                         ?>
