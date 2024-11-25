@@ -158,7 +158,6 @@ if (empty($_SESSION)) {
                     </div>
                 </div>
 
-                <form method="post" action="../../src/controller/traitProfiles.php">
                 <div class="row">
                     <div class="col">
                         <div class="card mb-4">
@@ -168,18 +167,22 @@ if (empty($_SESSION)) {
                                 <h5 class="my-3"><?php echo $_SESSION['nom'] ." ". $_SESSION['prenom'] ?></h5>
                                 <p class="text-muted mb-1"><?php echo strtoupper($_SESSION['fonction']) ?></p>
                                 <p class="text-muted mb-3"><?php echo $_SESSION['email'] ?></p>
-                                <select name="hopital" class="btn btn-secondary dropdown-toggle">
-                                    <option value="">Hopital de base</option>
-                                    <option value="hopital1">Hôpital 1</option>
-                                    <option value="hopital2">Hôpital 2</option>
-                                    <option value="hopital3">Hôpital 3</option>
-                                    <option value="hopital4">Hôpital 4</option>
-                                    <option value="hopital5">Hôpital 5</option>
-                                </select>
-                                <br>
-                                <button type="submit" class="btn btn-primary btn-sm">Modifier</button>
-                </form>
-
+                                <form method="post" action="../../src/controller/traitModifHop.php">
+                                    <select name="hopital" class="btn btn-secondary dropdown-toggle">
+                                        <?php
+                                        $bdd = new PDO('mysql:host=localhost:3306;dbname=hsp;charset=utf8', 'root', '');
+                                        $requete = $bdd->prepare("SELECT * FROM hopital");
+                                        $requete->execute();
+                                        $aff = $requete->fetchAll();
+                                        foreach ($aff as $ligne) {
+                                            ?>
+                                            <option value="<?php $ligne['id'] ?>" name="hopital"><?php echo $ligne['nom'] ?></option>
+                                        <?php }
+                                        ?>
+                                    </select>
+                                    <input type="hidden" value="<?php $_SESSION['id'] ?>">
+                                    <button type="submit" class="btn btn-primary btn-sm">Modifier</button>
+                                </form>
                             </div>
                         </div>
                         <div class="card mb-4 mb-lg-0">

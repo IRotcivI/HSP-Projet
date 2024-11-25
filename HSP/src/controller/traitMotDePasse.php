@@ -11,7 +11,7 @@ if (isset($_POST["submit-reset"])){
     $selector = bin2hex(random_bytes(8));
     $token = random_bytes(32);
 
-    $lien = "http://hsp-project/HSP/vue/auth/nouveauMotDePasse.php?selector=" . $selector . "&validator=" . bin2hex($token);
+    $lien = "http://hsp-projet/HSP/vue/auth/nouveauMotDePasse.php?selector=" . $selector . "&validator=" . bin2hex($token);
 
     $temps = date("U") + 1800;
 
@@ -32,7 +32,7 @@ if (isset($_POST["submit-reset"])){
 
 
 //Load Composer's autoloader
-    require 'C:\Users\FAYE Victor\Desktop\Programation\HSP-Projet\HSP\vendor\autoload.php';
+    require 'C:\Users\FAYE_Vi\Desktop\HSP-Projet\HSP\vendor\autoload.php';
 
 //Create an instance; passing `true` enables exceptions
     $mail = new PHPMailer(true);
@@ -55,14 +55,10 @@ if (isset($_POST["submit-reset"])){
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = 'Réinitialiser votre mot de passe HSP' ;
-        $mail->Body = 'Voici le lien pour réinitialiser votre mot de passe HSP: <a href="' . $lien . '">' . $lien . '</a>';
-        $mail->AltBody = 'Voici le lien pour réinitialiser votre mot de passe HSP: ' . $lien;
-
-        // Envoyer l'email
-        $mail->send();
+        $mail->Subject = 'Réinitialiser du mot de passe HSP';
+        $mail->Body = 'Voici le lien pour réinitialiser votre mot de passe HSP
+                       Lien : <a href="' . $lien . '">' . $lien . '</a>';
         $mail->AltBody = '';
-
 
         $mail->send();
         header("Location:/HSP/vue/auth/motDePasse.php?reset=success");

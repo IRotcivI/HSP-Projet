@@ -16,6 +16,7 @@ class Utilisateur{
     private $selector;
     private $validator;
     private $temp;
+    private $hopital;
     public function __construct( array $cmd)
     {
         $this -> hydrate ($cmd);
@@ -207,6 +208,22 @@ class Utilisateur{
     public function setCv($cv): void
     {
         $this->cv = $cv;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHopital()
+    {
+        return $this->hopital;
+    }
+
+    /**
+     * @param mixed $hopital
+     */
+    public function setHopital($hopital): void
+    {
+        $this->hopital = $hopital;
     }
 
 
@@ -480,5 +497,15 @@ class Utilisateur{
             $_SESSION['email'] = $this->getEmail();
             header('location:/HSP/vue/auth/profiles.php?succes=1');
     }
+    public function ModifUserHopital(){
+        $bdd = new \BaseDeDonne();
+        $req = $bdd -> getBdd() -> prepare ("UPDATE utilisateur SET ref_hopital = :hopital WHERE id = :id");
+        $req -> execute(array(
+            'hopital'=>$this->getHopital(),
+            'id'=>$this->getId()
+        ));
+        header('location:/HSP/vue/auth/profiles.php?succes=2');
+    }
+
 
 }
