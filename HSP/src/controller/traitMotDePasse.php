@@ -55,10 +55,14 @@ if (isset($_POST["submit-reset"])){
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = 'Reinitialiser du mot de passe HSP';
-        $mail->Body = 'Voici le lien pour réinitialiser votre mot de passe HSP
-                       Lien : <a href="' . $lien . '">' . $lien . '</a>';
+        $mail->Subject = 'Réinitialiser votre mot de passe HSP' ;
+        $mail->Body = 'Voici le lien pour réinitialiser votre mot de passe HSP: <a href="' . $lien . '">' . $lien . '</a>';
+        $mail->AltBody = 'Voici le lien pour réinitialiser votre mot de passe HSP: ' . $lien;
+
+        // Envoyer l'email
+        $mail->send();
         $mail->AltBody = '';
+
 
         $mail->send();
         header("Location:/HSP/vue/auth/motDePasse.php?reset=success");
