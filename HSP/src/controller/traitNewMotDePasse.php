@@ -3,7 +3,6 @@
 if (isset($_POST['resetmdpbutton'])){
     include '../database/Bdd.php';
     include '../model/Utilisateur.php';
-    var_dump($_POST);
     $selector = $_POST['selector'];
     $validator = $_POST['validator'];
     $mdp = $_POST['mdp'];
