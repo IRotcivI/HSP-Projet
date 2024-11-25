@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
 
             // Contenu de l'email
             $mail->isHTML(true);
-            $mail->Subject = 'Réinitialiser votre mot de passe HSP';
+            $mail->Subject = 'Confirmation evenement';'Nous vous confirmons la creation '
             $mail->Body    = 'Voici le lien pour réinitialiser votre mot de passe HSP: <a href="' . $lien . '">' . $lien . '</a>';
             $mail->AltBody = 'Voici le lien pour réinitialiser votre mot de passe HSP: ' . $lien;
 
@@ -66,7 +66,8 @@ if (isset($_POST['submit'])) {
             $mail->send();
 
             // Redirection en cas de succès
-            header("Location:/HSP/vue/auth/motDePasse.php?reset=success");
+            $mail->send();
+        header("Location:/HSP/vue//creationEvenement.php?reset=success");
         } catch (Exception $e) {
             echo "Le message n'a pas pu être envoyé. Erreur de l'expéditeur : {$mail->ErrorInfo}";
         }
