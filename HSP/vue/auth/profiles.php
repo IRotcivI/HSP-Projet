@@ -183,6 +183,9 @@ if (empty($_SESSION)) {
                                     <input type="hidden" value="<?php $_SESSION['id'] ?>">
                                     <button type="submit" class="btn btn-primary btn-sm">Modifier</button>
                                 </form>
+                                <a href="/HSP/vue/auth/hopital.php">
+                                    <button type="button" class="btn btn-primary btn-sm">Créer hopital</button>
+                                </a>
                             </div>
                         </div>
                         <div class="card mb-4 mb-lg-0">
