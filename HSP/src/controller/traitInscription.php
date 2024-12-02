@@ -4,22 +4,22 @@ if (isset($_POST['submit'])) {
     include '../database/Bdd.php';
     include '../model/Utilisateur.php';
 
-    if (empty($_POST['nom']) || empty($_POST['prenom']) || empty($_POST['email']) || empty($_POST['mdp']) || empty($_POST['mdp2'])) {
-        header("Location:/HSP/vue/auth/eleve/inscription.php?inscription=vide");
+    if (empty($_POST['nom']) || empty($_POST['prenom']) || empty($_POST['email']) || empty($_POST['mdp']) || empty($_POST['mdp2']) || empty($_POST['formation'])) {
+        header("Location:/HSP/vue/auth/eleve/formRegisterEleve.php?inscription=vide");
         exit();
     }
     else {
         if (!preg_match("/^[a-zA-Z ]*$/",$_POST['nom']) || !preg_match("/^[a-zA-Z ]*$/",$_POST['prenom'])) {
-            header("Location:/HSP/vue/auth/eleve/inscription.php?inscription=caractere");
+            header("Location:/HSP/vue/auth/eleve/formRegisterEleve.php?inscription=caractere");
             exit();
         }
         else{
             if ($_POST['mdp'] != $_POST['mdp2']) {
-                header("Location:/HSP/vue/auth/eleve/inscription.php?inscription=passwordincorect");
+                header("Location:/HSP/vue/auth/eleve/formRegisterEleve.php?inscription=passwordincorect");
             }
             else {
                 if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-                    header("Location:/HSP/vue/auth/eleve/inscription.php?inscription=emailinvalide");
+                    header("Location:/HSP/vue/auth/eleve/formRegisterEleve.php?inscription=emailinvalide");
                     exit();
                 }
                 else {
@@ -39,23 +39,23 @@ if (isset($_POST['submit'])) {
                                     'prenom' => $_POST['prenom'],
                                     'email' => $_POST['email'],
                                     'mdp' => $_POST['mdp'],
-                                    'cv' => $file
+                                    'cv' => $file,
+                                    'formation' => $_POST['formation'],
                                 ]);
-
                                 $ins->inscription();
                             }
                             else{
-                                header("Location:/HSP/vue/auth/eleve/inscription.php?inscription=cvtaille");
+                                header("Location:/HSP/vue/auth/eleve/formRegisterEleve.php?inscription=cvtaille");
                                 exit();
                             }
                         }
                         else {
-                            header("Location:/HSP/vue/auth/eleve/inscription.php?inscription=cvinvalide");
+                            header("Location:/HSP/vue/auth/eleve/formRegisterEleve.php?inscription=cvinvalide");
                             exit();
                         }
                     }
                     else {
-                        header("Location:/HSP/vue/auth/eleve/inscription.php?inscription=cvvide");
+                        header("Location:/HSP/vue/auth/eleve/formRegisterEleve.php?inscription=cvvide");
                         exit();
                     }
                 }
@@ -65,6 +65,6 @@ if (isset($_POST['submit'])) {
     }
 }
 else {
-    header("Location:/HSP/vue/auth/eleve/inscription.php?inscription=erreur");
+    header("Location:/HSP/vue/auth/eleve/formRegisterEleve.php?inscription=erreur");
     exit();
 }

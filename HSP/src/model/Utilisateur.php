@@ -3,7 +3,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-class Utilisateur{
+
+class Utilisateur
+{
 
     private $id;
     private $nom;
@@ -17,19 +19,20 @@ class Utilisateur{
     private $validator;
     private $temp;
     private $hopital;
-    public function __construct( array $cmd)
+    private $specialite;
+    private $formation;
+
+    public function __construct(array $cmd)
     {
-        $this -> hydrate ($cmd);
+        $this->hydrate($cmd);
     }
 
-    public function hydrate( array $cmd)
+    public function hydrate(array $cmd)
     {
-        foreach ($cmd as $key => $value)
-        {
-            $cmd = 'set'.ucfirst($key);
-            if (method_exists ($this, $cmd))
-            {
-                $this -> $cmd ($value);
+        foreach ($cmd as $key => $value) {
+            $cmd = 'set' . ucfirst($key);
+            if (method_exists($this, $cmd)) {
+                $this->$cmd ($value);
             }
         }
     }
@@ -226,38 +229,128 @@ class Utilisateur{
         $this->hopital = $hopital;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getSpecialite()
+    {
+        return $this->specialite;
+    }
+
+    /**
+     * @param mixed $specialite
+     */
+    public function setSpecialite($specialite): void
+    {
+        $this->specialite = $specialite;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFormation()
+    {
+        return $this->formation;
+    }
+
+    /**
+     * @param mixed $formation
+     */
+    public function setFormation($formation): void
+    {
+        $this->formation = $formation;
+    }
 
 
-    public function Inscription ()
+    public function Inscription()
     {
         $f = "eleve";
 
         $bdd = new \BaseDeDonne();
-        $req = $bdd ->getBdd()->prepare("SELECT * FROM utilisateur WHERE email = :email");
-        $req ->execute(array(
-            "email" =>$this->getEmail()
+        $req = $bdd->getBdd()->prepare("SELECT * FROM utilisateur WHERE email = :email");
+        $req->execute(array(
+            "email" => $this->getEmail()
         ));
-        if ($req -> rowCount() > 0){
-            header('location:/HSP/vue/auth/eleve/inscription.php?erreur=1');
+        if ($req->rowCount() > 0) {
+            header('location:/HSP/vue/auth/eleve/formRegisterEleve.php?erreur=1');
             exit();
 
-        }else{
+        } else {
             $bdd = new \BaseDeDonne();
-            $req = $bdd -> getBdd() -> prepare ("INSERT INTO utilisateur (nom,prenom,email,password,fonction,cv) VALUES (:nom,:prenom,:email,:password,:fonction,:cv)");
+            $req = $bdd->getBdd()->prepare("INSERT INTO utilisateur (nom,prenom,email,password,fonction,cv,formation) VALUES (:nom,:prenom,:email,:password,:fonction,:cv,:formation)");
             $hash = password_hash($this->getMdp(), PASSWORD_DEFAULT);
-            $req -> execute(array(
-                'nom'=>$this->getNom(),
-                'prenom'=>$this->getPrenom(),
-                'email'=>$this->getEmail(),
-                'password'=>$hash,
-                'fonction'=>$f,
-                'cv'=>$this->getCv()
+            $req->execute(array(
+                'nom' => $this->getNom(),
+                'prenom' => $this->getPrenom(),
+                'email' => $this->getEmail(),
+                'password' => $hash,
+                'fonction' => $f,
+                'cv' => $this->getCv(),
+                'formation' => $this->getFormation(),
             ));
             header("Location:/HSP/vue/auth/status.php");
             exit();
         }
     }
+    public function InscriptionProf()
+    {
+        $f = "professeur";
 
+        $bdd = new \BaseDeDonne();
+        $req = $bdd->getBdd()->prepare("SELECT * FROM utilisateur WHERE email = :email");
+        $req->execute(array(
+            "email" => $this->getEmail()
+        ));
+
+        if ($req->rowCount() > 0) {
+            header('location:/HSP/vue/auth/professeur/formRegisterPro.php?erreur=1');
+            exit();
+        } else {
+            $bdd = new \BaseDeDonne();
+            $req = $bdd->getBdd()->prepare("INSERT INTO utilisateur (nom,prenom,email,password,fonction,ref_specialite,ref_hopital,inscrit) VALUES (:nom,:prenom,:email,:password,:fonction,:specialite,:hopital,:inscit)");
+            $hash = password_hash($this->getMdp(), PASSWORD_DEFAULT);
+            $req->execute(array(
+                'nom' => $this->getNom(),
+                'prenom' => $this->getPrenom(),
+                'email' => $this->getEmail(),
+                'password' => $hash,
+                'fonction' => $f,
+                'specialite' => $this->getSpecialite(),
+                'hopital' => $this->getHopital(),
+                'inscit' => 0
+            ));
+            header("Location:/HSP/vue/auth/status.php");
+            exit();
+        }
+    }
+    public function InscriptionPartenaire(){
+        $f = "entreprise";
+        $bdd = new \BaseDeDonne();
+        $req = $bdd->getBdd()->prepare("SELECT * FROM utilisateur WHERE email = :email");
+        $req->execute(array(
+            "email" => $this->getEmail()
+        ));
+        if ($req->rowCount() > 0) {
+            header('location:/HSP/vue/auth/entreprise/formRegisterEntreprise.php?erreur=1');
+            exit();
+        }
+        else{
+            $bdd = new \BaseDeDonne();
+            $sql = $bdd->getBdd()->prepare("INSERT INTO utilisateur (nom,prenom,email,password,fonction,poste,inscrit) VALUES (:nom,:prenom,:email,:password,:fonction,:poste,:inscrit)");
+            $hash = password_hash($this->getMdp(), PASSWORD_DEFAULT);
+            $sql->execute(array(
+                'nom' => $this->getNom(),
+                'prenom' => $this->getPrenom(),
+                'email' => $this->getEmail(),
+                'password' => $hash,
+                'fonction' => $f,
+                'poste' => $this->getSpecialite(),
+                'inscrit' => 0
+            ));
+            header("Location:/HSP/vue/auth/status.php");
+            exit();
+        }
+    }
     public function updateInscription()
     {
         // Load Composer's autoloader
@@ -339,18 +432,16 @@ class Utilisateur{
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
     }
-
-    public function Connexion ()
+    public function Connexion()
     {
         $bdd = new \BaseDeDonne();
-        $req = $bdd -> getBdd() -> prepare ("SELECT * FROM utilisateur WHERE email = :email");
-        $req -> execute(array(
-            'email'=>$this->getEmail(),
+        $req = $bdd->getBdd()->prepare("SELECT * FROM utilisateur WHERE email = :email");
+        $req->execute(array(
+            'email' => $this->getEmail(),
         ));
 
-        $res = $req -> fetch();
-        if (is_array($res))
-        {
+        $res = $req->fetch();
+        if (is_array($res)) {
             if (password_verify($this->getMdp(), $res['password'])) {
                 if ($res['inscrit'] == 1) {
                     session_start();
@@ -367,17 +458,14 @@ class Utilisateur{
                     exit();
                 }
             } else {
-                header("Location:/HSP/vue/auth/connection.php?connection=passwordincorect");
+                header("Location:/HSP/vue/auth/formLogin.php?connection=passwordincorect");
                 exit();
             }
-        }
-        else
-        {
-            header("Location:/HSP/vue/auth/connection.php?connection=nouser");
+        } else {
+            header("Location:/HSP/vue/auth/formLogin.php?connection=nouser");
             exit();
         }
     }
-
     public function PasswordTokenDel()
     {
         $bdd = new \BaseDeDonne();
@@ -387,29 +475,27 @@ class Utilisateur{
         ));
 
     }
-
     public function PasswordTokenIns()
     {
         $bdd = new \BaseDeDonne();
         $req = $bdd->getBdd()->prepare('INSERT INTO mdpreset (mdpResetEmail,mdpResetSelector,mdpResetToken,mdpResetTemps) VALUES (:email,:selector,:token,:temps);');
         $hashToken = password_hash($this->getToken(), PASSWORD_DEFAULT);
         $req->execute(array(
-            'email'=>$this->getEmail(),
-            'token'=>$hashToken,
-            'selector'=>$this->getSelector(),
-            'temps'=>$this->getTemp(),
+            'email' => $this->getEmail(),
+            'token' => $hashToken,
+            'selector' => $this->getSelector(),
+            'temps' => $this->getTemp(),
         ));
 
     }
-
     public function PasswordReset()
     {
         $currentDate = date("U");
         $bdd = new \BaseDeDonne();
         $req = $bdd->getBdd()->prepare('SELECT * FROM mdpreset WHERE mdpResetSelector = :selector AND mdpResetTemps >= :temps');
         $req->execute(array(
-            'selector'=>$this->getSelector(),
-            'temps'=>$currentDate,
+            'selector' => $this->getSelector(),
+            'temps' => $currentDate,
         ));
 
 
@@ -419,93 +505,69 @@ class Utilisateur{
         $remCheck = password_verify($ram, $resultat["mdpResetToken"]);
 
 
-        if ($remCheck === false){
+        if ($remCheck === false) {
             echo "Vous devez re-envoyer la demande de réinitialisation.";
             exit();
 
-        } else if($remCheck === true){
+        } else if ($remCheck === true) {
             $tokenEmail = $resultat['mdpResetEmail'];
 
             $sql = $bdd->getBdd()->prepare("SELECT * FROM utilisateur WHERE email = :email");
-            $sql -> execute(array(
-                'email'=>$tokenEmail
+            $sql->execute(array(
+                'email' => $tokenEmail
             ));
 
 
-            $update = $bdd->getBdd() -> prepare("UPDATE utilisateur SET password = :pwd WHERE email = :email");
+            $update = $bdd->getBdd()->prepare("UPDATE utilisateur SET password = :pwd WHERE email = :email");
             $newPwdHash = password_hash($this->getMdp(), PASSWORD_DEFAULT);
-            $update -> execute(array(
-                'pwd'=>$newPwdHash,
-                'email'=>$tokenEmail
+            $update->execute(array(
+                'pwd' => $newPwdHash,
+                'email' => $tokenEmail
             ));
 
             $del = $bdd->getBdd()->prepare("DELETE FROM mdpreset WHERE mdpResetEmail = :email");
             $del->execute(array(
-                'email'=>$tokenEmail,
+                'email' => $tokenEmail,
             ));
             header("Location:/HSP/vue/auth/connection.php?pwd=updated");
 
         }
     }
-    public function InscriptionProf ()
-    {
-        $f = "professeur";
-
-        $bdd = new \BaseDeDonne();
-        $req = $bdd ->getBdd()->prepare("SELECT * FROM utilisateur WHERE email = :email");
-        $req ->execute(array(
-            "email" =>$this->getEmail()
-        ));
-
-        $bdd = new \BaseDeDonne();
-        $req = $bdd -> getBdd() -> prepare ("INSERT INTO utilisateur (nom,prenom,email,password,fonction) VALUES (:nom,:prenom,:email,:password,:fonction)");
-        $hash = password_hash($this->getMdp(), PASSWORD_DEFAULT);
-        $req -> execute(array(
-            'nom'=>$this->getNom(),
-            'prenom'=>$this->getPrenom(),
-            'email'=>$this->getEmail(),
-            'password'=>$hash,
-            'fonction'=>$f,
-        ));
-        header('location:/HSP/vue/auth/confirmation.html');
-    }
-
     public function Modifier()
     {
-        if ($_SESSION['email'] !== $this->getEmail()){
+        if ($_SESSION['email'] !== $this->getEmail()) {
             $bdd = new \BaseDeDonne();
-            $req = $bdd ->getBdd()->prepare("SELECT * FROM utilisateur WHERE email = :email AND id = :id");
-            $req ->execute(array(
-                "email" =>$this->getEmail(),
-                "id"=>$this->getId()
+            $req = $bdd->getBdd()->prepare("SELECT * FROM utilisateur WHERE email = :email AND id = :id");
+            $req->execute(array(
+                "email" => $this->getEmail(),
+                "id" => $this->getId()
             ));
-            if ($req -> rowCount() > 0){
+            if ($req->rowCount() > 0) {
                 header('location:/HSP/vue/auth/profiles.php?erreur=1');
                 exit();
             }
         }
-            $bdd = new \BaseDeDonne();
-            $req = $bdd -> getBdd() -> prepare ("UPDATE utilisateur SET nom = :nom, prenom = :prenom, email = :email WHERE id = :id ");
-            $req -> execute(array(
-                'nom'=>$this->getNom(),
-                'prenom'=>$this->getPrenom(),
-                'email'=>$this->getEmail(),
-                'id'=>$this->getId(),
-            ));
-            $_SESSION['nom'] = $this->getNom();
-            $_SESSION['prenom'] = $this->getPrenom();
-            $_SESSION['email'] = $this->getEmail();
-            header('location:/HSP/vue/auth/profiles.php?succes=1');
-    }
-    public function ModifUserHopital(){
         $bdd = new \BaseDeDonne();
-        $req = $bdd -> getBdd() -> prepare ("UPDATE utilisateur SET ref_hopital = :hopital WHERE id = :id");
-        $req -> execute(array(
-            'hopital'=>$this->getHopital(),
-            'id'=>$this->getId()
+        $req = $bdd->getBdd()->prepare("UPDATE utilisateur SET nom = :nom, prenom = :prenom, email = :email WHERE id = :id ");
+        $req->execute(array(
+            'nom' => $this->getNom(),
+            'prenom' => $this->getPrenom(),
+            'email' => $this->getEmail(),
+            'id' => $this->getId(),
+        ));
+        $_SESSION['nom'] = $this->getNom();
+        $_SESSION['prenom'] = $this->getPrenom();
+        $_SESSION['email'] = $this->getEmail();
+        header('location:/HSP/vue/auth/profiles.php?succes=1');
+    }
+    public function ModifUserHopital()
+    {
+        $bdd = new \BaseDeDonne();
+        $req = $bdd->getBdd()->prepare("UPDATE utilisateur SET ref_hopital = :hopital WHERE id = :id");
+        $req->execute(array(
+            'hopital' => $this->getHopital(),
+            'id' => $this->getId()
         ));
         header('location:/HSP/vue/auth/profiles.php?succes=2');
     }
-
-
 }
