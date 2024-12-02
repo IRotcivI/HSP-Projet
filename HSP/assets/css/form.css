@@ -1,0 +1,132 @@
+* {
+    font-family: "JetBrains Mono Medium", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-bottom: 80px; /* Plus d'espace pour les petits écrans */
+    }
+}
+
+.background-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 50px; /* Ajoute un espace de 50px en haut */
+    padding-bottom: 50px; /* Ajoute un espace avec le footer */
+}
+
+footer {
+    padding-top: 20px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    background: url("/HSP/assets/img/doctor-looking-information-database.jpg");
+    background-size: cover;
+}
+
+/*------------ Login container ------------*/
+.box-area {
+    width: 935px;
+}
+
+/*------------ Left box (background + text styles) ------------*/
+.left-box {
+    background: #4CAF50; /* Vert apaisant */
+    color: #ffffff;
+    text-align: center;
+    padding: 30px;
+}
+
+.left-box .text-white {
+    color: #ffffff;
+}
+
+.left-box small {
+    color: #E8F5E9; /* Vert clair pour contraste */
+}
+
+/*------------ Right box (form area) ------------*/
+.right-box {
+    padding: 40px 30px 40px 40px;
+    background-color: #ffffff; /* Blanc cassé */
+    border: 1px solid #ffffff; /* Gris léger pour contraste */
+    border-radius: 20px;
+}
+
+.right-box h2 {
+    color: #1A237E; /* Bleu profond pour titres */
+    font-weight: bold;
+}
+
+.right-box p {
+    color: #616161; /* Texte secondaire en gris foncé */
+}
+
+.right-box input {
+    border: 1px solid #BDBDBD; /* Bordures légères */
+    background-color: #F8FAFC;
+    color: #424242;
+}
+
+.right-box input:focus {
+    border-color: #4CAF50; /* Vert pour focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.right-box button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+.right-box button:hover {
+    background-color: #388E3C; /* Vert plus foncé pour hover */
+}
+
+/*------------ Custom Placeholder ------------*/
+::placeholder {
+    font-size: 16px;
+    color: #9E9E9E; /* Placeholder gris clair */
+}
+
+/*------------ Rounded borders ------------*/
+.rounded-4 {
+    border-radius: 20px;
+}
+
+.rounded-5 {
+    border-radius: 30px;
+}
+
+/*------------ For small screens ------------*/
+@media only screen and (max-width: 768px) {
+    .box-area {
+        margin: 0 10px;
+    }
+
+    .left-box {
+        height: 100px;
+        overflow: hidden;
+    }
+
+    .right-box {
+        padding: 20px;
+    }
+}

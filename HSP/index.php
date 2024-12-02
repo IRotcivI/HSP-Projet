@@ -1,236 +1,156 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>HSP Project</title>
-    <!-- HSP icon -->
-    <link rel="icon" href="/HSP/assets/img/freepik-export-202410281551095LzP.ico" type="image/x-icon" />
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-      <!-- Google Fonts OSWALD -->
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-      <!-- MDB -->
-      <link rel="stylesheet" href="/HSP/assets/css/mdb.min.css" />
-      <link rel="stylesheet" href="/HSP/assets/css/all.css">
-      <link rel="stylesheet" href="assets/css/index.css">
-  </head>
-  <body>
-    <!-- Start your project here-->
-    <header>
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
-        <!-- Container wrapper -->
-        <div class="container">
-          <!-- Navbar brand -->
-          <a class="navbar-brand me-2">
-            <img
-              src="/HSP/assets/img/freepik-export-202410281551095LzP.ico"
-              height="16"
-              alt="HSP Logo"
-              loading="lazy"
-              style="margin-top: -1px;"
-            />
-          </a>
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/nav.css">
+    <link rel="stylesheet" href="assets/css/temp.css">
 
-          <!-- Toggle button -->
-          <button
-            data-mdb-collapse-init
-            class="navbar-toggler"
-            type="button"
-            data-mdb-target="#navbarButtonsExample"
-            aria-controls="navbarButtonsExample"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <i class="fas fa-bars"></i>
-          </button>
-
-          <!-- Collapsible wrapper -->
-          <div class="collapse navbar-collapse" id="navbarButtonsExample">
-            <!-- Left links -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="/HSP/index.php">HSP</a>
-              </li>
-            </ul>
-            <!-- Left links -->
-
-            <div class="d-flex align-items-center">
-              <!--Lien vers la page connection-->
-              <a href="/HSP/vue/auth/connection.php">
-                <button data-mdb-ripple-init type="button" class="btn btn-link px-3 me-2">
-                  Connexion
-                </button>
-              </a>
-
-              <!--Lien vers la page inscription-->
-                <div class="dropdown">
-                    <a
-                            class="btn btn-primary dropdown-toggle"
-                            href="#"
-                            role="button"
-                            id="dropdownMenuLink"
-                            data-mdb-dropdown-init
-                            data-mdb-ripple-init
-                            aria-expanded="false"
-                    >
-                        Inscription
-                    </a>
-
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="/HSP/vue/auth/eleve/inscription.php">Eleve</a></li>
-                        <li><a class="dropdown-item" href="/HSP/vue/auth/professeur/inscriptionProf.php">Professeur</a></li>
+    <title>Document</title>
+</head>
+<body>
+<header>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand me-auto" href="#">Logo HSP</a>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                 aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Logo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2 active" aria-current="page" href="#">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="#">LOMP</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="#">Lieu</a>
+                        </li>
                     </ul>
                 </div>
             </div>
-          </div>
-          <!-- Collapsible wrapper -->
-        </div>
-        <!-- Container wrapper -->
-      </nav>
-      <!-- Navbar -->
-    </header>
-    <main>
-        <div class="bg-image ">
-            <img src="/HSP/assets/img/imghopital.jpg" height="100" class="img-fluid" alt="Wild Landscape"/>
-            <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
-                <div class = "titre d-flex justify-content-around align-top">
-                    <h1>Bienvenue sur HSP</h1>
-                </div>
-                <br><br>
-                <div class="d-flex justify-content-center align-text-top h-100">
-                    <h4><p>Créée en 1954, La Générale des hôpitaux (GDH), dont le siège est situé à Paris, est le premier groupe de cliniques et hôpitaux privés en France.<p> Fort de 70 années d'expérience, GDH a su tirer profit du développement des dernières technologies médicales afin d'offrir aux patients des prestations couvrant une large variété de spécialités.
-                            <p>Inauguré en 1995, l'hôpital privé HSP (Hôpital Sud Paris) est le fruit du rattachement de plusieurs établissements indépendants au pôle territorial Paris Sud du groupe GDH. Situé dans la commune de Marreuil sur Seine, à 25km de Paris, l'hôpital compte 90 praticiens et dispose de 289 lits.
-                            <p>Associant des compétences diverses et complémentaires, l'établissement possède :</p>
-
-                        <p>• un pôle de chirurgie</p>
-
-                        <p>• un pôle de médecine</p>
-
-                        <p>• un pôle de cancérologie</p>
-
-                        <p>• un pôle de maternité</p>
-
-                        <p>• un pôle d'imagerie médicale</p>
-
-                        <p>• un service d'urgences 24h/24 7j/7</p>
-
-                        <p>Le réseau informatique de l'hôpital HSP compte près de 350 postes pour des utilisateurs variés (praticiens, employés administratifs, patients...).</h4>
-
-                    <section class="home" id="text-block">
-                        <div class="home-infos">
-                            <!-- box -->
-                            <div class="nomevent">
-                                <h1>Actualités et Evénements</h1>
-                                <img src="images/paris.jpg" alt="">
-                                <div class="content">
-                                    <div>
-                                        <h4>Titre1</h4>
-                                            <p1>Description</e></p1>
-                                        <p1></p1>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- box -->
-                            <div class="box">
-                                <img src="images/moscou.jpg" alt="">
-                                <div class="content">
-                                    <div>
-                                        <h4>Titre2</h4>
-                                        <p1>Description</p1>
-                                        <p1></p1>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- box -->
-                            <div class="box">
-                                <img src="images/miami.jpg" alt="">
-                                <div class="content">
-                                    <div>
-                                        <h4>Titre3</h4>
-                                        <p1>Description</p1>
-                                        <p1></p1>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
+            <a href="/HSP/vue/auth/formLogin.php" class="login-button">Connexion</a>
+            <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="dropdown">
+                <!-- Dropdown toggle button -->
+                <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                    Inscription
+                </button>
+                <!-- Dropdown menu -->
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="/HSP/vue/auth/eleve/formRegisterEleve.php">Etudiant</a></li>
+                    <li><a class="dropdown-item" href="vue/auth/professeur/formRegisterPro.php">Professeur</a></li>
+                    <li><a class="dropdown-item" href="vue/auth/entreprise/formRegisterEntreprise.php">Partenaire</a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="decouvreservice">
-            <h1>Découvrez nos services</h1>
-        </div>
-
-        <div class="container">
-            <section class="services">
-                <div class="service">
-                    <h2>Opportunités d'Emploi et de Stage</h2>
-                    <p1>Offres d'emploi/stage publiées par les entreprises partenaires</p1>
-                </div>
-
-                <div class="service">
-                    <h2>Forum de Discussion</h2>
-                    <p1>Forums pour échanger sur divers sujets</p1>
-                </div>
-            </section>
-
-    </main>
-
-    <footer>
-        <div class="responsive-menu"></div>
-        <section id="contact">
-            <h1 class="title">Contact</h1>
-            <form action="">
-                <div class="left-right">
-                    <div class="left">
-                        <label>Nom de Famille</label>
-                        <input type="text" name="nom" placeholder="Nom">
-                        <label>Adresse Émail</label>
-                        <input type="email" name="email" placeholder="Email">
-                        <label>Titre</label>
-                        <input type="text" name="objet" placeholder="Objet">
-                        <label>Message</label>
-                        <textarea name="message" placeholder="Veuillez expliquer votre demande." cols="30" rows="10"></textarea>
-                        <button type="submit" name="envoyer">Envoyer</button>
-                    </div>
-                    <div class="right">
-                        <h2>Besoin d'un renseignement ?</h2>
-                        <label>N'hésiter pas à nous contacter !</label>
-                        <label>Adresse</label>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d70687.3324966235!2d2.2816912889486605!3d48.8213262263974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sHopital%20Paris%20Sud!5e0!3m2!1sfr!2sfr!4v1730123417147!5m2!1sfr!2sfr" align="left"  width="1265" height="700" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+    </nav>
+    <!--Navbar FIN-->
+</header>
+<main class="mt-5 pt-5">
+    <section class="container text-center my-5">
+        <h1 class="mb-4">Bienvenue à l'Hôpital Sud Paris (HSP)</h1>
+        <p class="lead">
+            Créée en 1954, La Générale des hôpitaux (GDH) est le premier groupe de cliniques et hôpitaux privés en
+            France.
+            Découvrez nos services, nos valeurs, et notre engagement envers l'excellence médicale.
+        </p>
+    </section>
+    <!-- Cards Section -->
+    <section class="container cards">
+        <div class="row">
+            <!-- Card 1 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x150" class="card-img-top" alt="Chirurgie">
+                    <div class="card-body">
+                        <h5 class="card-title">Pôle de Chirurgie</h5>
+                        <p class="card-text">Des équipements modernes et des chirurgiens expérimentés pour des soins de
+                            qualité.</p>
                     </div>
                 </div>
-            </form>
-            <div class="faute">
-                <?php
-                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                    if (empty($_POST['nom']) || empty($_POST['email']) || empty($_POST['objet']) || empty($_POST['message'])) {
-                        echo "Les Champs sont vide!";
-                        exit();
-                    } else {
-                        echo "Message envoyé";
-                    }
-                }
-                ?>
             </div>
-        </section>
-    </footer>
-    <!-- End your project here-->
-
-    <!-- MDB -->
-    <script type="text/javascript" src="assets/js/mdb.umd.min.js"></script>
-    <!-- Custom scripts -->
-    <script type="text/javascript"></script>
-  </body>
-
+            <!-- Card 2 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x150" class="card-img-top" alt="Médecine">
+                    <div class="card-body">
+                        <h5 class="card-title">Pôle de Médecine</h5>
+                        <p class="card-text">Une équipe médicale dédiée à votre bien-être et à votre santé.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x150" class="card-img-top" alt="Cancérologie">
+                    <div class="card-body">
+                        <h5 class="card-title">Pôle de Cancérologie</h5>
+                        <p class="card-text">Un accompagnement personnalisé pour les patients atteints de cancer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <!-- Card 4 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x150" class="card-img-top" alt="Maternité">
+                    <div class="card-body">
+                        <h5 class="card-title">Pôle de Maternité</h5>
+                        <p class="card-text">Un suivi complet pour les futures mamans et leurs bébés.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x150" class="card-img-top" alt="Imagerie Médicale">
+                    <div class="card-body">
+                        <h5 class="card-title">Pôle d'Imagerie Médicale</h5>
+                        <p class="card-text">Des technologies avancées pour des diagnostics précis.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x150" class="card-img-top" alt="Urgences">
+                    <div class="card-body">
+                        <h5 class="card-title">Service d'Urgences</h5>
+                        <p class="card-text">Disponible 24h/24 et 7j/7 pour répondre à vos besoins urgents.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="container text-center">
+            <p>&copy; 2024 Hôpital Sud Paris (HSP). Tous droits réservés.</p>
+        </div>
+    </section>
+</main>
+<!--Bootstrap JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
 </html>
