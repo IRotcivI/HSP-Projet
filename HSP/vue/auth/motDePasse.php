@@ -1,98 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Mot de passe oublié</title>
-    <!-- HSP icon -->
-    <link rel="icon" href="/HSP/assets/img/toolbox_container_repair_box_tool_box_toolboxes_icon_189312.ico"
-          type="image/x-icon" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <!-- Google Fonts OSWALD -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <!-- MDB -->
-    <link rel="stylesheet" href="../../assets/css/mdb.min.css" />
-    <link rel="stylesheet" href="../../assets/css/all.css">
-    <link rel="stylesheet" href="/HSP/assets/css/pwd.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../assets/css/nav.css">
+    <link rel="stylesheet" href="../../assets/css/form.css">
+    <title>Form</title>
 </head>
-
 <body>
-<!-- Start your project here-->
 <header>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
-        <!-- Container wrapper -->
-        <div class="container">
-            <!-- Navbar brand -->
-            <a class="navbar-brand me-2">
-                <img src="/HSP/assets/img/toolbox_container_repair_box_tool_box_toolboxes_icon_189312.ico" height="16"
-                     alt="HSP Logo" loading="lazy" style="margin-top: -1px;" />
-            </a>
 
-            <!-- Toggle button -->
-            <button data-mdb-collapse-init class="navbar-toggler" type="button" data-mdb-target="#navbarButtonsExample"
-                    aria-controls="navbarButtonsExample" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <!-- Collapsible wrapper -->
-            <div class="collapse navbar-collapse" id="navbarButtonsExample">
-                <!-- Left links -->
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">HSP</a>
-                    </li>
-                </ul>
-                <!-- Left links -->
-
-                <div class="d-flex align-items-center">
-                    <!--Lien vers la page connection-->
-                    <a href="/HSP/vue/auth/connection.php">
-                        <button data-mdb-ripple-init type="button" class="btn btn-link px-3 me-2">
-                            Connexion
-                        </button>
-                    </a>
-
-                    <!--Lien vers la page inscription-->
-                    <a href="/HSP/vue/auth/inscription.php">
-                        <button data-mdb-ripple-init type="button" class="btn btn-primary me-3">
-                            Inscription
-                        </button>
-                    </a>
-                </div>
-            </div>
-            <!-- Collapsible wrapper -->
-        </div>
-        <!-- Container wrapper -->
-    </nav>
-    <!-- Navbar -->
 </header>
-
 <main>
+    <section class="background-section">
+        <!----------------------- Main Container -------------------------->
+        <div class="container d-flex justify-content-center align-items-center min-vh-100">
+            <!----------------------- Login Container -------------------------->
+            <div class="row border rounded-5 p-3 bg-white shadow box-area">
+                <!--------------------------- Left Box ----------------------------->
+                <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #4A90E2;">
+                    <div class="featured-image mb-3">
+                        <img src="/HSP/assets/img/rb_2147795907.png" class="img-fluid" style="width: 250px;">
+                    </div>
+                    <p class="text-white fs-2" style=" font-weight: 600;">Pour être vérifié</p>
+                    <small class="text-white text-wrap text-center" style="width: 17rem;">Un e-mail vous sera envoyé avec un lien pour changer votre mot de passe.</small>
+                </div>
+                <!-------------------- ------ Right Box ---------------------------->
 
-    <div class="box">
-        <div class="inscription-container" id="inscription">
-            <h1>Mot de passe oublié</h1>
-            <h2>Un email va vous être envoyer</h2>
+                <div class="col-md-6 right-box">
+                    <div class="row align-items-center">
+                        <form method="post" action="../../src/controller/traitMotDePasse.php">
+                            <div class="header-text mb-4 ">
+                                <h2>Mot de passe oublié</h2>
+                                <p>Nous allons reinitialiser votre mot de passe par mail.</p>
+                                <p>Veuillez renseignez votre email :</p>
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="text" name="email" class="form-control form-control-lg bg-light fs-6" placeholder="Adresse e-mail">
+                            </div>
 
-            <form method="post" action="../../src/controller/traitMotDePasse.php">
-                <input type="email" name="email" placeholder="Entre votre email">
+                            <div class="input-group mb-3">
+                                <button type="submit" name="submit" class="btn btn-lg btn-primary w-100 fs-6">Envoyer</button>
+                            </div>
+                            <div class="input-group mb-5 d-flex justify-content-center">
+                                <small><a href="/HSP/index.php">Retour a l'acceuil</a></small>
+                            </div>
+                        </form>
 
-                <button type="submit" name="submit-reset" class="btn btn-primary" data-mdb-ripple-init>Reinitialiser le mot de passe</button>
-
-            </form>
-
-            <div class="eror">
+            <div class="faute">
                 <?php
                 $fullurl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
-                if (strpos($fullurl, "reset=success") !== false) {
-                    echo "<p class='text-success'>Email envoyer !</p>";
+                if (strpos($fullurl, "connection=vide") !== false) {
+                    echo "<p class='text-danger'>Vous n'avez pas rempli les champs !</p>";
                 }
                 elseif (strpos($fullurl, "connection=nouser") !== false) {
                     echo "<p class='text-danger'>Aucun utilisateur (Veullez créer un compte) !</p>";
@@ -102,6 +66,9 @@
                 }
                 elseif (strpos($fullurl, "connection=passwordincorect") !== false) {
                     echo "<p class='text-danger'>Mot de passe ou email incorrect !</p>";
+                }
+                elseif (strpos($fullurl, "pwd=updated") !== false) {
+                    echo "<p class='text-success'>Mot de passe mise a jour !</p>";
                 }
                 ?>
             </div>
