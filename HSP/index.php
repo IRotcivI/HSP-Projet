@@ -142,6 +142,8 @@
             </div>
         </div>
         Pour nous contacter , veuillez cliquer ici !
+        <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                aria-expanded="false">
     </section>
     <section class="footer">
         <div class="container text-center">
