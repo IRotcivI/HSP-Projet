@@ -141,6 +141,7 @@
                 </div>
             </div>
         </div>
+        Pour nous contacter , veuillez cliquer ici !
     </section>
     <section class="footer">
         <div class="container text-center">
