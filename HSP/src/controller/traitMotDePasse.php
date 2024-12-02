@@ -3,7 +3,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-if (isset($_POST["submit-reset"])){
+if (isset($_POST["submit"])){
     include '../database/Bdd.php';
     include '../model/Utilisateur.php';
 
@@ -32,7 +32,7 @@ if (isset($_POST["submit-reset"])){
 
 
 //Load Composer's autoloader
-    require 'C:\Users\FAYE_Vi\Desktop\HSP-Projet\HSP\vendor\autoload.php';
+    require '../../vendor/autoload.php';
 
 //Create an instance; passing `true` enables exceptions
     $mail = new PHPMailer(true);
