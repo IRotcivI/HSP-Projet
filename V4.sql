@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 15 nov. 2024 à 15:10
+-- Généré le : lun. 09 déc. 2024 à 15:06
 -- Version du serveur : 8.2.0
 -- Version de PHP : 8.2.13
 
@@ -79,21 +79,12 @@ CREATE TABLE IF NOT EXISTS `fiche_evenement` (
   `cp` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `type` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `nb_place` int NOT NULL,
-  `hop` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `fiche_evenement`
---
-
-INSERT INTO `fiche_evenement` (`id`, `titre`, `description`, `rue`, `ville`, `cp`, `type`, `nb_place`, `hop`) VALUES
-(2, 'a', 'a', 'a', 'a', '12345', 'event', 10, 'HSP'),
-(3, 'a', 'a', 'a', 'a', '12345', 'event', 9, 'HSP'),
-(4, 'a', 'a', 'a', 'a', '12345', 'event', 9, 'HSP'),
-(5, 'a', 'a', 'a', 'a', '12345', 'event', 9, 'HSP'),
-(6, 'a', 'a', 'a', 'a', '12345', 'event', 9, 'HSP'),
-(7, 'a', 'a', 'a', 'a', '12345', 'event', 9, 'HSP');
+  `ref_hopital` int DEFAULT NULL,
+  `ref_utilisateur` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_eve_hopital` (`ref_hopital`),
+  KEY `fk_utilisateur_evenement` (`ref_utilisateur`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -109,13 +100,6 @@ CREATE TABLE IF NOT EXISTS `fich_eve_utilisateur` (
   KEY `fk_event` (`ref_fiche_evenement`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Déchargement des données de la table `fich_eve_utilisateur`
---
-
-INSERT INTO `fich_eve_utilisateur` (`ref_utilisateur`, `ref_fiche_evenement`) VALUES
-(10, 2);
-
 -- --------------------------------------------------------
 
 --
@@ -125,17 +109,30 @@ INSERT INTO `fich_eve_utilisateur` (`ref_utilisateur`, `ref_fiche_evenement`) VA
 DROP TABLE IF EXISTS `hopital`;
 CREATE TABLE IF NOT EXISTS `hopital` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `Nom` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Specialite` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Rue` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Voie` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `CP` int NOT NULL,
-  `ref_utilisateur` int NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `hopital_ref_utilisateur_foreign` (`ref_utilisateur`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `nom` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rue` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cp` int NOT NULL,
+  `site` text COLLATE utf8mb4_unicode_ci,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `hopital`
+--
+
+INSERT INTO `hopital` (`id`, `nom`, `rue`, `cp`, `site`, `created_at`, `updated_at`) VALUES
+(1, 'Hôpital Sud Paris', '12 Rue de Paris', 75001, NULL, '2024-11-17 13:42:53', '2024-11-17 13:42:53'),
+(2, 'Hôpital Nord Paris', '45 Avenue des Fleurs', 60140, NULL, '2024-11-17 13:42:53', '2024-11-17 13:42:53'),
+(3, 'Hôpital Général de Lyon', '78 Rue Victor Hugo', 69760, NULL, '2024-11-17 13:42:53', '2024-11-17 13:42:53'),
+(4, 'Hôpital Général de Marseille', '22 Boulevard du Prado', 13124, NULL, '2024-11-17 13:42:53', '2024-11-17 13:42:53'),
+(5, 'Hôpital Général de Bordeaux', '35 Allée des Vignes', 33750, NULL, '2024-11-17 13:42:53', '2024-11-17 13:42:53'),
+(6, 'Hôpital Général de Nantes', '50 Quai de Loire', 44470, NULL, '2024-11-17 13:42:53', '2024-11-17 13:42:53'),
+(7, 'Hôpital Général de Toulouse', '10 Rue de la Garonne', 31600, NULL, '2024-11-17 13:42:53', '2024-11-17 13:42:53'),
+(8, 'Hôpital Général de Strasbourg', '88 Rue des Vosges', 67550, NULL, '2024-11-17 13:42:53', '2024-11-17 13:42:53'),
+(9, 'Hôpital Général de Rennes', '5 Rue de Bretagne', 35131, NULL, '2024-11-17 13:42:53', '2024-11-17 13:42:53'),
+(12, 'Hopital de HSP', '147 Av de la tourette', 93400, 'https://github.com/IRotcivI/HSP-Projet', '2024-11-25 14:45:30', '2024-11-25 14:45:30');
 
 -- --------------------------------------------------------
 
@@ -151,15 +148,14 @@ CREATE TABLE IF NOT EXISTS `mdpreset` (
   `mdpResetToken` longtext NOT NULL,
   `mdpResetTemps` text NOT NULL,
   PRIMARY KEY (`mdpResetId`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `mdpreset`
 --
 
 INSERT INTO `mdpreset` (`mdpResetId`, `mdpResetEmail`, `mdpResetSelector`, `mdpResetToken`, `mdpResetTemps`) VALUES
-(9, 'fayedaour@outlook.fr', '1aaff3c46e318513', '$2y$10$..U0WSgeLTDdAIyEixwtf.54cXV4D4xZEc9yRimgD5HcuEedbRzQC', '1728857850'),
-(22, 'funcyuncle@gmail.com', '32336d971284eab8', '$2y$10$OZBjN3Aw7uRsRcdhaMWfx.by6EHIXRF3DdPH3BKNkIe4VERxvpj7W', '1730133987');
+(11, 'v.faye@lprs.fr', '0504284d02fec492', '$2y$10$01Pf704IjhP4E5y1RsRLauRwQey26XPrkB3/ZfNHevcMyDyLsqk/S', '1733154644');
 
 -- --------------------------------------------------------
 
@@ -208,19 +204,14 @@ CREATE TABLE IF NOT EXISTS `offre` (
   `salaire` int NOT NULL,
   `type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `offre`
 --
 
 INSERT INTO `offre` (`id`, `titre`, `description`, `tache`, `date`, `salaire`, `type`) VALUES
-(1, 'Medecin', '24H/24 Pas de repo', '-Tu me fais un café TOUT LES JOUR!!!!!\r\n-ETC...', '2024/02/01', 0, 'CDI'),
-(2, 'Medecin 2\r\n', '24H/24 Pas de repo', '-Tu me fais un café TOUT LES JOUR!!!!!\r\n-ETC...', '2024/02/01', 0, 'CDI'),
-(3, 'Medecin 3\r\n', '24H/24 Pas de repo', '-Tu me fais un café TOUT LES JOUR!!!!!\r\n-ETC...', '2024/02/01', 0, 'CDI'),
-(4, 'Medecin 4\r\n\r\n', '24H/24 Pas de repo', '-Tu me fais un café TOUT LES JOUR!!!!!\r\n-ETC...', '2024/02/01', 0, 'CDI'),
-(5, 'Medecin 5\r\n\r\n', '24H/24 Pas de repo', '-Tu me fais un café TOUT LES JOUR!!!!!\r\n-ETC...', '2024/02/01', 0, 'CDI'),
-(6, 'Medecin 6\r\n\r\n', '24H/24 Pas de repo', '-Tu me fais un café TOUT LES JOUR!!!!!\r\n-ETC...', '2024/02/01', 0, 'CDI');
+(7, 'TEST', '    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cum dolore dolorum eveniet fuga in ipsam ipsum iste necessitatibus nemo neque odio officiis reprehenderit, sed tempori', 'TEST', '01/01/2000', 1000, 'CDI');
 
 -- --------------------------------------------------------
 
@@ -262,15 +253,15 @@ CREATE TABLE IF NOT EXISTS `post` (
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `fk_utilisateurpost` (`ref_utilisateur`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `post`
 --
 
 INSERT INTO `post` (`id`, `titre`, `categorie`, `contenu`, `ref_utilisateur`, `created_at`, `updated_at`) VALUES
-(7, 'HSP Forum beta', 'annonce', '        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam culpa doloribus illo in, ipsa iure modi nesciunt nostrum odit pariatur placeat recusandae rerum vitae voluptatem volu', 7, '2024-11-06 17:25:10', '2024-11-06 18:34:50'),
-(8, 'T\'es le plus fort Donald TRUMMP', 'annonce', '47TH président des Etats Unis', 7, '2024-11-06 17:39:31', '2024-11-06 18:34:50');
+(11, 'gh', 'general', 'gh', 28, '2024-12-09 14:02:06', '2024-12-09 14:02:06'),
+(12, 'TEST', 'general', 'TEST', 28, '2024-12-09 14:49:21', '2024-12-09 14:49:21');
 
 -- --------------------------------------------------------
 
@@ -289,19 +280,46 @@ CREATE TABLE IF NOT EXISTS `reponse` (
   PRIMARY KEY (`id`),
   KEY `fk_reponsepost` (`ref_post`),
   KEY `fk_reponseutilisateur` (`ref_utilisateur`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
 
 --
--- Déchargement des données de la table `reponse`
+-- Structure de la table `specialite`
 --
 
-INSERT INTO `reponse` (`id`, `contenu`, `ref_post`, `ref_utilisateur`, `created_at`, `updated_at`) VALUES
-(1, 'Lorem oh dolor Asad', 7, 7, '2024-11-06 19:12:46', '2024-11-06 19:12:46'),
-(2, 'TEST', 7, 7, '2024-11-06 19:26:22', '2024-11-06 19:26:22'),
-(3, 'Donnaaaaaaaaalllllllllllldddddddd', 8, 7, '2024-11-06 19:28:11', '2024-11-06 19:28:11'),
-(4, 'Je suis bo', 7, 7, '2024-11-15 13:58:21', '2024-11-15 13:58:21'),
-(5, 'teststststststs', 7, 7, '2024-11-15 13:58:52', '2024-11-15 13:58:52'),
-(6, 'tzatkdyjdfzotzladofyazldyfzdcyudztdzjzdghxzfddzffazyedafzyedza', 8, 7, '2024-11-15 14:47:07', '2024-11-15 14:47:07');
+DROP TABLE IF EXISTS `specialite`;
+CREATE TABLE IF NOT EXISTS `specialite` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nom` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `specialite`
+--
+
+INSERT INTO `specialite` (`id`, `nom`) VALUES
+(1, 'Cardiologue'),
+(2, 'Neurologue'),
+(3, 'Gastroentérologue'),
+(4, 'Dermatologue'),
+(5, 'Pédiatrie'),
+(6, 'Oncologue'),
+(7, 'Pneumologue'),
+(8, 'Rhumatologue'),
+(9, 'Endocrinologue'),
+(10, 'Ophtalmologue'),
+(11, 'Gynécologue'),
+(12, 'Psychiatre'),
+(13, 'Urologue'),
+(14, 'Néphrologue'),
+(15, 'Hématologue'),
+(16, 'Oto-rhino-laryngologue'),
+(17, 'Chirurgien orthopédique'),
+(18, 'Anesthésiologue'),
+(19, 'Médecin interne'),
+(20, 'Médecin généraliste');
 
 -- --------------------------------------------------------
 
@@ -317,21 +335,28 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `fonction` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `cv` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `entreprise` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `ref_offre` int DEFAULT NULL,
+  `poste` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cv` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `formation` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ref_specialite` int DEFAULT NULL,
+  `ref_hopital` int DEFAULT NULL,
+  `inscrit` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `utilisateur_email_unique` (`email`),
-  KEY `fk_useroffre` (`ref_offre`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  KEY `fk_userhopital` (`ref_hopital`),
+  KEY `fk_userspecialite` (`ref_specialite`)
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`id`, `nom`, `prenom`, `email`, `password`, `fonction`, `cv`, `entreprise`, `ref_offre`) VALUES
-(7, 'AHAD', 'Asad', 'r.asad@lprs.fr', '$2y$10$AvrjFSGIF2VYG3/63LGDne1BP5zjhyksAtJ8w9tFnNP7Tz5PNlMkC', 'eleve', 'pdf-exemple.pdf', NULL, NULL),
-(10, 'FAYE', 'Victor', 'v.faye@lprs.fr', '$2y$10$K1Ppp.3S1PqnJ5lIgh03uOn3ePKjMSvBlyHQmtwBTiKBlj0xwhdKe', 'eleve', 'pdf-exemple.pdf', NULL, NULL);
+INSERT INTO `utilisateur` (`id`, `nom`, `prenom`, `email`, `password`, `fonction`, `poste`, `cv`, `formation`, `ref_specialite`, `ref_hopital`, `inscrit`) VALUES
+(24, 'FAYE', 'Victor', 'funcyuncle@gmail.com', '$2y$10$8l874nvhNo/LiNQxzJO4VOpD8SwPr4o9NNyQ6UtRuMDKIc5Xv0CBi', 'professeur', NULL, 'CV.pdf', 'BTS SIO', NULL, NULL, 0),
+(26, 'FAYE', 'Victor', 'r.asad@lprs.fr', '$2y$10$dOKOERVGS5iO4UBChumM9OjUShmnkDhXKGSov24CNRxq.pjLH8XTe', 'entreprise', 'Technicien', NULL, NULL, NULL, NULL, 0),
+(27, 'FAYE', 'Victor', 'hsp.fleshy970@passinbox.com', '$2y$10$fG0Z4MwOTSnt3BhAtNtPw.8enIUAu1d7XX4nxtHgMbo4ScQKhOcEO', 'eleve', NULL, 'CV_FV.pdf', 'BTS SIO', NULL, NULL, 0),
+(28, 'FAYE', 'Victor', 'v.faye@lprs.fr', '$2y$10$W7zH1CzxGqYhTOdLm2rx5.dMyhqyNE8QjTTV39up32yxFhehcdVYS', 'eleve', NULL, 'CV_FV.pdf', 'BTS SIO', NULL, NULL, 1),
+(29, 'DJAIZ', 'Selim', 'v.f@lprs.fr', '$2y$10$0J4J.uXgl4qO4L.p4NN.Yu0cgevAtRTOKd8zgF4Koh89jaRZWiouW', 'professeur', NULL, NULL, NULL, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -350,6 +375,13 @@ CREATE TABLE IF NOT EXISTS `utilisateur_offre` (
 --
 -- Contraintes pour les tables déchargées
 --
+
+--
+-- Contraintes pour la table `fiche_evenement`
+--
+ALTER TABLE `fiche_evenement`
+  ADD CONSTRAINT `fk_eve_hopital` FOREIGN KEY (`ref_hopital`) REFERENCES `hopital` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `fk_utilisateur_evenement` FOREIGN KEY (`ref_utilisateur`) REFERENCES `utilisateur` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Contraintes pour la table `fich_eve_utilisateur`
@@ -375,7 +407,8 @@ ALTER TABLE `reponse`
 -- Contraintes pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  ADD CONSTRAINT `fk_useroffre` FOREIGN KEY (`ref_offre`) REFERENCES `offre` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+  ADD CONSTRAINT `fk_userhopital` FOREIGN KEY (`ref_hopital`) REFERENCES `hopital` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `fk_userspecialite` FOREIGN KEY (`ref_specialite`) REFERENCES `specialite` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Contraintes pour la table `utilisateur_offre`
