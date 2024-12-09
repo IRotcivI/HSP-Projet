@@ -37,14 +37,13 @@
                             <h2>Formulaire de contact</h2>
                             <p>Contactez nous</p>
                         </div>
-                        <form method="post" action="/HSP/src/controller/traitInscription.php"
-                              enctype="multipart/form-data">
+                        <form method="post" action="/HSP/src/controller/traitContact.php"
                             <div class="input-group mb-3">
                                 <input type="text" name="email" class="form-control form-control-lg bg-light fs-6"
                                        placeholder="Email">
                             </div>
                             <div class="input-group mb-3">
-                                <input type="text" name="Motif" class="form-control form-control-lg bg-light fs-6"
+                                <input type="text" name="motif" class="form-control form-control-lg bg-light fs-6"
                                        placeholder="Motif">
                             </div>
                             <div class="input-group mb-3">
@@ -67,7 +66,7 @@
                         </div>
                         <div class="row">
                             <small>Avez vous un compte? <a
-                                    href="/HSP/vue/auth/connection.php">Connectez-vous</a>
+                                    href="/HSP/vue/auth/formLogin.php">Connectez-vous</a>
                             </small>
                         </div>
                     </div>

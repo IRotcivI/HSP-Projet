@@ -5,12 +5,19 @@ class Contact {
     private $motif;
     private $demande;
     private $autre;
-    public function __construct($email) {
-        $this->email = $email;
-        $this->motif = $motif;
-        $this->demande = $demande;
-        $this->autre = $autre;
+    public function __construct(array $donnee) {
+        $this->hydrate($donnee);
     }
+
+    public function hydrate(array $donnee) {
+        foreach ($donnee as $key => $value) {
+            $method = 'set' . ucfirst($key);
+            if (method_exists($this, $method)) {
+                $this->$method($value);
+            }
+        }
+    }
+
 
     /**
      * @return mixed
@@ -76,31 +83,18 @@ class Contact {
         $this->autre = $autre;
     }
 
-    public function Contact()
-    {
+public function Contact() {
 
-        $bdd = new \BaseDeDonne();
-        $req = $bdd->getBdd()->prepare("SELECT * FROM utilisateur WHERE email = :email");
-        $req->execute(array(
-            "email" => $this->getEmail()
-        ));
-        if ($req->rowCount() > 0) {
-            header('location:/HSP/vue/auth/eleve/formRegisterEleve.php?erreur=1');
-            exit();
+    $bdd = new \BaseDeDonne();
 
-        } else {
-            $bdd = new \BaseDeDonne();
-            $req = $bdd->getBdd()->prepare("INSERT INTO contact (email,motif,demande,autre) VALUES (:email,:motif,:demande,:autre)");
-            $req->execute(array(
-                'email' => $this->getEmail(),
-                'motif' => $this->getMotif(),
-                'demande' => $this->getDemande(),
-                'autre' => $this->getAutre(),
-            ));
-            header("msgEn.html");
-            exit();
-        }
-    }
+    $req = $bdd->getBdd()->prepare("INSERT INTO contact (email, motif, demande, autre) VALUES (:email, :motif, :demande, :autre)");
+    $req->execute(array(
+        'email' => $this->email,
+        'motif' => $this->motif,
+        'demande' => $this->demande,
+        'autre' => $this->autre,
+    ));
+}
 
     public function ContactEffectuer(): void
     {
