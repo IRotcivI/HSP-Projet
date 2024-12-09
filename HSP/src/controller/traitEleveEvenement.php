@@ -5,7 +5,7 @@ if (isset($_POST['submit'])) {
     include '../model/Evenement.php';
 
     if (empty($_POST['id']) || empty($_POST['event'])){
-        header("Location:/HSP/vue/eleveEvenement.php?event=error");
+        header("Location:/HSP/vue/newEvent.php?event=error");
         exit();
     }
     else{
