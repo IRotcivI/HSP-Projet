@@ -141,7 +141,7 @@
                 </div>
             </div>
         </div>
-        <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" onclick="window.location.href='../HSP/vue/contact.php'">
+        <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" onclick="window.location.href='../vue/contacct.php'">
             Pour nous contacter, veuillez cliquer ici !
         </button>
     </section>
