@@ -29,29 +29,28 @@ form input{
     background: #e4e4e4;
 }
 form textarea {
-    width: 92%; /* Même largeur */
+    width: 92%;
     height: 250px;
-    outline: none; /* Retire le contour */
-    border: 1px solid #fff; /* Bordure blanche */
-    padding: 12px 20px; /* Espace intérieur */
-    margin-bottom: 10px; /* Espace en bas */
-    border-radius: 20px; /* Bords arrondis */
-    background: #e4e4e4; /* Couleur de fond */
-    resize: vertical; /* Permet à l'utilisateur de redimensionner uniquement en hauteur */
+    outline: none;
+    border: 1px solid #fff;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    background: #e4e4e4;
+    resize: vertical;
 }
 form select {
-    width: 92%; /* Même largeur que le textarea */
-    outline: none; /* Retire le contour de mise en surbrillance */
-    border: 1px solid #fff; /* Bordure blanche pour le select */
-    padding: 12px 20px; /* Espace intérieur similaire */
-    margin-bottom: 10px; /* Espace en bas */
-    border-radius: 20px; /* Bords arrondis */
-    background: #e4e4e4; /* Couleur de fond grise */
-    appearance: none; /* Retire le style par défaut du navigateur (facultatif) */
-    -webkit-appearance: none; /* Pour les navigateurs basés sur WebKit */
-    -moz-appearance: none; /* Pour Firefox */
+    width: 92%;
+    outline: none;
+    border: 1px solid #fff;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    background: #e4e4e4;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 p{
     margin-top: 15px;
 }
-

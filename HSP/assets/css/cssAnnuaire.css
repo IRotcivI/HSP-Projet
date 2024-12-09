@@ -1,0 +1,138 @@
+main {
+    background: url("/HSP/assets/img/imghopital.jpg");
+    background-size: cover;
+    width: 100%;
+}
+
+.mt-5 {
+    margin-top: 0 !important;
+}
+
+.btn-primary {
+    background-color: gray;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+
+.login-button {
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    font-size: 14px;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+.dropdown-menu {
+    border-radius: 8px;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+
+.badge-custom {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.badge-success {
+    background-color: purple;
+    border: 2px solid #218838;
+}
+
+.badge-info {
+    background-color: #17a2b8;
+    border: 2px solid #117a8b;
+}
+
+.badge-warning {
+    background-color: #ffc107;
+    color: #333;
+    border: 2px solid #e0a800;
+}
+
+.badge-custom:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.status {
+    margin-right: 16px;
+}
+
+.card {
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.card header h2 {
+    font-weight: 700;
+    color: #0d6efd;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.table thead {
+    background-color: #f8f9fa;
+    text-align: left;
+    font-size: 16px;
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+.table .badge {
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+.table .btn {
+    font-size: 14px;
+    border-radius: 20px;
+}
+
+.footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.footer p {
+    margin: 0;
+}
+
+section.card{
+    margin-top: 75px;
+    margin-right: 18px;
+    margin-left: 18px;
+}
+
+textarea{
+    border: none;
+    background-color: white;
+}

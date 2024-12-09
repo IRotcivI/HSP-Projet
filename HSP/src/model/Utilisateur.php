@@ -450,7 +450,7 @@ class Utilisateur
                     $_SESSION['prenom'] = $res['prenom'];
                     $_SESSION['email'] = $res['email'];
                     $_SESSION['fonction'] = $res['fonction'];
-                    header("Location:/HSP/vue/menu.php");
+                    header("Location:/HSP/vue/newMenu.php");
                     exit();
 
                 } elseif ($res['inscrit'] == 0) {
