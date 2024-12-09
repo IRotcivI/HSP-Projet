@@ -26,7 +26,7 @@
                         <img src="/HSP/assets/img/writer-svgrepo-com.svg" class="img-fluid"
                              style="width: 200px; align-content: center" alt="">
                     </div>
-                    <p class="text-white fs-2" style=" font-weight: 600;">Inscrivez-vous</p>
+                    <p class="text-white fs-2" style=" font-weight: 600;">Contactez-nous</p>
                     <small class="text-white text-wrap text-center" style="width: 17rem;">
                         Rejoignez le Pôle Étudiant, une communauté dédiée à la formation, à l'accompagnement, et à
                         la réussite des étudiants en médecine. </small>
