@@ -80,7 +80,7 @@
             <!-- Card 1 -->
             <div class="col-md-4">
                 <div class="card">
-                    <img src="https://via.placeholder.com/300x150" class="card-img-top" alt="Chirurgie">
+                    <img src="../HSP/assets/img/httpswww.ch-ajaccio.frstoragepolesyzJe7KNuII3YhAg.jpg.jpg" class="card-img-top" alt="Chirurgie"height="300" WIDTH="150">
                     <div class="card-body">
                         <h5 class="card-title">Pôle de Chirurgie</h5>
                         <p class="card-text">Des équipements modernes et des chirurgiens expérimentés pour des soins de
@@ -90,8 +90,8 @@
             </div>
             <!-- Card 2 -->
             <div class="col-md-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/300x150" class="card-img-top" alt="Médecine">
+                <div class="card" >
+                    <img src="../HSP/assets/img/img_2.png" class="card-img-top" alt="Médecine"height="300" WIDTH="150">
                     <div class="card-body">
                         <h5 class="card-title">Pôle de Médecine</h5>
                         <p class="card-text">Une équipe médicale dédiée à votre bien-être et à votre santé.</p>
@@ -101,7 +101,7 @@
             <!-- Card 3 -->
             <div class="col-md-4">
                 <div class="card">
-                    <img src="https://via.placeholder.com/300x150" class="card-img-top" alt="Cancérologie">
+                    <img src="../HSP/assets/img/img.png" class="card-img-top" alt="Cancérologie"height="300" WIDTH="150">
                     <div class="card-body">
                         <h5 class="card-title">Pôle de Cancérologie</h5>
                         <p class="card-text">Un accompagnement personnalisé pour les patients atteints de cancer.</p>
@@ -112,8 +112,8 @@
         <div class="row mt-4">
             <!-- Card 4 -->
             <div class="col-md-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/300x150" class="card-img-top" alt="Maternité">
+                <div class="card" >
+                    <img src="../HSP/assets/img/img_1.png" class="card-img-top" alt="Maternité"  height="300" WIDTH="150">
                     <div class="card-body">
                         <h5 class="card-title">Pôle de Maternité</h5>
                         <p class="card-text">Un suivi complet pour les futures mamans et leurs bébés.</p>
@@ -123,7 +123,7 @@
             <!-- Card 5 -->
             <div class="col-md-4">
                 <div class="card">
-                    <img src="https://via.placeholder.com/300x150" class="card-img-top" alt="Imagerie Médicale">
+                    <img src="../HSP/assets/img/accueil5-111.jpg" class="card-img-top" alt="Imagerie Médicale"height="300" WIDTH="150">
                     <div class="card-body">
                         <h5 class="card-title">Pôle d'Imagerie Médicale</h5>
                         <p class="card-text">Des technologies avancées pour des diagnostics précis.</p>
@@ -133,7 +133,7 @@
             <!-- Card 6 -->
             <div class="col-md-4">
                 <div class="card">
-                    <img src="https://via.placeholder.com/300x150" class="card-img-top" alt="Urgences">
+                    <img src="../HSP/assets/img/urgences.png" class="card-img-top" alt="Urgences"height="300" WIDTH="150">
                     <div class="card-body">
                         <h5 class="card-title">Service d'Urgences</h5>
                         <p class="card-text">Disponible 24h/24 et 7j/7 pour répondre à vos besoins urgents.</p>
