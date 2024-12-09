@@ -24,7 +24,7 @@ if (empty($_SESSION)) {
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
         <!-- MDB -->
         <link rel="stylesheet" href="../../assets/css/mdb.min.css" />
-        <link rel="stylesheet" href="../../assets/css/eleveForum.css">
+        <link rel="stylesheet" href="../../assets/css/newForum.css">
         <link rel="stylesheet" href="../../assets/css/all.css">
     </head>
     <body>
@@ -459,7 +459,6 @@ if (empty($_SESSION)) {
                 }
                 ?>
         </div>
-
     </main>
 
     <footer></footer>

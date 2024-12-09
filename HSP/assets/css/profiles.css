@@ -1,26 +1,143 @@
-.send{
-
+/* Style pour la section à l'intérieur du main */
+section {
+    margin-bottom: 40px; /* Augmentation de la marge en bas de chaque section pour une séparation plus claire */
 }
 
-body{
-    background-color: #dfe9f5;
+/* Ajuster les card-body à l'intérieur du main */
+.card-body {
+    background-color: #ffffff; /* Fond blanc pour les cards */
+    padding: 25px; /* Espacement interne accru */
+    border-radius: 12px; /* Coins plus arrondis */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre plus marquée autour des cards */
 }
 
-input{
-    outline: none;
-    border: none;
+/* Style des alertes et messages d'état dans la section profil */
+.card-body p {
+    font-size: 17px; /* Légère augmentation de la taille du texte */
+    margin: 8px 0; /* Espacement légèrement plus important */
 }
 
-.col-sm-9 {
-    outline: none;
-    border: none;
+/* Style pour le texte de succès (messages modifiés avec succès) */
+.text-success {
+    color: #28a745; /* Vert pour le succès */
+    font-weight: bold;
+    font-size: 18px; /* Taille plus grande pour attirer l'attention */
 }
 
-.btn-sm, .btn-group-sm>.btn {
-    --mdb-btn-padding-top: 0.375rem;
-    --mdb-btn-padding-bottom: 0.3125rem;
-    --mdb-btn-padding-x: 1rem;
-    --mdb-btn-font-size: 0.75rem;
-    --mdb-btn-line-height: 1.5;
-    margin: 10px;
+/* Style pour les messages d'erreur */
+.text-danger {
+    color: #dc3545; /* Rouge pour les erreurs */
+    font-weight: bold;
+    font-size: 18px; /* Taille plus grande pour l'impact */
+}
+
+/* Pour centrer les images de profil */
+.card-body img {
+    border-radius: 50%; /* Image circulaire */
+    width: 160px; /* Taille de l'avatar légèrement augmentée */
+    height: 160px; /* Assure que l'avatar reste circulaire */
+    object-fit: cover; /* Garder la proportion de l'image */
+    margin-bottom: 20px; /* Espacement sous l'image */
+}
+
+/* Style pour les boutons dans la section principale */
+button {
+    font-size: 16px; /* Augmentation de la taille de texte pour les boutons */
+    padding: 12px 25px; /* Espacement à l'intérieur des boutons pour plus de confort */
+    border-radius: 8px; /* Coins plus arrondis pour les boutons */
+    transition: all 0.3s ease; /* Effet de transition pour les boutons */
+}
+
+button:hover {
+    opacity: 0.85; /* Légère réduction de l'opacité au survol */
+    cursor: pointer; /* Changement de curseur au survol */
+}
+
+/* Modifier le bouton 'Modifier' */
+.btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+    border-color: #117a8b;
+}
+
+/* Style du formulaire dans le main */
+form {
+    background-color: #f8f9fa; /* Légère nuance de gris clair pour le fond */
+    padding: 30px; /* Espacement interne plus généreux */
+    border-radius: 12px; /* Coins plus arrondis pour le formulaire */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombre plus marquée autour du formulaire */
+}
+
+/* Espacement entre les éléments du formulaire */
+form .row {
+    margin-bottom: 20px; /* Marge augmentée pour mieux espacer les champs */
+}
+
+form .row p {
+    font-weight: bold;
+    font-size: 17px; /* Augmentation de la taille de police des labels */
+}
+
+/* Style pour les champs de texte dans le formulaire */
+form input[type="text"], form input[type="email"] {
+    width: 100%;
+    padding: 12px; /* Espacement accru pour plus de confort */
+    margin-top: 8px; /* Espacement supérieur entre le label et le champ */
+    border-radius: 8px; /* Coins arrondis pour les champs */
+    border: 1px solid #ced4da;
+}
+
+form input[type="text"]:focus, form input[type="email"]:focus {
+    border-color: #17a2b8; /* Bordure bleue en focus */
+    box-shadow: 0 0 8px rgba(23, 162, 184, 0.5); /* Ombre plus marquée sur focus */
+}
+
+/* Espacement pour les éléments text-center dans les cards */
+div.card-body.text-center {
+    margin-top: 100px;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    background-color: #f8f9fa;
+    font-size: 16px;
+}
+
+select:focus {
+    border-color: #17a2b8;
+    box-shadow: 0 0 8px rgba(23, 162, 184, 0.5);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+hr {
+    margin: 1rem 0;
+    color: green;
+    border: 0;
+    border-top: var(--bs-border-width) solid;
+    opacity: .25;
+}
+
+.btn-primary {
+    background-color: gray;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+    margin-top: 110px;
 }
