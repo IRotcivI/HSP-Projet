@@ -8,8 +8,8 @@
     <!--Bootstrap CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../assets/css/nav.css">
-    <link rel="stylesheet" href="../../../assets/css/form.css">
+    <link rel="stylesheet" href="../assets/css/nav.css">
+    <link rel="stylesheet" href="../assets/css/form.css">
     <title>Form</title>
 </head>
 <body>
@@ -26,10 +26,9 @@
                         <img src="/HSP/assets/img/writer-svgrepo-com.svg" class="img-fluid"
                              style="width: 200px; align-content: center" alt="">
                     </div>
-                    <p class="text-white fs-2" style=" font-weight: 600;">Inscrivez-vous</p>
+                    <p class="text-white fs-2" style=" font-weight: 600;">Contactez nous</p>
                     <small class="text-white text-wrap text-center" style="width: 17rem;">
-                        Rejoignez le Pôle Étudiant, une communauté dédiée à la formation, à l'accompagnement, et à
-                        la réussite des étudiants en médecine. </small>
+                        Si vous avez besoin d'aide, nous proposons plusieurs options de service client.</small>
                 </div>
                 <!----------------------------- Right Box ----------------------------->
                 <div class="col-md-6 right-box">
@@ -65,11 +64,6 @@
                         </form>
                         <div class="faute">
 
-                        </div>
-                        <div class="row">
-                            <small>Avez vous un compte? <a
-                                    href="/HSP/vue/auth/connection.php">Connectez-vous</a>
-                            </small>
                         </div>
                     </div>
                 </div>
