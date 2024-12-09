@@ -74,10 +74,8 @@ if (empty($_SESSION)) {
                         <span class="badge-custom badge-warning">Opérateur</span>
                     <?php } ?>
                 </div>
-
-
                 <!-- User Profile -->
-                <a href="auth/profiles.php" class="login-button d-flex align-items-center">
+                <a href="auth/newProfile.php" class="login-button d-flex align-items-center">
                     <img src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" class="rounded-circle me-2" height="22"
                          alt="Avatar">
                     <strong><?php echo strtoupper($_SESSION['prenom']); ?></strong>
@@ -88,7 +86,6 @@ if (empty($_SESSION)) {
                         data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <!-- Dropdown Options -->
                 <div class="dropdown ms-3">
                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"

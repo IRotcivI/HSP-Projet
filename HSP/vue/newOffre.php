@@ -71,7 +71,7 @@ if (empty($_SESSION)) {
                     <?php } ?>
                 </div>
                 <!-- User Profile -->
-                <a href="auth/profiles.php" class="login-button d-flex align-items-center">
+                <a href="auth/newProfile.php" class="login-button d-flex align-items-center">
                     <img src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" class="rounded-circle me-2" height="22"
                          alt="Avatar">
                     <strong><?php echo strtoupper($_SESSION['prenom']); ?></strong>
