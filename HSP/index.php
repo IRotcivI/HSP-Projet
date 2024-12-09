@@ -80,7 +80,7 @@
             <!-- Card 1 -->
             <div class="col-md-4">
                 <div class="card">
-                    <img src="../HSP/assets/img/httpswww.ch-ajaccio.frstoragepolesyzJe7KNuII3YhAg.jpg.jpg" class="card-img-top" alt="Chirurgie"height="300" WIDTH="150">
+                    <img src="../HSP/assets/img/img_3.png" class="card-img-top" alt="Chirurgie"height="300" WIDTH="150">
                     <div class="card-body">
                         <h5 class="card-title">Pôle de Chirurgie</h5>
                         <p class="card-text">Des équipements modernes et des chirurgiens expérimentés pour des soins de
