@@ -99,7 +99,7 @@ if (empty($_SESSION)) {
                         <?php } else { ?>
                             <li><a class="dropdown-item" href="#">Non disponible</a></li>
                         <?php } ?>
-                        <li><a class="dropdown-item" href="/HSP/src/controller/traitMenu.php">Déconnexion</a></li>
+                        <li><a class="dropdown-item" href="../../HSP/src/controller/traitMenu.php">Déconnexion</a></li>
                     </ul>
                 </div>
             </div>
@@ -165,13 +165,13 @@ if (empty($_SESSION)) {
                                         </td>
                                         <td><?php echo htmlspecialchars($ligne['nb_place']) ?></td>
                                         <td>
-                                            <a href="/HSP/vue/eleveEvenement.php">
+                                            <a href="../../HSP/vue/eleveEvenement.php">
                                                 <button type="button" class="btn btn-info" data-mdb-ripple-init>Info
                                                 </button>
                                             </a>
                                         </td>
                                         <td>
-                                            <form method="post" action="/HSP/src/controller/traitEleveEvenement.php">
+                                            <form method="post" action="../../HSP/src/controller/traitEleveEvenement.php">
                                                 <input type="hidden" name="event" value="<?php echo $ligne['id']; ?>">
                                                 <input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>">
                                                 <button type="submit" value="annuler" name="submit"
@@ -224,7 +224,7 @@ if (empty($_SESSION)) {
 
                                     if ($aff == NULL) { ?>
                                         <div>
-                                            <a href="/HSP/vue/eleveOffre.php">
+                                            <a href="../../HSP/vue/newOffre.php">
                                                 <button type="button" class="btn btn-light" data-mdb-ripple-init
                                                         data-mdb-ripple-color="dark">Participer à une offre d'emploi /
                                                     stage
@@ -260,14 +260,14 @@ if (empty($_SESSION)) {
                                             </td>
                                             <td><?php echo htmlspecialchars($ligne['date']) ?></td>
                                             <td>
-                                                <a href="/HSP/vue/eleveOffre.php">
+                                                <a href="../../HSP/vue/newOffre.php">
                                                     <button type="button" class="btn btn-info" data-mdb-ripple-init>
                                                         Info
                                                     </button>
                                                 </a>
                                             </td>
                                             <td>
-                                                <form method="post" action="/HSP/src/controller/traitEleveOffre.php">
+                                                <form method="post" action="../../HSP/src/controller/traitEleveOffre.php">
                                                     <input type="hidden" name="offre"
                                                            value="<?php echo $ligne['id']; ?>">
                                                     <input type="hidden" name="id"
