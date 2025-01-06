@@ -28,7 +28,7 @@
                     <div class="featured-image mb-3">
                         <img src="/HSP/assets/img/rb_51067.png" class="img-fluid" style="width: 250px;">
                     </div>
-                    <p class="text-white fs-2" style=" font-weight: 600;">En cour</p>
+                    <p class="text-white fs-2" style=" font-weight: 600;">En cours</p>
                     <small class="text-white text-wrap text-center" style="width: 17rem;">Chilling...</small>
                 </div>
                 <!-------------------- ------ Right Box ---------------------------->
@@ -40,10 +40,10 @@
                                 <h2>Bonjour</h2>
                                 <p>Nous sommes heureux de vous revoir</p>
                                 <p>
-                                    Votre compte est en cour de validation.
+                                    Votre compte est en cours de validation.
                                 </p>
                                 <p>
-                                    Vous receverez un mail si oui ou non vous etes inscrit.
+                                    Vous receverez un mail en cas de validation de l'inscription.
                                 </p>
                                 <p>
                                     Merci de votre comprehension.
