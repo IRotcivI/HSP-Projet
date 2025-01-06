@@ -1,212 +1,144 @@
-<?php
-session_start();
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../assets/css/nav.css">
+    <link rel="stylesheet" href="../../assets/css/form.css">
+    <title>Form</title>
+</head>
+<body>
+<header>
 
-if (empty($_SESSION)) {
-    header('Location: /HSP/index.php');
-    exit();
-} else {
-    ?>
-
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>HSP Project</title>
-        <!-- HSP icon -->
-        <link rel="icon" href="/HSP/assets/img/freepik-export-202410281551095LzP.ico" type="image/x-icon" />
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-        <!-- Google Fonts OSWALD -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-        <!-- MDB -->
-        <link rel="stylesheet" href="../assets/css/mdb.min.css" />
-        <link rel="stylesheet" href="../assets/css/all.css">
-        <link rel="stylesheet" href="../assets/css/profiles.css">
-        <link rel="stylesheet" href="../assets/css/evenement.css">
-    </head>
-    <body>
-    <!-- Start your project here-->
-    <header>
-        <!-- Navbar-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
-            <div class="container-fluid justify-content-between">
-                <!-- Left elements -->
-                <div class="d-flex">
-                    <!-- Brand -->
-                    <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="menu.php">
-                        <img src="/HSP/assets/img/freepik-export-202410281551095LzP.ico" height="20" alt="MDB Logo" loading="lazy" style="margin-top: 2px;" />
-                    </a>
+</header>
+<div class="wrapper">
+    <main>
+        <!----------------------- Main Container --------------------------->
+        <div class="container d-flex justify-content-center align-items-center min-vh-100">
+            <!----------------------- Registration Container --------------------------->
+            <div class="row border rounded-5 p-3 bg-white shadow box-area">
+                <!--------------------------- Left Box ----------------------------->
+                <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box"
+                     style="background: #4CAF50;">
+                    <div class="featured-image mb-3">
+                        <img src="/HSP/assets/img/professor-svgrepo-com.svg" class="img-fluid"
+                             style="width: 200px; align-content: center">
+                    </div>
+                    <p class="text-white fs-2" style="font-weight: 600;">Creer un evenement</p>
+                    <small class="text-white text-wrap text-center" style="width: 17rem;">
+                        Créer un evenement. </small>
                 </div>
-                <!-- Left elements -->
+                <!----------------------------- Right Box ----------------------------->
+                <div class="col-md-6 right-box">
+                    <div class="row align-items-center">
+                        <div class="header-text mb-4">
+                            <h2>Créer un evenement</h2>
+                            <p>Créer un evenement</p>
+                        </div>
+                        <form method="post" action="/HSP/src/controller/traitCreationEven.php"
+                              enctype="multipart/form-data">
 
-                <!-- Center elements -->
-                <?php
-                if ($_SESSION['fonction'] == 'eleve'){ ?>
-                    <ul class="navbar-nav flex-row d-none d-md-flex">
-                        <li class="nav-item me-3 me-lg-1 active">
-                            <a class="nav-link" href="database.php">
-                                <span><i class="fas fa-book-open"></i></span>
-                            </a>
-                        </li>
-                        <li class="nav-item me-3 me-lg-1 active">
-                            <a class="nav-link" href="eleveEvenement.php">
-                                <span><i class="fas fa-calendar-day"></i></span>
-                            </a>
-                        </li>
-                        <li class="nav-item me-3 me-lg-1 active">
-                            <a class="nav-link" href="eleveOffre.php">
-                                <span><i class="fas fa-briefcase"></i></span>
-                            </a>
-                        </li>
-                        <li class="nav-item me-3 me-lg-1 active">
-                            <a class="nav-link" href="forum/eleveForum.php">
-                                <span><i class="fas fa-comments"></i></span>
-                            </a>
-                        </li>
-                    </ul>
-                    <?php
-                }
-                if ($_SESSION['fonction'] == 'professeur'){ ?>
-                    <ul class="navbar-nav flex-row d-none d-md-flex">
-                        <li class="nav-item me-3 me-lg-1 active">
-                            <a class="nav-link" href="annuaireMedecin.php">
-                                <span><i class="fas fa-graduation-cap"></i></span>
-                            </a>
-                        </li>
 
-                        <li class="nav-item me-3 me-lg-1 active">
-                            <a class="nav-link" href="creationEvenement.php">
-                                <span><i class="far fa-calendar-plus"></i></span>
-                            </a>
-                        </li>
+                            <div class="input-group mb-3">
+                                <input type="text" name="titre" class="form-control form-control-lg bg-light fs-6"
+                                       placeholder="Titre">
+                                <label class="form-label" for="form4Example2"></label>
+                            </div>
 
-                        <li class="nav-item me-3 me-lg-1 active">
-                            <a class="nav-link" href="forum/eleveForum.php?choix=medecin" title="Forum">
-                                <span><i class="fas fa-comments"></i></span>
-                            </a>
-                        </li>
-                    </ul>
-                    <?php
-                }
-                ?>
-                <!-- Center elements -->
+                            <div class="input-group mb-3">
+                                <input type="text" name="description" class="form-control form-control-lg bg-light fs-6"
+                                       placeholder="Description" >
+                                <label class="form-label" for="form4Example3"></label>
+                            </div>
 
-                <!-- Right elements -->
-                <ul class="navbar-nav flex-row">
-                    <li>
-                        <?php
-                        if ($_SESSION['fonction'] == 'eleve') { ?>
-                            <button type="button" class="btn btn-success" data-mdb-ripple-init disabled><?php echo $_SESSION['fonction']?></button>
+                            <div class="input-group mb-3">
+                                <input type="email" name="rue" class="form-control form-control-lg bg-light fs-6"
+                                       placeholder="Rue">
+                                <label class="form-label" for="form4Example4"></label>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <input type="text" name="ville"
+                                       class="form-control form-control-lg bg-light fs-6"
+                                       placeholder="Ville">
+                                <label class="form-label" for="form4Example5"></label>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <input type="text" name="cp"
+                                       class="form-control form-control-lg bg-light fs-6"
+                                       placeholder="Code postal">
+                                <label class="form-label" for="form4Example6"></label>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <input type="text" name="nb_place"
+                                       class="form-control form-control-lg bg-light fs-6"
+                                       placeholder="Nombre de place">
+                                <label class="form-label" for="form4Example6"></label>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <select name="hop" class="form-control form-control-lg bg-light fs-6">
+                                    <option value="" disabled selected>Choisissez votre hopital</option>
+                                    <?php
+                                    $bdd = new PDO('mysql:host=localhost:3306;dbname=hsp;charset=utf8', 'root', '');
+                                    $requete = $bdd->prepare("SELECT * FROM hopital");
+                                    $requete->execute();
+                                    $aff = $requete->fetchAll();
+
+                                    foreach ($aff as $ligne) {
+                                        ?>
+                                        <option value="<?php echo $ligne['id'] ?>"><?php echo $ligne['nom'] ?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <button type="submit" name="submit" class="btn btn-lg btn-primary w-100 fs-6">
+                                    Création
+                                </button>
+                            </div>
+
+
+                        </form>
+                        <div class="faute">
                             <?php
-                        }
-                        else { ?>
-                            <button type="button" class="btn btn-info" data-mdb-ripple-init disabled><?php echo $_SESSION['fonction']?></button>
-                            <?php
-                        }
-                        ?>
-                    </li>
-                    <li class="nav-item me-3 me-lg-1">
-                        <a class="nav-link d-sm-flex align-items-sm-center" href="auth/profiles.php">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" class="rounded-circle" height="22" alt="Black and White Portrait of a Man" loading="lazy" />
-                            <strong class="d-none d-sm-block ms-1"><?php echo strtoupper($_SESSION['prenom']); ?></strong>
-                        </a>
-                    </li>
+                            $fullurl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
-                    <li class="nav-item dropdown me-3 me-lg-1">
-                        <a data-mdb-dropdown-init class="nav-link dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button" aria-expanded="false">
-                            <i class="fas fa-chevron-circle-down fa-lg"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                            <?php
-                            if ($_SESSION['fonction'] == 'professeur') { ?>
-                                <li><a class="dropdown-item" href="#">Tableau de(s) offre</a></li>
-                                <?php
-                            }
-                            else { ?>
-                                <li><a class="dropdown-item" href="#">Non disponible</a></li>
-                                <?php
+                            if (strpos($fullurl, "inscription=vide") !== false) {
+                                echo "<p class='text-danger'>Vous n'avez pas rempli tout les champs !</p>";
+                            } elseif (strpos($fullurl, "inscription=caractere") !== false) {
+                                echo "<p class='text-danger'>Vous avez utilisé des caractères invalides !</p>";
+                            } elseif (strpos($fullurl, "inscription=emailinvalide") !== false) {
+                                echo "<p class='text-danger'>Email invalide !</p>";
+                            } elseif (strpos($fullurl, "inscription=passwordincorect") !== false) {
+                                echo "<p class='text-danger'>Les mots de passe ne correspondent pas !</p>";
+                            } elseif (strpos($fullurl, "erreur=1") !== false) {
+                                echo "<p class='text-danger'>Email déjà utilisé !</p>";
                             }
                             ?>
-                            <li><a class="dropdown-item" href="/HSP/src/controller/traitMenu.php">Déconnection</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <!-- Right elements -->
+                        </div>
+                    </div>
+                </div>
             </div>
-        </nav>
-        <!-- Navbar -->
-    </header>
-
-
-    <main>
-        <div class="box">
-            <form style="width: 300px;" method="post" action="../src/controller/traitCreationEven.php">
-                <!-- Name input -->
-
-
-                <!-- Titre input -->
-                <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="text" id="form4Example2" class="form-control" name="titre" />
-                    <label class="form-label" for="form4Example2">Titre</label>
-                </div>
-
-                <!-- Description input -->
-                <div data-mdb-input-init class="form-outline mb-4">
-                    <textarea class="form-control" id="form4Example3" rows="4" name="description"></textarea>
-                    <label class="form-label" for="form4Example3">Description</label>
-                </div>
-
-                <!-- rue input -->
-                <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="text" id="form4Example2" class="form-control" name="rue" />
-                    <label class="form-label" for="form4Example3">Rue</label>
-                </div>
-
-                <!-- ville input -->
-                <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="text" id="form4Example2" class="form-control" name="ville"/>
-                    <label class="form-label" for="form4Example3">Ville</label>
-                </div>
-
-                <!-- cp input -->
-                <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="text" id="form4Example2" class="form-control" name="cp"/>
-                    <label class="form-label" for="form4Example3">Code postal</label>
-                </div>
-
-                <!-- nb_place input -->
-                <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="number" id="form4Example2" class="form-control" name="nb_place"/>
-                    <label class="form-label" for="form4Example3">Nombre de place</label>
-                </div>
-
-                <!-- hopital input -->
-                <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="text" id="form4Example2" class="form-control" name="hopital"/>
-                    <label class="form-label" for="form4Example3">Hopital</label>
-                </div>
-
-                <!-- Submit button -->
-                <button data-mdb-ripple-init type="submit" name="submit" class="btn btn-primary btn-block mb-4">Creer l'evenement</button>
-            </form>
-
         </div>
     </main>
-
-    <footer></footer>
-    <!-- End your project here-->
-
-    <!-- MDB -->
-    <script type="text/javascript" src="../assets/js/mdb.umd.min.js"></script>
-    <!-- Custom scripts -->
-    <script type="text/javascript"></script>
-    </body>
-    </html>
-
-    <?php
-}
-?>
+    <section class="footer">
+        <div class="container text-center">
+            <p>&copy; 2024 Hôpital Sud Paris (HSP). Tous droits réservés.</p>
+        </div>
+    </section>
+</div>
+<!--Bootstrap JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+</html>
+<?php
