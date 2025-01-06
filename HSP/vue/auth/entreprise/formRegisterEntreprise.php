@@ -24,7 +24,7 @@
                 <!--------------------------- Left Box ----------------------------->
                 <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #4CAF50;">
                     <div class="featured-image mb-3">
-                        <img src="/HSP/assets/img/mechanic-svgrepo-com.svg" class="img-fluid" style="width: 200px; align-content: center">
+                        <img src="../../../assets/img/mechanic-svgrepo-com.svg" class="img-fluid" style="width: 200px; align-content: center" alt="">
                     </div>
                     <p class="text-white fs-2" style="font-weight: 600;">Inscrivez-vous</p>
                     <small class="text-white text-wrap text-center" style="width: 17rem;">
@@ -61,7 +61,7 @@
                                 <button type="submit" name="submit" class="btn btn-lg btn-primary w-100 fs-6">S'inscrire</button>
                             </div>
                             <div class="row">
-                                <small>Déjà un compte ? <a href="/HSP/vue/auth/connection.php">Connectez-vous</a></small>
+                                <small>Déjà un compte ? <a href="../../../vue/auth/connection.php">Connectez-vous</a></small>
                             </div>
                         </form>
                     </div>

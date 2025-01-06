@@ -1,3 +1,8 @@
+main {
+    background-size: cover;
+    width: 100%;
+}
+
 section.cards {
     display: flex;
     flex-wrap: wrap;
@@ -64,11 +69,7 @@ section.btn:hover {
     transform: translateY(-10px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-main{
-    background: url("/HSP/assets/img/imghopital.jpg");
-    background-size: cover;
-    width: 100%;
-}
+
 .my-5 {
     margin-top: 5rem !important;
     margin-bottom: 3rem !important;

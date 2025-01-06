@@ -26,7 +26,7 @@
                 <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box"
                      style="background: #ffc107;;">
                     <div class="featured-image mb-3">
-                        <img src="/HSP/assets/img/rb_51067.png" class="img-fluid" style="width: 250px;">
+                        <img src="../../assets/img/rb_51067.png" class="img-fluid" style="width: 250px;" alt="">
                     </div>
                     <p class="text-white fs-2" style=" font-weight: 600;">En cours</p>
                     <small class="text-white text-wrap text-center" style="width: 17rem;">Chilling...</small>

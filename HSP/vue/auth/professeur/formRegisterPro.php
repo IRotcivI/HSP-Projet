@@ -26,8 +26,8 @@
                 <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box"
                      style="background: #4CAF50;">
                     <div class="featured-image mb-3">
-                        <img src="/HSP/assets/img/professor-svgrepo-com.svg" class="img-fluid"
-                             style="width: 200px; align-content: center">
+                        <img src="../../../assets/img/professor-svgrepo-com.svg" class="img-fluid"
+                             style="width: 200px; align-content: center" alt="">
                     </div>
                     <p class="text-white fs-2" style="font-weight: 600;">Inscrivez-vous</p>
                     <small class="text-white text-wrap text-center" style="width: 17rem;">
@@ -41,7 +41,7 @@
                             <h2>Créer un compte</h2>
                             <p>Inscrivez-vous pour accéder à la plateforme</p>
                         </div>
-                        <form method="post" action="/HSP/src/controller/traitInscriptionProf.php"
+                        <form method="post" action="../../../src/controller/traitInscriptionProf.php"
                               enctype="multipart/form-data">
                             <div class="input-group mb-3">
                                 <input type="text" name="nom" class="form-control form-control-lg bg-light fs-6"
@@ -120,7 +120,7 @@
                         </div>
                         <div class="row">
                             <small>Déjà un compte ? <a
-                                        href="/HSP/vue/auth/connection.php">Connectez-vous</a></small>
+                                        href="../../../vue/auth/formLogin.php">Connectez-vous</a></small>
                         </div>
                     </div>
                 </div>

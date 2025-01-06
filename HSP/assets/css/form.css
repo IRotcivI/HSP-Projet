@@ -35,9 +35,8 @@ footer {
 }
 
 main {
-    flex: 1;
-    background: url("/HSP/assets/img/doctor-looking-information-database.jpg");
     background-size: cover;
+    width: 100%;
 }
 
 /*------------ Login container ------------*/

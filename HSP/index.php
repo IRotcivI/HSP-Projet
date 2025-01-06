@@ -30,19 +30,9 @@
                         <li class="nav-item">
                             <a class="nav-link mx-lg-2 active" aria-current="page" href="#">Accueil</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link mx-lg-2" href="#">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link mx-lg-2" href="#">LOMP</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link mx-lg-2" href="#">Lieu</a>
-                        </li>
-                    </ul>
                 </div>
             </div>
-            <a href="/HSP/vue/auth/formLogin.php" class="login-button">Connexion</a>
+            <a href="vue/auth/formLogin.php" class="login-button">Connexion</a>
             <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -55,7 +45,7 @@
                 </button>
                 <!-- Dropdown menu -->
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item" href="/HSP/vue/auth/eleve/formRegisterEleve.php">Etudiant</a></li>
+                    <li><a class="dropdown-item" href="vue/auth/eleve/formRegisterEleve.php">Etudiant</a></li>
                     <li><a class="dropdown-item" href="vue/auth/professeur/formRegisterPro.php">Professeur</a></li>
                     <li><a class="dropdown-item" href="vue/auth/entreprise/formRegisterEntreprise.php">Partenaire</a>
                     </li>
@@ -65,7 +55,7 @@
     </nav>
     <!--Navbar FIN-->
 </header>
-<main class="mt-5 pt-5">
+<main class="mt-5 pt-5" style="background: url('assets/img/imghopital.jpg');">
     <section class="container text-center my-5">
         <h1 class="mb-4">Bienvenue à l'Hôpital Sud Paris (HSP)</h1>
         <p class="lead">
@@ -80,7 +70,8 @@
             <!-- Card 1 -->
             <div class="col-md-4">
                 <div class="card">
-                    <img src="../HSP/assets/img/img_3.png" class="card-img-top" alt="Chirurgie"height="300" WIDTH="150">
+                    <img src="../HSP/assets/img/img_3.png" class="card-img-top" alt="Chirurgie" height="300"
+                         WIDTH="150">
                     <div class="card-body">
                         <h5 class="card-title">Pôle de Chirurgie</h5>
                         <p class="card-text">Des équipements modernes et des chirurgiens expérimentés pour des soins de
@@ -90,8 +81,8 @@
             </div>
             <!-- Card 2 -->
             <div class="col-md-4">
-                <div class="card" >
-                    <img src="../HSP/assets/img/img_2.png" class="card-img-top" alt="Médecine"height="300" WIDTH="150">
+                <div class="card">
+                    <img src="../HSP/assets/img/img_2.png" class="card-img-top" alt="Médecine" height="300" WIDTH="150">
                     <div class="card-body">
                         <h5 class="card-title">Pôle de Médecine</h5>
                         <p class="card-text">Une équipe médicale dédiée à votre bien-être et à votre santé.</p>
@@ -101,7 +92,8 @@
             <!-- Card 3 -->
             <div class="col-md-4">
                 <div class="card">
-                    <img src="../HSP/assets/img/img.png" class="card-img-top" alt="Cancérologie"height="300" WIDTH="150">
+                    <img src="../HSP/assets/img/img.png" class="card-img-top" alt="Cancérologie" height="300"
+                         WIDTH="150">
                     <div class="card-body">
                         <h5 class="card-title">Pôle de Cancérologie</h5>
                         <p class="card-text">Un accompagnement personnalisé pour les patients atteints de cancer.</p>
@@ -112,8 +104,9 @@
         <div class="row mt-4">
             <!-- Card 4 -->
             <div class="col-md-4">
-                <div class="card" >
-                    <img src="../HSP/assets/img/img_1.png" class="card-img-top" alt="Maternité"  height="300" WIDTH="150">
+                <div class="card">
+                    <img src="../HSP/assets/img/img_1.png" class="card-img-top" alt="Maternité" height="300"
+                         WIDTH="150">
                     <div class="card-body">
                         <h5 class="card-title">Pôle de Maternité</h5>
                         <p class="card-text">Un suivi complet pour les futures mamans et leurs bébés.</p>
@@ -123,7 +116,8 @@
             <!-- Card 5 -->
             <div class="col-md-4">
                 <div class="card">
-                    <img src="../HSP/assets/img/accueil5-111.jpg" class="card-img-top" alt="Imagerie Médicale"height="300" WIDTH="150">
+                    <img src="../HSP/assets/img/accueil5-111.jpg" class="card-img-top" alt="Imagerie Médicale"
+                         height="300" WIDTH="150">
                     <div class="card-body">
                         <h5 class="card-title">Pôle d'Imagerie Médicale</h5>
                         <p class="card-text">Des technologies avancées pour des diagnostics précis.</p>
@@ -133,7 +127,8 @@
             <!-- Card 6 -->
             <div class="col-md-4">
                 <div class="card">
-                    <img src="../HSP/assets/img/urgences.png" class="card-img-top" alt="Urgences"height="300" WIDTH="150">
+                    <img src="../HSP/assets/img/urgences.png" class="card-img-top" alt="Urgences" height="300"
+                         WIDTH="150">
                     <div class="card-body">
                         <h5 class="card-title">Service d'Urgences</h5>
                         <p class="card-text">Disponible 24h/24 et 7j/7 pour répondre à vos besoins urgents.</p>
@@ -141,7 +136,8 @@
                 </div>
             </div>
         </div>
-        <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" onclick="window.location.href='../HSP/vue/contacct.php'">
+        <button class="btn btn-primary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                aria-expanded="false" onclick="window.location.href='../HSP/vue/contacct.php'">
             Pour nous contacter, veuillez cliquer ici !
         </button>
     </section>

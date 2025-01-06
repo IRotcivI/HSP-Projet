@@ -5,7 +5,7 @@ if (isset($_POST['submit'])) {
     include '../model/Utilisateur.php';
 
     if (empty($_POST['email']) || empty($_POST['mdp'])) {
-        header("Location:/HSP/vue/auth/formLogin.php?connection=vide");
+        header("Location:../../../HSP/vue/auth/formLogin.php?connection=vide");
         exit();
     }
     else{
@@ -18,6 +18,6 @@ if (isset($_POST['submit'])) {
     }
 }
 else {
-    header("Location:/HSP/vue/auth/formLogin.php?connection=erreur");
+    header("Location:../../../HSP/vue/auth/formLogin.php?connection=erreur");
     exit();
 }

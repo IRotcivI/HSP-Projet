@@ -272,7 +272,7 @@ class Utilisateur
             "email" => $this->getEmail()
         ));
         if ($req->rowCount() > 0) {
-            header('location:/HSP/vue/auth/eleve/formRegisterEleve.php?erreur=1');
+            header('location:../../../HSP/vue/auth/eleve/formRegisterEleve.php?erreur=1');
             exit();
 
         } else {
@@ -288,7 +288,7 @@ class Utilisateur
                 'cv' => $this->getCv(),
                 'formation' => $this->getFormation(),
             ));
-            header("Location:/HSP/vue/auth/status.php");
+            header("Location:../../../HSP/vue/auth/status.php");
             exit();
         }
     }
@@ -303,7 +303,7 @@ class Utilisateur
         ));
 
         if ($req->rowCount() > 0) {
-            header('location:/HSP/vue/auth/professeur/formRegisterPro.php?erreur=1');
+            header('location:../../../HSP/vue/auth/professeur/formRegisterPro.php?erreur=1');
             exit();
         } else {
             $bdd = new \BaseDeDonne();
@@ -319,7 +319,7 @@ class Utilisateur
                 'hopital' => $this->getHopital(),
                 'inscit' => 0
             ));
-            header("Location:/HSP/vue/auth/status.php");
+            header("Location:../../../HSP/vue/auth/status.php");
             exit();
         }
     }
@@ -331,7 +331,7 @@ class Utilisateur
             "email" => $this->getEmail()
         ));
         if ($req->rowCount() > 0) {
-            header('location:/HSP/vue/auth/entreprise/formRegisterEntreprise.php?erreur=1');
+            header('location:../../../HSP/vue/auth/entreprise/formRegisterEntreprise.php?erreur=1');
             exit();
         }
         else{
@@ -347,7 +347,7 @@ class Utilisateur
                 'poste' => $this->getSpecialite(),
                 'inscrit' => 0
             ));
-            header("Location:/HSP/vue/auth/status.php");
+            header("Location:../../../HSP/vue/auth/status.php");
             exit();
         }
     }
@@ -393,7 +393,7 @@ class Utilisateur
 
                 $mail->send();
 
-                header('location:/HSP/vue/auth/validation.php?btn=eleve&status=inscrit');
+                header('location:../../../HSP/vue/auth/validation.php?btn=eleve&status=inscrit');
                 exit();
             } elseif ($this->getSelector() == "refuser") {
                 $bdd = new \BaseDeDonne();
@@ -425,7 +425,7 @@ class Utilisateur
                 $mail->send();
 
 
-                header('location:/HSP/vue/auth/validation.php?btn=eleve&status=refuser');
+                header('location:../../../HSP/vue/auth/validation.php?btn=eleve&status=refuser');
                 exit();
             }
         } catch (Exception $e) {
@@ -450,19 +450,19 @@ class Utilisateur
                     $_SESSION['prenom'] = $res['prenom'];
                     $_SESSION['email'] = $res['email'];
                     $_SESSION['fonction'] = $res['fonction'];
-                    header("Location:/HSP/vue/newMenu.php");
+                    header("Location:../../../HSP/vue/newMenu.php");
                     exit();
 
                 } elseif ($res['inscrit'] == 0) {
-                    header("Location:/HSP/vue/auth/status.php");
+                    header("Location:../../../HSP/vue/auth/status.php");
                     exit();
                 }
             } else {
-                header("Location:/HSP/vue/auth/formLogin.php?connection=passwordincorect");
+                header("Location:../../../HSP/vue/auth/formLogin.php?connection=passwordincorect");
                 exit();
             }
         } else {
-            header("Location:/HSP/vue/auth/formLogin.php?connection=nouser");
+            header("Location:../../../HSP/vue/auth/formLogin.php?connection=nouser");
             exit();
         }
     }

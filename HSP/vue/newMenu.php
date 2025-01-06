@@ -19,7 +19,7 @@ if (empty($_SESSION)) {
         <link rel="stylesheet" href="../assets/css/nav.css">
         <link rel="stylesheet" href="../assets/css/cssMenu.css">
 
-        <title>Document</title>
+        <title>Menu HSP</title>
     </head>
     <body>
     <header>
@@ -28,7 +28,7 @@ if (empty($_SESSION)) {
             <div class="container-fluid">
                 <!-- Logo -->
                 <a class="navbar-brand me-auto d-flex align-items-center" href="newMenu.php">
-                    <img src="/HSP/assets/img/freepik-export-202410281551095LzP.ico" height="24" alt="HSP Logo"/>
+                    <img src="../assets/img/freepik-export-202410281551095LzP.ico" height="24" alt="HSP Logo"/>
                     <span class="ms-2">Tableau de bord</span>
                 </a>
 
@@ -48,7 +48,8 @@ if (empty($_SESSION)) {
                                                 class="fas fa-calendar-day"></i> Évènements</a></li>
                                 <li class="nav-item"><a class="nav-link mx-lg-2" href="newOffre.php"><i
                                                 class="fas fa-briefcase"></i> Offres</a></li>
-                                <li class="nav-item"><a class="nav-link mx-lg-2" href="/HSP/vue/forum/newForum.php?choix="><i
+                                <li class="nav-item"><a class="nav-link mx-lg-2"
+                                                        href="../../HSP/vue/forum/newForum.php?choix="><i
                                                 class="fas fa-comments"></i> Forum</a></li>
                             <?php } elseif ($_SESSION['fonction'] == 'professeur') { ?>
                                 <li class="nav-item"><a class="nav-link mx-lg-2" href="annuaireMedecin.php"><i
@@ -57,7 +58,7 @@ if (empty($_SESSION)) {
                                                 class="far fa-calendar-plus"></i> Créer un événement</a></li>
                             <?php } elseif ($_SESSION['fonction'] == 'operateur') { ?>
                                 <li class="nav-item"><a class="nav-link mx-lg-2"
-                                                        href="/HSP/vue/auth/validation.php?btn="><i
+                                                        href="../../HSP/vue/auth/validation.php?btn="><i
                                                 class="fas fa-clipboard-list"></i> Validation</a></li>
                             <?php } ?>
                         </ul>
@@ -129,7 +130,7 @@ if (empty($_SESSION)) {
 
                                 if ($aff == NULL) { ?>
                                     <div>
-                                        <a href="/HSP/vue/eleveEvenement.php">
+                                        <a href="../../HSP/vue/newEvent.php">
                                             <button type="button" class="btn btn-light" data-mdb-ripple-init
                                                     data-mdb-ripple-color="dark">Participer à un évenement
                                             </button>

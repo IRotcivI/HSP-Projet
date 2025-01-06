@@ -25,7 +25,7 @@ if (empty($_SESSION)) {
             <div class="container-fluid">
                 <!-- Logo -->
                 <a class="navbar-brand me-auto d-flex align-items-center" href="newMenu.php">
-                    <img src="/HSP/assets/img/freepik-export-202410281551095LzP.ico" height="24" alt="HSP Logo"/>
+                    <img src="../assets/img/freepik-export-202410281551095LzP.ico" height="24" alt="HSP Logo"/>
                     <span class="ms-2">Tableau de bord</span>
                 </a>
                 <!-- Offcanvas -->

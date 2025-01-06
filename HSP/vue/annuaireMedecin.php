@@ -16,7 +16,7 @@ if (empty($_SESSION)) {
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>HSP Project</title>
         <!-- Icone HSP -->
-        <link rel="icon" href="/HSP/assets/img/freepik-export-202410281551095LzP.ico" type="image/x-icon" />
+        <link rel="icon" href="../assets/img/freepik-export-202410281551095LzP.ico" type="image/x-icon" />
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
         <!-- Google Fonts OSWALD -->
