@@ -47,7 +47,7 @@ if (empty($_SESSION)) {
                                                 class="fas fa-calendar-day"></i> Évènements</a></li>
                                 <li class="nav-item"><a class="nav-link mx-lg-2" href="newOffre.php"><i
                                                 class="fas fa-briefcase"></i> Offres</a></li>
-                                <li class="nav-item"><a class="nav-link mx-lg-2" href="/HSP/vue/forum/newForum.php?choix="><i
+                                <li class="nav-item"><a class="nav-link mx-lg-2" href="../../HSP/vue/forum/newForum.php?choix="><i
                                                 class="fas fa-comments"></i> Forum</a></li>
                             <?php } elseif ($_SESSION['fonction'] == 'professeur') { ?>
                                 <li class="nav-item"><a class="nav-link mx-lg-2" href="annuaireMedecin.php"><i
@@ -56,7 +56,7 @@ if (empty($_SESSION)) {
                                                 class="far fa-calendar-plus"></i> Créer un événement</a></li>
                             <?php } elseif ($_SESSION['fonction'] == 'operateur') { ?>
                                 <li class="nav-item"><a class="nav-link mx-lg-2"
-                                                        href="/HSP/vue/auth/validation.php?btn="><i
+                                                        href="../../HSP/vue/auth/validation.php?btn="><i
                                                 class="fas fa-clipboard-list"></i> Validation</a></li>
                             <?php } ?>
                         </ul>
@@ -96,7 +96,7 @@ if (empty($_SESSION)) {
                         <?php } else { ?>
                             <li><a class="dropdown-item" href="#">Non disponible</a></li>
                         <?php } ?>
-                        <li><a class="dropdown-item" href="/HSP/src/controller/traitMenu.php">Déconnexion</a></li>
+                        <li><a class="dropdown-item" href="../../HSP/src/controller/traitMenu.php">Déconnexion</a></li>
                     </ul>
                 </div>
             </div>
