@@ -122,7 +122,16 @@ if (empty($_SESSION)) {
                                 <thead class="bg-light">
                                 <?php
                                 $bdd = new PDO('mysql:host=localhost:3306;dbname=hsp;charset=utf8', 'root', '');
-                                $requete = $bdd->prepare("SELECT * FROM fiche_evenement WHERE id IN (SELECT ref_fiche_evenement FROM fich_eve_utilisateur WHERE ref_utilisateur = :id) ");
+                                $requete = $bdd->prepare("
+                                SELECT fe.*, h.nom
+                                FROM fiche_evenement fe
+                                JOIN hopital h ON fe.ref_hopital = h.id
+                                WHERE fe.id IN (
+                                SELECT ref_fiche_evenement
+                                FROM fich_eve_utilisateur
+                                WHERE ref_utilisateur = :id
+                                    )
+                                 ");
                                 $requete->execute(array(
                                     'id' => $_SESSION['id']
                                 ));
@@ -137,8 +146,7 @@ if (empty($_SESSION)) {
                                         </a>
                                     </div>
                                     <?php
-                                }
-                                else { ?>
+                                } else { ?>
                                 <tr>
                                     <th>Nom</th>
                                     <th>Etablissement</th>
@@ -161,7 +169,7 @@ if (empty($_SESSION)) {
                                             </div>
                                         </td>
                                         <td>
-                                            <p><?php echo htmlspecialchars($ligne['hop']) ?></p>
+                                            <p><?php echo htmlspecialchars($ligne['nom']) ?></p>
                                         </td>
                                         <td><?php echo htmlspecialchars($ligne['nb_place']) ?></td>
                                         <td>
@@ -171,7 +179,8 @@ if (empty($_SESSION)) {
                                             </a>
                                         </td>
                                         <td>
-                                            <form method="post" action="../../HSP/src/controller/traitEleveEvenement.php">
+                                            <form method="post"
+                                                  action="../../HSP/src/controller/traitEleveEvenement.php">
                                                 <input type="hidden" name="event" value="<?php echo $ligne['id']; ?>">
                                                 <input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>">
                                                 <button type="submit" value="annuler" name="submit"
@@ -190,6 +199,7 @@ if (empty($_SESSION)) {
                                 </tbody>
                             </table>
                         </section>
+
                     </div>
                     <div class="item item2">
                         <section>
@@ -267,7 +277,8 @@ if (empty($_SESSION)) {
                                                 </a>
                                             </td>
                                             <td>
-                                                <form method="post" action="../../HSP/src/controller/traitEleveOffre.php">
+                                                <form method="post"
+                                                      action="../../HSP/src/controller/traitEleveOffre.php">
                                                     <input type="hidden" name="offre"
                                                            value="<?php echo $ligne['id']; ?>">
                                                     <input type="hidden" name="id"
@@ -314,33 +325,33 @@ if (empty($_SESSION)) {
 
     <!--Temps-->
     <script>
-      function startClock() {
-        const timeElement = document.querySelector(".item2 .time"); // Sélecteur pour l'heure
-        const dateElement = document.querySelector(".item2 .date"); // Sélecteur pour la date
+        function startClock() {
+            const timeElement = document.querySelector(".item2 .time"); // Sélecteur pour l'heure
+            const dateElement = document.querySelector(".item2 .date"); // Sélecteur pour la date
 
-        function updateClock() {
-          const now = new Date();
+            function updateClock() {
+                const now = new Date();
 
-          const hours = String(now.getHours()).padStart(2, "0");
-          const minutes = String(now.getMinutes()).padStart(2, "0");
-          const seconds = String(now.getSeconds()).padStart(2, "0");
-          const timeString = `${hours}:${minutes}:${seconds}`;
+                const hours = String(now.getHours()).padStart(2, "0");
+                const minutes = String(now.getMinutes()).padStart(2, "0");
+                const seconds = String(now.getSeconds()).padStart(2, "0");
+                const timeString = `${hours}:${minutes}:${seconds}`;
 
-          const day = String(now.getDate()).padStart(2, "0");
-          const month = String(now.getMonth() + 1).padStart(2, "0"); // Mois commence à 0
-          const year = now.getFullYear();
-          const dateString = `${day}/${month}/${year}`;
+                const day = String(now.getDate()).padStart(2, "0");
+                const month = String(now.getMonth() + 1).padStart(2, "0"); // Mois commence à 0
+                const year = now.getFullYear();
+                const dateString = `${day}/${month}/${year}`;
 
-          // Mise à jour du DOM
-          if (timeElement) timeElement.textContent = timeString;
-          if (dateElement) dateElement.textContent = dateString;
+                // Mise à jour du DOM
+                if (timeElement) timeElement.textContent = timeString;
+                if (dateElement) dateElement.textContent = dateString;
+            }
+
+            updateClock();
+            setInterval(updateClock, 1000);
         }
 
-        updateClock();
-        setInterval(updateClock, 1000);
-      }
-
-      document.addEventListener("DOMContentLoaded", startClock);
+        document.addEventListener("DOMContentLoaded", startClock);
     </script>
     </body>
     </html>

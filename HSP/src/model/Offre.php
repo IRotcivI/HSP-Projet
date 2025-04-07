@@ -158,7 +158,7 @@ class Offre {
                 'ref_offre'=>$this->getIdOffre()
             ));
 
-            header("Location:/HSP/vue/eleveOffre");
+            header("Location:/HSP/vue/newOffre.php");
             exit();
 
         }
@@ -177,7 +177,7 @@ class Offre {
             'offre'=>$this->getIdOffre()
         ));
 
-        header("Location:/HSP/vue/eleveOffre");
+        header("Location:/HSP/vue/newOffre.php");
         exit();
 
     }
